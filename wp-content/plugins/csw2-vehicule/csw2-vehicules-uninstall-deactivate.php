@@ -1,8 +1,4 @@
 <?php
-// Section pour la désinstallation et la désactivation de l'extension
-
-register_deactivation_hook(__FILE__, 'csw2_vehicules_deactivate');
-
 /**
  * Traitements à la désactivation de l'extension
  *
