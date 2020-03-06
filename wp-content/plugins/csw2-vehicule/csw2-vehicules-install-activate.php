@@ -46,7 +46,7 @@ function csw2_vehicules_create_table()
         vehicule_annee_circulation YEAR NOT NULL,
         vehicule_kilometrage INT NOT NULL,
         vehicule_prix INT NOT NULL,
-        vehicule_date_enregistrement DATE NOT NULL,
+        vehicule_date_enregistrement DATE NOT NULL DEFAULT CURRENT_TIMESTAMP,
         vehicule_proprietaire_id INT NOT NULL,
         PRIMARY KEY (vehicule_id))
       ENGINE = InnoDB " . $wpdb->get_charset_collate();
