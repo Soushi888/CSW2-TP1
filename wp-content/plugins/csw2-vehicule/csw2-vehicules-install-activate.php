@@ -41,7 +41,7 @@ function csw2_vehicules_create_table()
     $sql = "CREATE TABLE $wpdb->prefix" . "vehicules (
         vehicule_id INT NOT NULL AUTO_INCREMENT,
         vehicule_marque VARCHAR(255) NOT NULL,
-        vehicule_model VARCHAR(255) NOT NULL,
+        e VARCHAR(255) NOT NULL,
         vehicule_couleur VARCHAR(255) NOT NULL,
         vehicule_annee_circulation YEAR NOT NULL,
         vehicule_kilometrage INT NOT NULL,

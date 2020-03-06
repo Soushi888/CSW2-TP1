@@ -51,19 +51,18 @@ function insert_vehicule()
         $annee_circulation = sanitize_text_field($_POST["annee_circulation"]);
         $kilometrage = sanitize_text_field($_POST["kilometrage"]);
         $prix = sanitize_text_field($_POST["prix"]);
-        
 
         // insertion dans la table
         global $wpdb;
         $wpdb->insert(
             $wpdb->prefix . 'vehicules',
             array(
-                'marque' => $marque,
-                'modele' => $modele,
-                'couleur' => $couleur,
-                'annee_circulation' => $annee_circulation,
-                'kilometrage' => $kilometrage,
-                'prix' => $prix
+                'vehicule_marque' => $marque,
+                'vehicule_modele' => $modele,
+                'vehicule_couleur' => $couleur,
+                'vehicule_annee_circulation' => $annee_circulation,
+                'vehicule_kilometrage' => $kilometrage,
+                'vehicule_prix' => $prix
             ),
             array(
                 '%s',
@@ -74,6 +73,9 @@ function insert_vehicule()
                 '%d'
             )
         );
+ ?>
+        <pre><?= var_dump($wpdb->queries); ?></pre> 
+        <?php
         // génèrer le titre de l'image avec l'id de le véhicule insérée dans la table vehicules
         $vehicule_image_title = "vehicule-" . $wpdb->insert_id;
         // echo "<pre>".print_r($_FILES, true)."</pre>"; exit;

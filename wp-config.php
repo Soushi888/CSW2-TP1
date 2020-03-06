@@ -82,7 +82,9 @@ $table_prefix = 'csw2_';
  *
  * @link https://codex.wordpress.org/Debugging_in_WordPress
  */
-define('WP_DEBUG', false);
+define('WP_DEBUG', true);
+define('WP_DEBUG_LOG', true);
+define( 'SAVEQUERIES', true );
 
 /* C’est tout, ne touchez pas à ce qui suit ! Bonne publication. */
 
