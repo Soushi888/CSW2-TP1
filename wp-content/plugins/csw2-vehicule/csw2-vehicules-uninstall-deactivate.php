@@ -35,7 +35,6 @@ function csw2_vehicules_delete_pages()
  * ==============================================
  */
 
-register_uninstall_hook(__FILE__, 'csw2_vehicules_uninstall');
 
 /**
  * Traitements à la désinstallation de l'extension
