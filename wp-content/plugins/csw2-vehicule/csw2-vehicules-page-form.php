@@ -73,24 +73,22 @@ function insert_vehicule()
                 '%d'
             )
         );
- ?>
-        <pre><?= var_dump($wpdb->queries); ?></pre> 
-        <?php
+
         // génèrer le titre de l'image avec l'id de le véhicule insérée dans la table vehicules
-        $vehicule_image_title = "vehicule-" . $wpdb->insert_id;
-        // echo "<pre>".print_r($_FILES, true)."</pre>"; exit;
+        // $vehicule_image_title = "vehicule-" . $wpdb->insert_id;
 
         // chargement des fichiers nécessaires à l'exécution de la fonction media_handle_upload
-        require_once(ABSPATH . 'wp-admin/includes/image.php');
-        require_once(ABSPATH . 'wp-admin/includes/file.php');
-        require_once(ABSPATH . 'wp-admin/includes/media.php');
+        // require_once(ABSPATH . 'wp-admin/includes/image.php');
+        // require_once(ABSPATH . 'wp-admin/includes/file.php');
+        // require_once(ABSPATH . 'wp-admin/includes/media.php');
 
         // déplacement du fichier image dans le dossier wp-content/uploads et création d'un post de type attachment dans la table posts le premier paramètre 'image' est le nom du champ input qui suit dans $_FILES['image']
-        $vehicule_image_post_id = media_handle_upload('image', 0, array('post_title' => $vehicule_image_title));
+        // $vehicule_image_post_id = media_handle_upload('image', 0, array('post_title' => $vehicule_image_title));
+        // echo "<pre>".print_r($vehicule_image_post_id, true)."</pre>"; exit;
 
         // ajouter une métadonnée csw2_vehicules dans la table postmeta, associée au post précédent, pour rattacher ce post à l'extension   
-        $unique = true;
-        add_post_meta($vehicule_image_post_id, 'csw2_vehicules', 'img', $unique);
+        // $unique = true;
+        // // add_post_meta($vehicule_image_post_id, 'csw2_vehicules', 'img', $unique);
     ?>
         <p>Le véhicule a été enregistré.</p>
 <?php

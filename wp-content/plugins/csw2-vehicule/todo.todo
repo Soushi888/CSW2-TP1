@@ -1,0 +1,25 @@
+✔ Installation @done (2020-03-06 00 h 51 min 32 s)
+✔ Désinstallation @done (2020-03-06 00 h 51 min 33 s)
+✔ Page Annoncer un véhicule @done (2020-03-06 00 h 52 min 32 s)
+    ☐ Vérifier proprietaire_id
+    ☐ Système d'images
+☐ Consultation des annonces
+    ☐ Liste des annonces
+    ☐ Filtre et trie
+    ☐ Gestion des rôles
+        ☐ Lien vers la page de création d'une annonce
+        ☐ Administrateur
+        ☐ Autorisé
+        ☐ Annonyme
+☐ Formulaire Modification d'une annonce
+☐ Page confirmation suppression annonce
+☐ Interface Administrateur et options
+    ☐ Options
+        ☐ Temps d'affichage
+        ☐ Permission création
+        ☐ Valeur par defaut "visibilité de l'annonce"
+    ☐ Interface admin
+
+☐ Vérifications
+    ☐ Commentaires
+    ☐ Tests
