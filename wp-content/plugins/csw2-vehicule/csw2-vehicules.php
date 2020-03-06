@@ -21,8 +21,8 @@ require_once("csw2-vehicules-install-activate.php");
 
 // Section pour la désinstallation et la désactivation de l'extension
 require_once("csw2-vehicules-uninstall-deactivate.php");
-// register_deactivation_hook(__FILE__, 'csw2_vehicules_deactivate');
-// register_uninstall_hook(__FILE__, 'csw2_vehicules_uninstall');
+register_deactivation_hook(__FILE__, 'csw2_vehicules_deactivate');
+register_uninstall_hook(__FILE__, 'csw2_vehicules_uninstall');
 
 // Section pour la page de création d'annonce de véhicule
 require_once("csw2-vehicules-page-form.php");
