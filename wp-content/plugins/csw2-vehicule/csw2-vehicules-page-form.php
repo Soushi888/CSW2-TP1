@@ -10,21 +10,22 @@ function html_form_vehicule_code()
 {
 ?>
     <form action="<?php echo esc_url($_SERVER['REQUEST_URI']) ?>" method="post" enctype="multipart/form-data">
-        <label for="marque">Marque du véhicule</label>
-        <input type="text" name="marque" id="marque" required>
-        <label for="modele">Modèle du véhicule</label>
-        <input type="text" name="modele" id="modele" required>
-        <label for="couleur">Couleur du véhicule</label>
-        <input type="text" name="couleur" id="couleur" required>
-        <label>Photo du véhicule</label>
-        <input type="file" name="photo" required>
-        <label for="annee-circulation">Année de mise en circulation du véhicule</label>
-        <input type="number" min="1900" max="2099" step="1" value="2020" name="annee-circulation" id="annee-circulation" required>
-        <label for="kilometrage">Kilométrage du véhicule</label>
-        <input type="text" name="kilometrage" id="kilometrage" required>
-        <label for="prix">Prix du véhicule</label>
-        <input type="text" name="prix" id="prix" required>
-        <input type="hidden" name="proprietaire-id" id="proprietaire-id" value="" required>
+        <label for="marque">Marque du véhicule
+            <input type="text" name="marque" id="marque" required></label>
+        <label for="modele">Modèle du véhicule
+            <input type="text" name="modele" id="modele" required></label>
+        <label for="couleur">Couleur du véhicule
+            <input type="text" name="couleur" id="couleur" required></label>
+        <label>Photo du véhicule
+            <input type="file" name="photo" required></label>
+        <label for="annee-circulation">Année de mise en circulation du véhicule
+            <input type="number" min="1900" max="2099" step="1" value="2020" name="annee-circulation" id="annee-circulation" required></label>
+        <label for="kilometrage">Kilométrage du véhicule
+            <input type="text" name="kilometrage" id="kilometrage" required></label>
+        <label for="prix">Prix du véhicule
+            <input type="text" name="prix" id="prix" required></label>
+
+        <input type="hidden" name="proprietaire-id" id="proprietaire-id" value="<?= get_current_user_id() ?>" required>
 
 
         <input type="submit" style="margin-top: 30px;" name="submitted" value="Envoyez">

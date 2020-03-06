@@ -51,7 +51,6 @@ function csw2_vehicules_create_table()
         PRIMARY KEY (vehicule_id))
       ENGINE = InnoDB " . $wpdb->get_charset_collate();
 
-    die($sql);
     require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
     dbDelta($sql);
 }
