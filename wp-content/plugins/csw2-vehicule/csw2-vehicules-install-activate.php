@@ -80,10 +80,11 @@ function csw2_vehicules_default_settings()
  */
 function csw2_vehicules_create_pages()
 {
+    // Formulaire pour annoncer un nouveau véhicule
     $csw2_vehicules_page = array(
-        'post_title'     => "Saisie d'une recette",
-        'post_name'      => "saisie-recette",
-        'post_content'   => "[saisie_recette]",
+        'post_title'     => "Annoncer un véhicule",
+        'post_name'      => "annoncer-vehicule",
+        'post_content'   => "[annoncer_vehicule]",
         'post_type'      => 'page',
         'post_status'    => 'publish',
         'comment_status' => 'closed',
@@ -92,9 +93,10 @@ function csw2_vehicules_create_pages()
     );
     wp_insert_post($csw2_vehicules_page);
 
+    // Liste de tous les véhicules annoncés
     $csw2_vehicules_page = array(
-        'post_title'     => "Recettes",
-        'post_name'      => "recettes",
+        'post_title'     => "Vehicules d'occasion à vendre",
+        'post_name'      => "vehicules",
         'post_content'   => "[csw2_vehicules_list]",
         'post_type'      => 'page',
         'post_status'    => 'publish',
@@ -104,9 +106,10 @@ function csw2_vehicules_create_pages()
     );
     wp_insert_post($csw2_vehicules_page);
 
+    // Infos sur un véhicule en particulier
     $csw2_vehicules_page = array(
-        'post_title'     => "Recette",
-        'post_name'      => "recette",
+        'post_title'     => "Vehicule",
+        'post_name'      => "vehicule",
         'post_content'   => "[csw2_vehicules_single]",
         'post_type'      => 'page',
         'post_status'    => 'publish',
