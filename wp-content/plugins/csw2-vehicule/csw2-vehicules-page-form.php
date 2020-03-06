@@ -19,13 +19,13 @@ function html_form_vehicule_code()
         <label>Photo du véhicule
             <input type="file" name="photo" required></label>
         <label for="annee-circulation">Année de mise en circulation du véhicule
-            <input type="number" min="1900" max="2099" step="1" value="2020" name="annee-circulation" id="annee-circulation" required></label>
+            <input type="number" min="1900" max="<?= date("Y") ?>" step="1" value="<?= date("Y") ?>" name="annee_circulation" id="annee_circulation" required></label>
         <label for="kilometrage">Kilométrage du véhicule
             <input type="text" name="kilometrage" id="kilometrage" required></label>
         <label for="prix">Prix du véhicule
             <input type="text" name="prix" id="prix" required></label>
 
-        <input type="hidden" name="proprietaire-id" id="proprietaire-id" value="<?= get_current_user_id() ?>" required>
+        <input type="hidden" name="proprietaire_id" id="proprietaire_id" value="<?= get_current_user_id() ?>" required>
 
 
         <input type="submit" style="margin-top: 30px;" name="submitted" value="Envoyez">
@@ -45,27 +45,31 @@ function insert_vehicule()
     // si le bouton submit est cliqué
     if (isset($_POST['submitted'])) {
         // assainir les valeurs du formulaire
-        $title        = sanitize_text_field($_POST["title"]);
-        $ingredients  = sanitize_textarea_field($_POST["ingredients"]);
-        $instructions = sanitize_textarea_field($_POST["instructions"]);
-        $prep_time    = sanitize_text_field($_POST["prep_time"]);
-        $cook_time    = sanitize_text_field($_POST["cook_time"]);
+        $marque = sanitize_text_field($_POST["marque"]);
+        $modele = sanitize_text_field($_POST["modele"]);
+        $couleur = sanitize_text_field($_POST["couleur"]);
+        $annee_circulation = sanitize_text_field($_POST["annee_circulation"]);
+        $kilometrage = sanitize_text_field($_POST["kilometrage"]);
+        $prix = sanitize_text_field($_POST["prix"]);
+        
 
         // insertion dans la table
         global $wpdb;
         $wpdb->insert(
             $wpdb->prefix . 'vehicules',
             array(
-                'title' => $title,
-                'ingredients' => $ingredients,
-                'instructions' => $instructions,
-                'prep_time' => $prep_time,
-                'cook_time' => $cook_time
+                'marque' => $marque,
+                'modele' => $modele,
+                'couleur' => $couleur,
+                'annee_circulation' => $annee_circulation,
+                'kilometrage' => $kilometrage,
+                'prix' => $prix
             ),
             array(
                 '%s',
                 '%s',
                 '%s',
+                '%d',
                 '%d',
                 '%d'
             )
@@ -73,18 +77,18 @@ function insert_vehicule()
         // génèrer le titre de l'image avec l'id de le véhicule insérée dans la table vehicules
         $vehicule_image_title = "vehicule-" . $wpdb->insert_id;
         // echo "<pre>".print_r($_FILES, true)."</pre>"; exit;
+
         // chargement des fichiers nécessaires à l'exécution de la fonction media_handle_upload
         require_once(ABSPATH . 'wp-admin/includes/image.php');
         require_once(ABSPATH . 'wp-admin/includes/file.php');
         require_once(ABSPATH . 'wp-admin/includes/media.php');
-        // déplacement du fichier image dans le dossier wp-content/uploads
-        // et création d'un post de type attachment dans la table posts
-        // le premier paramètre 'image' est le nom du champ input qui suit dans $_FILES['image']
+        
+        // déplacement du fichier image dans le dossier wp-content/uploads et création d'un post de type attachment dans la table posts le premier paramètre 'image' est le nom du champ input qui suit dans $_FILES['image']
         $vehicule_image_post_id = media_handle_upload('image', 0, array('post_title' => $vehicule_image_title));
-        // ajouter une métadonnée n41_vehicules dans la table postmeta, associée au post précédent,
-        // pour rattacher ce post à l'extension   
+
+        // ajouter une métadonnée csw2_vehicules dans la table postmeta, associée au post précédent, pour rattacher ce post à l'extension   
         $unique = true;
-        add_post_meta($vehicule_image_post_id, 'n41_vehicules', 'img', $unique);
+        add_post_meta($vehicule_image_post_id, 'csw2_vehicules', 'img', $unique);
     ?>
         <p>Le véhicule a été enregistré.</p>
 <?php
