@@ -94,3 +94,6 @@ function csw2_vehicules_delete_images()
 		}
 	}
 }
+
+register_deactivation_hook(__FILE__, 'csw2_vehicules_deactivate');
+register_uninstall_hook(__FILE__, 'csw2_vehicules_uninstall');

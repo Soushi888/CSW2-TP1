@@ -82,7 +82,7 @@ function insert_vehicule()
         require_once(ABSPATH . 'wp-admin/includes/image.php');
         require_once(ABSPATH . 'wp-admin/includes/file.php');
         require_once(ABSPATH . 'wp-admin/includes/media.php');
-        
+
         // déplacement du fichier image dans le dossier wp-content/uploads et création d'un post de type attachment dans la table posts le premier paramètre 'image' est le nom du champ input qui suit dans $_FILES['image']
         $vehicule_image_post_id = media_handle_upload('image', 0, array('post_title' => $vehicule_image_title));
 
