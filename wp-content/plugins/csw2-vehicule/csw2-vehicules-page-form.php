@@ -11,19 +11,19 @@ function html_form_vehicule_code()
 ?>
     <form action="<?php echo esc_url($_SERVER['REQUEST_URI']) ?>" method="post" enctype="multipart/form-data">
         <label for="marque">Marque du véhicule
-            <input type="text" name="marque" id="marque" required></label>
+            <input type="text" name="marque" id="marque" required></label><br>
         <label for="modele">Modèle du véhicule
-            <input type="text" name="modele" id="modele" required></label>
+            <input type="text" name="modele" id="modele" required></label><br>
         <label for="couleur">Couleur du véhicule
-            <input type="text" name="couleur" id="couleur" required></label>
+            <input type="text" name="couleur" id="couleur" required></label><br>
         <label>Photo du véhicule
-            <input type="file" name="photo" required></label>
+            <input type="file" name="photo" required></label><br>
         <label for="annee-circulation">Année de mise en circulation du véhicule
-            <input type="number" min="1900" max="<?= date("Y") ?>" step="1" value="<?= date("Y") ?>" name="annee_circulation" id="annee_circulation" required></label>
+            <input type="number" min="1900" max="<?= date("Y") ?>" step="1" value="<?= date("Y") ?>" name="annee_circulation" id="annee_circulation" required></label><br>
         <label for="kilometrage">Kilométrage du véhicule
-            <input type="text" name="kilometrage" id="kilometrage" required></label>
+            <input type="text" name="kilometrage" id="kilometrage" required></label><br>
         <label for="prix">Prix du véhicule
-            <input type="text" name="prix" id="prix" required></label>
+            <input type="text" name="prix" id="prix" required></label><br>
 
         <input type="hidden" name="proprietaire_id" id="proprietaire_id" value="<?= get_current_user_id() ?>" required>
 
@@ -54,45 +54,53 @@ function insert_vehicule()
 
         // insertion dans la table
         global $wpdb;
-        $wpdb->insert(
-            $wpdb->prefix . 'vehicules',
-            array(
-                'vehicule_marque' => $marque,
-                'vehicule_modele' => $modele,
-                'vehicule_couleur' => $couleur,
-                'vehicule_annee_circulation' => $annee_circulation,
-                'vehicule_kilometrage' => $kilometrage,
-                'vehicule_prix' => $prix
-            ),
-            array(
-                '%s',
-                '%s',
-                '%s',
-                '%d',
-                '%d',
-                '%d'
-            )
-        );
-
-        // génèrer le titre de l'image avec l'id de le véhicule insérée dans la table vehicules
-        // $vehicule_image_title = "vehicule-" . $wpdb->insert_id;
-
-        // chargement des fichiers nécessaires à l'exécution de la fonction media_handle_upload
-        // require_once(ABSPATH . 'wp-admin/includes/image.php');
-        // require_once(ABSPATH . 'wp-admin/includes/file.php');
-        // require_once(ABSPATH . 'wp-admin/includes/media.php');
-
-        // déplacement du fichier image dans le dossier wp-content/uploads et création d'un post de type attachment dans la table posts le premier paramètre 'image' est le nom du champ input qui suit dans $_FILES['image']
-        // $vehicule_image_post_id = media_handle_upload('image', 0, array('post_title' => $vehicule_image_title));
-        // echo "<pre>".print_r($vehicule_image_post_id, true)."</pre>"; exit;
-
-        // ajouter une métadonnée csw2_vehicules dans la table postmeta, associée au post précédent, pour rattacher ce post à l'extension   
-        // $unique = true;
-        // // add_post_meta($vehicule_image_post_id, 'csw2_vehicules', 'img', $unique);
+        try {
+            $wpdb->insert(
+                $wpdb->prefix . 'vehicules',
+                array(
+                    'vehicule_marque' => $marque,
+                    'vehicule_modele' => $modele,
+                    'vehicule_couleur' => $couleur,
+                    'vehicule_annee_circulation' => $annee_circulation,
+                    'vehicule_kilometrage' => $kilometrage,
+                    'vehicule_prix' => $prix
+                ),
+                array(
+                    '%s',
+                    '%s',
+                    '%s',
+                    '%d',
+                    '%d',
+                    '%d'
+                )
+            );
     ?>
-        <p>Le véhicule a été enregistré.</p>
+            <p>Le véhicule a été enregistré.</p>
+        <?php
+        } catch (Exception $e) { ?>
+            <p>Le véhicule n'a pas été enregistré.</p>
 <?php
+            echo "Erreur : " . $e->getMessage();
+        }
     }
+    // génèrer le titre de l'image avec l'id de le véhicule insérée dans la table vehicules
+    // $vehicule_image_title = "vehicule-" . $wpdb->insert_id;
+
+    // chargement des fichiers nécessaires à l'exécution de la fonction media_handle_upload
+    // require_once(ABSPATH . 'wp-admin/includes/image.php');
+    // require_once(ABSPATH . 'wp-admin/includes/file.php');
+    // require_once(ABSPATH . 'wp-admin/includes/media.php');
+
+    // déplacement du fichier image dans le dossier wp-content/uploads et création d'un post de type attachment dans la table posts le premier paramètre 'image' est le nom du champ input qui suit dans $_FILES['image']
+    // $vehicule_image_post_id = media_handle_upload('image', 0, array('post_title' => $vehicule_image_title));
+    // echo "<pre>".print_r($vehicule_image_post_id, true)."</pre>"; exit;
+
+    // ajouter une métadonnée csw2_vehicules dans la table postmeta, associée au post précédent, pour rattacher ce post à l'extension   
+    // $unique = true;
+    // // add_post_meta($vehicule_image_post_id, 'csw2_vehicules', 'img', $unique);
+
+
+
 }
 
 /**
