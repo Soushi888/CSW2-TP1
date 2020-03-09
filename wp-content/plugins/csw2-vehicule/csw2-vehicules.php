@@ -27,3 +27,5 @@ register_uninstall_hook(__FILE__, 'csw2_vehicules_uninstall');
 // Section pour la page de création d'annonce de véhicule
 require_once("csw2-vehicules-page-form.php");
 
+// Section pour le traitement de la page de liste des véhicules
+require_once("csw2-vehicules-page-list.php");

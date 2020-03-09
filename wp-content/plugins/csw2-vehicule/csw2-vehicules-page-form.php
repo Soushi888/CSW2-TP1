@@ -12,8 +12,8 @@ function html_form_vehicule_code()
     <form action="<?php echo esc_url($_SERVER['REQUEST_URI']) ?>" method="post" enctype="multipart/form-data">
         <label for="marque">Marque du véhicule
             <input type="text" name="marque" id="marque" required></label><br>
-        <label for="modele">Modèle du véhicule
-            <input type="text" name="modele" id="modele" required></label><br>
+        <!-- <label for="modele">Modèle du véhicule
+            <input type="text" name="modele" id="modele" required></label><br> -->
         <label for="couleur">Couleur du véhicule
             <input type="text" name="couleur" id="couleur" required></label><br>
         <label>Photo du véhicule
@@ -51,6 +51,7 @@ function insert_vehicule()
         $annee_circulation = sanitize_text_field($_POST["annee_circulation"]);
         $kilometrage = sanitize_text_field($_POST["kilometrage"]);
         $prix = sanitize_text_field($_POST["prix"]);
+        $proprietaire_id = sanitize_text_field($_POST["proprietaire_id"]);
 
         // insertion dans la table
         global $wpdb;
@@ -63,7 +64,8 @@ function insert_vehicule()
                     'vehicule_couleur' => $couleur,
                     'vehicule_annee_circulation' => $annee_circulation,
                     'vehicule_kilometrage' => $kilometrage,
-                    'vehicule_prix' => $prix
+                    'vehicule_prix' => $prix,
+                    'vehicule_proprietaire_id' => $proprietaire_id
                 ),
                 array(
                     '%s',
@@ -71,10 +73,12 @@ function insert_vehicule()
                     '%s',
                     '%d',
                     '%d',
+                    '%d',
                     '%d'
                 )
             );
     ?>
+            <pre><?= print_r($_POST) ?></pre>
             <p>Le véhicule a été enregistré.</p>
         <?php
         } catch (Exception $e) { ?>
@@ -98,8 +102,6 @@ function insert_vehicule()
     // ajouter une métadonnée csw2_vehicules dans la table postmeta, associée au post précédent, pour rattacher ce post à l'extension   
     // $unique = true;
     // // add_post_meta($vehicule_image_post_id, 'csw2_vehicules', 'img', $unique);
-
-
 
 }
 
