@@ -78,7 +78,6 @@ function insert_vehicule()
                 )
             );
     ?>
-            <pre><?= print_r($_POST) ?></pre>
             <p>Le véhicule a été enregistré.</p>
         <?php
         } catch (Exception $e) { ?>
