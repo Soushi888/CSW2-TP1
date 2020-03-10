@@ -1,4 +1,4 @@
-<?php 
+<?php
 // Section pour le traitement de la page de liste des véhicules
 
 
@@ -26,15 +26,46 @@ function csw2_vehicules_html_list_code()
         endif;
 
         $vehicule_search = '';
-        if (isset($_POST['vehicule-search'])) :
+        $vehicule_prop = 'vehicule_marque';
+        $vehicule_sens = "ASC";
+        if (isset($_POST['vehicule-search'])) {
             $vehicule_search = trim($_POST['vehicule-search']);
-        endif;
+        }
+
+        if (isset($_POST['vehicule-prop'])) {
+            $vehicule_prop = trim($_POST['vehicule-prop']);
+        }
+
+        if (isset($_POST['vehicule-sens'])) {
+            $vehicule_sens = trim($_POST['vehicule-sens']);
+        }
+
+
 
         /* Affichage du formulaire de filtrage de véhicules 
 	   ----------------------------------------------- */
         ?>
-        <form style="margin-top: 30px" action="<?= esc_url($_SERVER['REQUEST_URI']) ?>" method="post">
+        <style>
+            .form_vehicules_search fieldset {
+                display: inline;
+            }
+        </style>
+
+        <form class="form_vehicules_search" style="margin-top: 30px" action="<?= esc_url($_SERVER['REQUEST_URI']) ?>" method="post">
             <input type="text" style="display: inline-block; width: 500px; padding: 0 10px; line-height: 50px" name="vehicule-search" placeholder="Filtrer les véhicules contenant cette chaîne de caractères" value="<?= $vehicule_search ?>">
+            <fieldset>
+                <legend>Propriété</legend>
+                <label for="marque">marque<input type="radio" name="vehicule-prop" id="marque" value="marque"></label>
+                <label for="modele">modele<input type="radio" name="vehicule-prop" id="modele" value="modele"></label>
+                <label for="couleur">couleur<input type="radio" name="vehicule-prop" id="couleur" value="couleur"></label>
+                <label for="annee_circulation">annee_circulation<input type="radio" name="vehicule-prop" id="annee_circulation" value="annee_circulation"></label>
+            </fieldset>
+            <fieldset>
+                <legend>Sens</legend>
+                <label for="ASC">ASC<input type="radio" name="vehicule-sens" id="ASC" value="ASC"></label>
+                <label for="DESC">DESC<input type="radio" name="vehicule-sens" id="DESC" value="DESC"></label>
+            </fieldset>
+
             <input type="submit" style="display: inline-block; margin-left: 20px; padding: 0 24px; line-height: 50px;" name="submitted" value="Envoyez">
         </form>
         <?php
@@ -43,10 +74,10 @@ function csw2_vehicules_html_list_code()
 	   ---------------------------------- */
 
         $sql  = "SELECT * FROM $wpdb->prefix" . "vehicules
-			 WHERE vehicule_marque LIKE '%s'
-	   		 ORDER BY vehicule_marque ASC";
+			 WHERE (vehicule_marque LIKE '%s') OR (vehicule_modele LIKE '%s') OR (vehicule_couleur LIKE '%s') OR (vehicule_prix < '%d')
+	   		 ORDER BY '%s' $vehicule_sens;";
 
-        $vehicules = $wpdb->get_results($wpdb->prepare($sql, '%' . $vehicule_search . '%'));
+        $vehicules = $wpdb->get_results($wpdb->prepare($sql, '%' . $vehicule_search . '%', '%' . $vehicule_search . '%', '%' . $vehicule_search . '%', '%' . $vehicule_search . '%', $vehicule_prop));
 
         if (count($vehicules) > 0) :
             $postmeta = $wpdb->get_row(
@@ -61,39 +92,39 @@ function csw2_vehicules_html_list_code()
                 <hr>
                 <article style="display: flex">
                     <h4 style="margin: 0; width: 300px;">
-                        <a href="<?php echo $single_permalink . '?page=' . stripslashes($vehicule->vehicule_marque) . '&id=' . $vehicule->id ?>"><?= stripslashes($vehicule->vehicule_marque) . " " . stripslashes($vehicule->vehicule_modele) . " " . stripslashes($vehicule->vehicule_couleur) ?></a>
+                        <a href="<?php echo $single_permalink . '?id=' . $vehicule->vehicule_id ?>"><?= stripslashes($vehicule->vehicule_marque) . " " . stripslashes($vehicule->vehicule_modele) . " " . stripslashes($vehicule->vehicule_couleur) ?></a>
                     </h4>
                     <div>
-                            <div style="display: flex">
-                                <p style="width:270px; padding: 5px; color: #777">Marque :</p>
-                                <p style="padding: 5px"><?= stripslashes(nl2br($vehicule->vehicule_marque)) ?></p>
-                            </div>
-    
-                            <div style="display: flex">
-                                <p style="width:270px; padding: 5px; color: #777">Modèle :</p>
-                                <p style="padding: 5px"><?= stripslashes(nl2br($vehicule->vehicule_modele)) ?></p>
-                            </div>
+                        <div style="display: flex">
+                            <p style="width:270px; padding: 5px; color: #777">Marque :</p>
+                            <p style="padding: 5px"><?= stripslashes(nl2br($vehicule->vehicule_marque)) ?></p>
+                        </div>
 
-                            <div style="display: flex">
-                                <p style="width:270px; padding: 5px; color: #777">Couleur :</p>
-                                <p style="padding: 5px"><?= stripslashes(nl2br($vehicule->vehicule_couleur)) ?></p>
-                            </div>
-                  
-                            <div style="display: flex">
-                                <p style="width:270px; padding: 5px; color: #777">Année de mise en circulation : </p>
-                                <p style="padding: 5px"><?= $vehicule->vehicule_annee_circulation ?> minutes</p>
-                            </div>
-                  
-                            <div style="display: flex">
-                                <p style="width:270px; padding: 5px; color: #777">Kilométrage :</p>
-                                <p style="padding: 5px"><?= $vehicule->vehicule_kilometrage ?>km</p>
-                            </div>
+                        <div style="display: flex">
+                            <p style="width:270px; padding: 5px; color: #777">Modèle :</p>
+                            <p style="padding: 5px"><?= stripslashes(nl2br($vehicule->vehicule_modele)) ?></p>
+                        </div>
 
-                            <div style="display: flex">
-                                <p style="width:270px; padding: 5px; color: #777">Prix :</p>
-                                <p style="padding: 5px"><?= $vehicule->vehicule_prix ?> $</p>
-                            </div>
-                
+                        <div style="display: flex">
+                            <p style="width:270px; padding: 5px; color: #777">Couleur :</p>
+                            <p style="padding: 5px"><?= stripslashes(nl2br($vehicule->vehicule_couleur)) ?></p>
+                        </div>
+
+                        <div style="display: flex">
+                            <p style="width:270px; padding: 5px; color: #777">Année de mise en circulation : </p>
+                            <p style="padding: 5px"><?= $vehicule->vehicule_annee_circulation ?></p>
+                        </div>
+
+                        <div style="display: flex">
+                            <p style="width:270px; padding: 5px; color: #777">Kilométrage :</p>
+                            <p style="padding: 5px"><?= $vehicule->vehicule_kilometrage ?>km</p>
+                        </div>
+
+                        <div style="display: flex">
+                            <p style="width:270px; padding: 5px; color: #777">Prix :</p>
+                            <p style="padding: 5px"><?= $vehicule->vehicule_prix ?> $</p>
+                        </div>
+
                     </div>
                 </article>
             <?php
