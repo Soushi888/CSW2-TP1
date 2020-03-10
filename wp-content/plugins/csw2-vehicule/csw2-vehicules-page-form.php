@@ -12,12 +12,12 @@ function html_form_vehicule_code()
     <form action="<?php echo esc_url($_SERVER['REQUEST_URI']) ?>" method="post" enctype="multipart/form-data">
         <label for="marque">Marque du véhicule
             <input type="text" name="marque" id="marque" required></label><br>
-        <!-- <label for="modele">Modèle du véhicule
-            <input type="text" name="modele" id="modele" required></label><br> -->
+        <label for="modele">Modèle du véhicule
+            <input type="text" name="modele" id="modele" required></label><br>
         <label for="couleur">Couleur du véhicule
             <input type="text" name="couleur" id="couleur" required></label><br>
-        <label>Photo du véhicule
-            <input type="file" name="photo" required></label><br>
+        <!-- <label>Photo du véhicule
+            <input type="file" name="photo" required></label><br> -->
         <label for="annee-circulation">Année de mise en circulation du véhicule
             <input type="number" min="1900" max="<?= date("Y") ?>" step="1" value="<?= date("Y") ?>" name="annee_circulation" id="annee_circulation" required></label><br>
         <label for="kilometrage">Kilométrage du véhicule
