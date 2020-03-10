@@ -13,7 +13,7 @@ Author URI: https://www.linkedin.com/in/sacha-pignot-75b645160/
 */
 
 // Section pour la gestion des réglages dans l'administration
-// require_once("csw2-vehicules-settings.php");
+require_once("csw2-vehicules-settings.php");
 
 // Section pour l'installation et l'activation de l'extension
 register_activation_hook(__FILE__, 'csw2_vehicules_activate');

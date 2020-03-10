@@ -161,3 +161,16 @@
 [10-Mar-2020 07:28:01 UTC] PHP Notice:  wp_register_style was called <strong>incorrectly</strong>. Scripts and styles should not be registered or enqueued until the <code>wp_enqueue_scripts</code>, <code>admin_enqueue_scripts</code>, or <code>login_enqueue_scripts</code> hooks. Please see <a href="https://wordpress.org/support/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 3.3.0.) in C:\wamp64\www\CSW2-TP1\wp-includes\functions.php on line 4986
 [10-Mar-2020 07:28:01 UTC] PHP Notice:  wp_enqueue_style was called <strong>incorrectly</strong>. Scripts and styles should not be registered or enqueued until the <code>wp_enqueue_scripts</code>, <code>admin_enqueue_scripts</code>, or <code>login_enqueue_scripts</code> hooks. Please see <a href="https://wordpress.org/support/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 3.3.0.) in C:\wamp64\www\CSW2-TP1\wp-includes\functions.php on line 4986
 [10-Mar-2020 07:32:01 UTC] PHP Notice:  wp_register_style was called <strong>incorrectly</strong>. Scripts and styles should not be registered or enqueued until the <code>wp_enqueue_scripts</code>, <code>admin_enqueue_scripts</code>, or <code>login_enqueue_scripts</code> hooks. Please see <a href="https://wordpress.org/support/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 3.3.0.) in C:\wamp64\www\CSW2-TP1\wp-includes\functions.php on line 4986
+[10-Mar-2020 15:05:30 UTC] PHP Notice:  Undefined property: WP_Ajax_Upgrader_Skin::$api in C:\wamp64\www\sacha\CSW2-TP1\wp-admin\includes\class-theme-upgrader.php on line 132
+[10-Mar-2020 15:05:30 UTC] PHP Stack trace:
+[10-Mar-2020 15:05:30 UTC] PHP   1. {main}() C:\wamp64\www\sacha\CSW2-TP1\wp-admin\admin-ajax.php:0
+[10-Mar-2020 15:05:30 UTC] PHP   2. do_action() C:\wamp64\www\sacha\CSW2-TP1\wp-admin\admin-ajax.php:175
+[10-Mar-2020 15:05:30 UTC] PHP   3. WP_Hook->do_action() C:\wamp64\www\sacha\CSW2-TP1\wp-includes\plugin.php:478
+[10-Mar-2020 15:05:30 UTC] PHP   4. WP_Hook->apply_filters() C:\wamp64\www\sacha\CSW2-TP1\wp-includes\class-wp-hook.php:312
+[10-Mar-2020 15:05:30 UTC] PHP   5. wp_ajax_install_theme() C:\wamp64\www\sacha\CSW2-TP1\wp-includes\class-wp-hook.php:288
+[10-Mar-2020 15:05:30 UTC] PHP   6. Theme_Upgrader->install() C:\wamp64\www\sacha\CSW2-TP1\wp-admin\includes\ajax-actions.php:4021
+[10-Mar-2020 15:05:30 UTC] PHP   7. WP_Upgrader->run() C:\wamp64\www\sacha\CSW2-TP1\wp-admin\includes\class-theme-upgrader.php:220
+[10-Mar-2020 15:05:30 UTC] PHP   8. WP_Upgrader->install_package() C:\wamp64\www\sacha\CSW2-TP1\wp-admin\includes\class-wp-upgrader.php:789
+[10-Mar-2020 15:05:30 UTC] PHP   9. apply_filters() C:\wamp64\www\sacha\CSW2-TP1\wp-admin\includes\class-wp-upgrader.php:616
+[10-Mar-2020 15:05:30 UTC] PHP  10. WP_Hook->apply_filters() C:\wamp64\www\sacha\CSW2-TP1\wp-includes\plugin.php:206
+[10-Mar-2020 15:05:30 UTC] PHP  11. Theme_Upgrader->check_parent_theme_filter() C:\wamp64\www\sacha\CSW2-TP1\wp-includes\class-wp-hook.php:288
