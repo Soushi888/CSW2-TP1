@@ -41,7 +41,6 @@ function html_form_vehicule_code()
  */
 function insert_vehicule()
 {
-    global $post;
     // si le bouton submit est cliqué
     if (isset($_POST['submitted'])) {
         // assainir les valeurs du formulaire

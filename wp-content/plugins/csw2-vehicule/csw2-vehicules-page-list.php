@@ -43,8 +43,8 @@ function csw2_vehicules_html_list_code()
 	   ---------------------------------- */
 
         $sql  = "SELECT * FROM $wpdb->prefix" . "vehicules
-			 WHERE title LIKE '%s'
-	   		 ORDER BY title ASC";
+			 WHERE vehicule_marque LIKE '%s'
+	   		 ORDER BY vehicule_marque ASC";
 
         $vehicules = $wpdb->get_results($wpdb->prepare($sql, '%' . $vehicule_search . '%'));
 
@@ -54,50 +54,46 @@ function csw2_vehicules_html_list_code()
             );
             $single_permalink = get_permalink($postmeta->post_id);
 
-            $settings = get_option('csw2_vehicules_settings');
+            // $settings = get_option('csw2_vehicules_settings');
 
             foreach ($vehicules as $vehicule) :
         ?>
                 <hr>
                 <article style="display: flex">
                     <h4 style="margin: 0; width: 300px;">
-                        <a href="<?php echo $single_permalink . '?page=' . stripslashes($vehicule->title) . '&id=' . $vehicule->id ?>"><?= stripslashes($vehicule->title) ?></a>
+                        <a href="<?php echo $single_permalink . '?page=' . stripslashes($vehicule->vehicule_marque) . '&id=' . $vehicule->id ?>"><?= stripslashes($vehicule->vehicule_marque) . " " . stripslashes($vehicule->vehicule_modele) . " " . stripslashes($vehicule->vehicule_couleur) ?></a>
                     </h4>
                     <div>
-                        <?php
-                        if (isset($settings['view_ingredients']) && $settings['view_ingredients'] === 'yes') :
-                        ?>
                             <div style="display: flex">
-                                <p style="width:250px; padding: 5px; color: #777">Ingrédients:</p>
-                                <p style="padding: 5px"><?= stripslashes(nl2br($vehicule->ingredients)) ?></p>
+                                <p style="width:270px; padding: 5px; color: #777">Marque :</p>
+                                <p style="padding: 5px"><?= stripslashes(nl2br($vehicule->vehicule_marque)) ?></p>
                             </div>
-                        <?php
-                        endif;
-                        if (isset($settings['view_instructions']) && $settings['view_instructions'] === 'yes') :
-                        ?>
+    
                             <div style="display: flex">
-                                <p style="width:250px; padding: 5px; color: #777">Instructions:</p>
-                                <p style="padding: 5px"><?= stripslashes(nl2br($vehicule->instructions)) ?></p>
+                                <p style="width:270px; padding: 5px; color: #777">Modèle :</p>
+                                <p style="padding: 5px"><?= stripslashes(nl2br($vehicule->vehicule_modele)) ?></p>
                             </div>
-                        <?php
-                        endif;
-                        if (isset($settings['view_prep_time']) && $settings['view_prep_time'] === 'yes') :
-                        ?>
+
                             <div style="display: flex">
-                                <p style="width:250px; padding: 5px; color: #777">Temps de préparation:</p>
-                                <p style="padding: 5px"><?= $vehicule->prep_time ?> minutes</p>
+                                <p style="width:270px; padding: 5px; color: #777">Couleur :</p>
+                                <p style="padding: 5px"><?= stripslashes(nl2br($vehicule->vehicule_couleur)) ?></p>
                             </div>
-                        <?php
-                        endif;
-                        if (isset($settings['view_cook_time']) && $settings['view_cook_time'] === 'yes') :
-                        ?>
+                  
                             <div style="display: flex">
-                                <p style="width:250px; padding: 5px; color: #777">Temps de cuisson:</p>
-                                <p style="padding: 5px"><?= $vehicule->cook_time ?> minutes</p>
+                                <p style="width:270px; padding: 5px; color: #777">Année de mise en circulation : </p>
+                                <p style="padding: 5px"><?= $vehicule->vehicule_annee_circulation ?> minutes</p>
                             </div>
-                        <?php
-                        endif;
-                        ?>
+                  
+                            <div style="display: flex">
+                                <p style="width:270px; padding: 5px; color: #777">Kilométrage :</p>
+                                <p style="padding: 5px"><?= $vehicule->vehicule_kilometrage ?>km</p>
+                            </div>
+
+                            <div style="display: flex">
+                                <p style="width:270px; padding: 5px; color: #777">Prix :</p>
+                                <p style="padding: 5px"><?= $vehicule->vehicule_prix ?> $</p>
+                            </div>
+                
                     </div>
                 </article>
             <?php
