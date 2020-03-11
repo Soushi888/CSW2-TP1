@@ -74,6 +74,7 @@ function csw2_vehicules_create_table()
         ('Prius', 'PRICRX', 'verte', 2001, 10000, 1),
         ('Ionic', 'IONCXCS', 'noir', 1998, 8000, 1),
         ('Toyota', 'TOYCRX', 'rouge', 2006, 12000, 1)");
+    die($sql2);
     $wpdb->query($sql2);
 }
 
