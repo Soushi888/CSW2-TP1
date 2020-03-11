@@ -10,6 +10,7 @@ function csw2_vehicules_activate()
 {
     csw2_vehicules_check_version();
     csw2_vehicules_create_table();
+    csw2_vehicules_add_data();
     csw2_vehicules_default_settings();
     csw2_vehicules_create_pages();
 }
@@ -53,8 +54,12 @@ function csw2_vehicules_create_table()
 
     require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
     dbDelta($sql);
+}
 
-    $sql2 = $wpdb->prepare("INSERT INTO $wpdb->prefix" . "vehicules(
+function csw2_vehicules_add_data() {
+    global $wpdb;
+    $sql2 = $wpdb->prepare(
+        "INSERT INTO $wpdb->prefix" . "vehicules(
         vehicule_marque,
         vehicule_modele,
         vehicule_couleur,
@@ -77,7 +82,6 @@ function csw2_vehicules_create_table()
     die($sql2);
     $wpdb->query($sql2);
 }
-
 
 /**
  * Inilialisation de l'option csw2_vehicules_settings, qui regroupe un tableau de réglages pour l'affichage des rubriques sur la page de liste
