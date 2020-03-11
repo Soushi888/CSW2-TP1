@@ -60,7 +60,7 @@ function csw2_vehicules_add_data()
 {
     global $wpdb;
 
-    $sql = "INSERT INTO csw2_vehicules(
+    $sql = "INSERT INTO {$wpdb->prefix} vehicules(
         vehicule_marque,
         vehicule_modele,
         vehicule_couleur,
