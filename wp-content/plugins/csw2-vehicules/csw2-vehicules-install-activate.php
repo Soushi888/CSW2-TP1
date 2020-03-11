@@ -58,8 +58,7 @@ function csw2_vehicules_create_table()
 
 function csw2_vehicules_add_data() {
     global $wpdb;
-    $sql2 = $wpdb->prepare(
-        "INSERT INTO $wpdb->prefix" . "vehicules(
+    $sql = "INSERT INTO $wpdb->prefix" . "vehicules(
         vehicule_marque,
         vehicule_modele,
         vehicule_couleur,
@@ -78,9 +77,10 @@ function csw2_vehicules_add_data() {
         ('Toyota', 'TOYCRX', 'rouge', 2015, 12000, 1),
         ('Prius', 'PRICRX', 'verte', 2001, 10000, 1),
         ('Ionic', 'IONCXCS', 'noir', 1998, 8000, 1),
-        ('Toyota', 'TOYCRX', 'rouge', 2006, 12000, 1)");
-    die($sql2);
-    $wpdb->query($sql2);
+        ('Toyota', 'TOYCRX', 'rouge', 2006, 12000, 1)";
+    $wpdb->prepare($sql);
+    die($sql);
+    $wpdb->query($sql);
 }
 
 /**
