@@ -180,3 +180,57 @@
 [11-Mar-2020 01:52:24 UTC] PHP Warning:  include(C:\wamp64\www\CSW2-TP1/wp-content/plugins/csw2-vehicule/csw2-vehicules.php): failed to open stream: No such file or directory in C:\wamp64\www\CSW2-TP1\wp-admin\includes\plugin.php on line 1221
 [11-Mar-2020 01:52:24 UTC] PHP Warning:  include(): Failed opening 'C:\wamp64\www\CSW2-TP1/wp-content/plugins/csw2-vehicule/csw2-vehicules.php' for inclusion (include_path='.;C:\php\pear') in C:\wamp64\www\CSW2-TP1\wp-admin\includes\plugin.php on line 1221
 [11-Mar-2020 01:52:24 UTC] PHP Warning:  call_user_func_array() expects parameter 1 to be a valid callback, function 'csw2_vehicules_uninstall' not found or invalid function name in C:\wamp64\www\CSW2-TP1\wp-includes\class-wp-hook.php on line 288
+[11-Mar-2020 01:56:31 UTC] PHP Deprecated:  Non-static method wpdb::query() should not be called statically in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-install-activate.php on line 77
+[11-Mar-2020 01:56:31 UTC] PHP Fatal error:  Uncaught Error: Using $this when not in object context in C:\wamp64\www\CSW2-TP1\wp-includes\wp-db.php:1879
+Stack trace:
+#0 C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-install-activate.php(77): wpdb::query('INSERT INTO csw...')
+#1 C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-install-activate.php(12): csw2_vehicules_create_table()
+#2 C:\wamp64\www\CSW2-TP1\wp-includes\class-wp-hook.php(288): csw2_vehicules_activate(false)
+#3 C:\wamp64\www\CSW2-TP1\wp-includes\class-wp-hook.php(312): WP_Hook->apply_filters('', Array)
+#4 C:\wamp64\www\CSW2-TP1\wp-includes\plugin.php(478): WP_Hook->do_action(Array)
+#5 C:\wamp64\www\CSW2-TP1\wp-admin\includes\plugin.php(681): do_action('activate_csw2-v...', false)
+#6 C:\wamp64\www\CSW2-TP1\wp-admin\plugins.php(44): activate_plugin('csw2-vehicules/...', 'http://localhos...', false)
+#7 {main}
+  thrown in C:\wamp64\www\CSW2-TP1\wp-includes\wp-db.php on line 1879
+[11-Mar-2020 01:56:32 UTC] PHP Deprecated:  Non-static method wpdb::query() should not be called statically in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-install-activate.php on line 77
+[11-Mar-2020 01:56:32 UTC] PHP Fatal error:  Uncaught Error: Using $this when not in object context in C:\wamp64\www\CSW2-TP1\wp-includes\wp-db.php:1879
+Stack trace:
+#0 C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-install-activate.php(77): wpdb::query('INSERT INTO csw...')
+#1 C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-install-activate.php(12): csw2_vehicules_create_table()
+#2 C:\wamp64\www\CSW2-TP1\wp-includes\class-wp-hook.php(288): csw2_vehicules_activate('')
+#3 C:\wamp64\www\CSW2-TP1\wp-includes\class-wp-hook.php(312): WP_Hook->apply_filters('', Array)
+#4 C:\wamp64\www\CSW2-TP1\wp-includes\plugin.php(478): WP_Hook->do_action(Array)
+#5 C:\wamp64\www\CSW2-TP1\wp-admin\plugins.php(177): do_action('activate_csw2-v...')
+#6 {main}
+  thrown in C:\wamp64\www\CSW2-TP1\wp-includes\wp-db.php on line 1879
+[11-Mar-2020 01:56:32 UTC] PHP Deprecated:  Non-static method wpdb::query() should not be called statically in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-install-activate.php on line 77
+[11-Mar-2020 01:56:32 UTC] PHP Fatal error:  Uncaught Error: Using $this when not in object context in C:\wamp64\www\CSW2-TP1\wp-includes\wp-db.php:1879
+Stack trace:
+#0 C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-install-activate.php(77): wpdb::query('INSERT INTO csw...')
+#1 C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-install-activate.php(12): csw2_vehicules_create_table()
+#2 C:\wamp64\www\CSW2-TP1\wp-includes\class-wp-hook.php(288): csw2_vehicules_activate('')
+#3 C:\wamp64\www\CSW2-TP1\wp-includes\class-wp-hook.php(312): WP_Hook->apply_filters('', Array)
+#4 C:\wamp64\www\CSW2-TP1\wp-includes\plugin.php(478): WP_Hook->do_action(Array)
+#5 C:\wamp64\www\CSW2-TP1\wp-admin\plugins.php(177): do_action('activate_csw2-v...')
+#6 {main}
+  thrown in C:\wamp64\www\CSW2-TP1\wp-includes\wp-db.php on line 1879
+[11-Mar-2020 01:56:53 UTC] Erreur de la base de données WordPress Column count doesn't match value count at row 1 pour la requête INSERT INTO csw2_vehicules(
+        vehicule_marque,
+        vehicule_modele,
+        vehicule_couleur,
+        vehicule_annee_circulation,
+        vehicule_kilometrage,
+        vehicule_prix,
+        vehicule_proprietaire_id)
+        
+        VALUES
+        ('Toyota', 'TOYCRX', 'rouge', 2003, 12000, 1),
+        ('Prius', 'PRICRX', 'verte', 2005, 10000, 1),
+        ('Ionic', 'IONCXCS', 'noir', 2002, 8000, 1),
+        ('Toyota', 'TOYCRX', 'rouge', 2008, 12000, 1),
+        ('Prius', 'PRICRX', 'verte', 1996, 10000, 1),
+        ('Ionic', 'IONCXCS', 'noir', 2012, 8000, 1),
+        ('Toyota', 'TOYCRX', 'rouge', 2015, 12000, 1),
+        ('Prius', 'PRICRX', 'verte', 2001, 10000, 1),
+        ('Ionic', 'IONCXCS', 'noir', 1998, 8000, 1),
+        ('Toyota', 'TOYCRX', 'rouge', 2006, 12000, 1) faite par activate_plugin, do_action('activate_csw2-vehicules/csw2-vehicules.php'), WP_Hook->do_action, WP_Hook->apply_filters, csw2_vehicules_activate, csw2_vehicules_create_table
