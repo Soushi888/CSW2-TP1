@@ -55,10 +55,12 @@ function csw2_vehicules_html_list_code()
             <input type="text" style="display: inline-block; width: 500px; padding: 0 10px; line-height: 50px" name="vehicule-search" placeholder="Filtrer les véhicules contenant cette chaîne de caractères" value="<?= $vehicule_search ?>">
             <fieldset>
                 <legend>Propriété</legend>
-                <label for="marque">marque<input type="radio" name="vehicule-prop" id="marque" value="marque"></label>
-                <label for="modele">modele<input type="radio" name="vehicule-prop" id="modele" value="modele"></label>
-                <label for="couleur">couleur<input type="radio" name="vehicule-prop" id="couleur" value="couleur"></label>
-                <label for="annee_circulation">annee_circulation<input type="radio" name="vehicule-prop" id="annee_circulation" value="annee_circulation"></label>
+                <select name="vehicule-prop" id="vehicule-prop">
+                    <option value="marque">Marque</option>
+                    <option value="modele">Modèle</option>
+                    <option value="couleur">Couleur</option>
+                    <option value="annee_circulation">Année mise en circulation</option>
+                </select>
             </fieldset>
             <fieldset>
                 <legend>Sens</legend>
