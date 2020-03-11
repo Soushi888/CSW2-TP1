@@ -56,89 +56,31 @@ function csw2_vehicules_create_table()
     dbDelta($sql);
 }
 
-function csw2_vehicules_add_data() {
+function csw2_vehicules_add_data()
+{
     global $wpdb;
-    $sql = $wpdb->prepare("INSERT INTO $wpdb->prefix" . "vehicules(
-        vehicule_marque,
-        vehicule_modele,
-        vehicule_couleur,
-        vehicule_annee_circulation,
-        vehicule_kilometrage,
-        vehicule_prix,
-        vehicule_proprietaire_id)        
-        VALUES( 'Toyota',
-            'TOYCRX',
-            'rouge',
-            2003,
-            3000,
-            12000,
-            1
-        ),( 'Prius',
-            'PRICRX',
-            'verte',
-            2005,
-            12000,
-            10000,
-            1
-        ),( 'Ionic',
-            'IONCXCS',
-            'noir',
-            2002,
-            30000,
-            8000,
-            1
-        ),( 'Toyota',
-            'TOYCRX',
-            'rouge',
-            2008,
-            150000,
-            12000,
-            1
-        ),( 'Prius',
-            'PRICRX',
-            'verte',
-            1996,
-            300000,
-            10000,
-            1
-        ),( 'Ionic',
-            'IONCXCS',
-            'noir',
-            2012,
-            20000,
-            8000,
-            1
-        ),( 'Toyota',
-            'TOYCRX',
-            'rouge',
-            2015,
-            32000,
-            12000,
-            1
-        ),( 'Prius',
-            'PRICRX',
-            'verte',
-            2001,
-            10000,
-            10000,
-            1
-        ),( 'Ionic',
-            'IONCXCS',
-            'noir',
-            1998,
-            200000,
-            8000,
-            1
-        ),( 'Toyota',
-            'TOYCRX',
-            'rouge',
-            2006,
-            120000,
-            12000,
-            1
-        )"
+    $wpdb->insert(
+        $wpdb->prefix . 'vehicules',
+        array(
+            'vehicule_marque' => ["Toyota", "Prius", "Ionic", "Toyota", "Prius", "Ionic", "Toyota", "Prius", "Ionic", "Toyota", "Prius", "Ionic", "Toyota", "Prius", "Ionic"],
+            'vehicule_modele' => ["TOYCRXV", "PRIXCVB", "IONICVBRKL", "TOYCRXV", "PRIXCVB", "IONICVBRKL", "TOYCRXV", "PRIXCVB", "IONICVBRKL", "TOYCRXV", "PRIXCVB", "IONICVBRKL", "TOYCRXV", "PRIXCVB", "IONICVBRKL"],
+            'vehicule_couleur' => ["rouge", "vert", "noir", "noir", "vert" ,"rouge", "noir", "noir",  "vert", "rouge", "vert" ,"rouge", "noir", "vert", "rouge"],
+            'vehicule_annee_circulation' => [2000, 2003, 2010, 2008, 2005, 2012, 2015, 2003, 1995, 2006, 1996, 2000, 2004, 2012, 2016],
+            'vehicule_kilometrage' => [2000, 3000, 5866, 2000, 3000, 5866, 2000, 3000, 5866, 2000, 3000, 5866, 2000, 3000, 5866],
+            'vehicule_prix' => [1200, 32000, 50000, 1200, 32000, 50000, 1200, 32000, 50000, 1200, 32000, 50000, 1200, 32000, 50000],
+            'vehicule_proprietaire_id' => [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+        ),
+        array(
+            '%s',
+            '%s',
+            '%s',
+            '%d',
+            '%d',
+            '%d',
+            '%d'
+        )
     );
-    
+
     $wpdb->query($sql);
 }
 
