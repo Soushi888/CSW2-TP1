@@ -10,7 +10,7 @@ function csw2_vehicules_activate()
 {
     csw2_vehicules_check_version();
     csw2_vehicules_create_table();
-    // csw2_vehicules_add_data();
+    csw2_vehicules_add_data();
     csw2_vehicules_default_settings();
     csw2_vehicules_create_pages();
 }
