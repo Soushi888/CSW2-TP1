@@ -174,3 +174,9 @@
 [10-Mar-2020 15:05:30 UTC] PHP   9. apply_filters() C:\wamp64\www\sacha\CSW2-TP1\wp-admin\includes\class-wp-upgrader.php:616
 [10-Mar-2020 15:05:30 UTC] PHP  10. WP_Hook->apply_filters() C:\wamp64\www\sacha\CSW2-TP1\wp-includes\plugin.php:206
 [10-Mar-2020 15:05:30 UTC] PHP  11. Theme_Upgrader->check_parent_theme_filter() C:\wamp64\www\sacha\CSW2-TP1\wp-includes\class-wp-hook.php:288
+[11-Mar-2020 01:52:24 UTC] PHP Warning:  fopen(C:\wamp64\www\CSW2-TP1/wp-content/plugins/csw2-vehicule/csw2-vehicules.php): failed to open stream: No such file or directory in C:\wamp64\www\CSW2-TP1\wp-includes\functions.php on line 5782
+[11-Mar-2020 01:52:24 UTC] PHP Warning:  fread() expects parameter 1 to be resource, bool given in C:\wamp64\www\CSW2-TP1\wp-includes\functions.php on line 5785
+[11-Mar-2020 01:52:24 UTC] PHP Warning:  fclose() expects parameter 1 to be resource, bool given in C:\wamp64\www\CSW2-TP1\wp-includes\functions.php on line 5788
+[11-Mar-2020 01:52:24 UTC] PHP Warning:  include(C:\wamp64\www\CSW2-TP1/wp-content/plugins/csw2-vehicule/csw2-vehicules.php): failed to open stream: No such file or directory in C:\wamp64\www\CSW2-TP1\wp-admin\includes\plugin.php on line 1221
+[11-Mar-2020 01:52:24 UTC] PHP Warning:  include(): Failed opening 'C:\wamp64\www\CSW2-TP1/wp-content/plugins/csw2-vehicule/csw2-vehicules.php' for inclusion (include_path='.;C:\php\pear') in C:\wamp64\www\CSW2-TP1\wp-admin\includes\plugin.php on line 1221
+[11-Mar-2020 01:52:24 UTC] PHP Warning:  call_user_func_array() expects parameter 1 to be a valid callback, function 'csw2_vehicules_uninstall' not found or invalid function name in C:\wamp64\www\CSW2-TP1\wp-includes\class-wp-hook.php on line 288
