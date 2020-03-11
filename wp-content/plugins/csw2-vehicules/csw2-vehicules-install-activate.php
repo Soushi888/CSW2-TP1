@@ -59,7 +59,6 @@ function csw2_vehicules_create_table()
 function csw2_vehicules_add_data()
 {
     global $wpdb;
-    var_dump($wpdb->prefix);
     $sql = "INSERT INTO {$wpdb->prefix}vehicules(
         vehicule_marque,
         vehicule_modele,
