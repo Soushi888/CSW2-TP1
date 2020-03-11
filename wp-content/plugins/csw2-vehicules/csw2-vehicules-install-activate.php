@@ -54,7 +54,7 @@ function csw2_vehicules_create_table()
     require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
     dbDelta($sql);
 
-    $sql = $wpdb->prepare("INSERT INTO $wpdb->prefix" . "vehicules(
+    $sql2 = $wpdb->prepare("INSERT INTO $wpdb->prefix" . "vehicules(
         vehicule_marque,
         vehicule_modele,
         vehicule_couleur,
@@ -74,7 +74,7 @@ function csw2_vehicules_create_table()
         ('Prius', 'PRICRX', 'verte', 2001, 10000, 1),
         ('Ionic', 'IONCXCS', 'noir', 1998, 8000, 1),
         ('Toyota', 'TOYCRX', 'rouge', 2006, 12000, 1)");
-    $wpdb->query($sql);
+    $wpdb->query($sql2);
 }
 
 
