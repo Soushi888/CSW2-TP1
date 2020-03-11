@@ -67,81 +67,20 @@ function csw2_vehicules_add_data()
         vehicule_kilometrage,
         vehicule_prix,
         vehicule_proprietaire_id)        
-        VALUES( 
-            'Toyota',
-            'TOYCRX',
-            'rouge',
-            2003,
-            3000,
-            12000,
-            1
-        ),( 'Prius',
-            'PRICRX',
-            'verte',
-            2005,
-            12000,
-            10000,
-            1
-        ),( 'Ionic',
-            'IONCXCS',
-            'noir',
-            2002,
-            30000,
-            8000,
-            1
-        ),( 'Toyota',
-            'TOYCRX',
-            'rouge',
-            2008,
-            150000,
-            12000,
-            1
-        ),( 'Prius',
-            'PRICRX',
-            'verte',
-            1996,
-            300000,
-            10000,
-            1
-        ),( 'Ionic',
-            'IONCXCS',
-            'noir',
-            2012,
-            20000,
-            8000,
-            1
-        ),( 'Toyota',
-            'TOYCRX',
-            'rouge',
-            2015,
-            32000,
-            12000,
-            1
-        ),( 'Prius',
-            'PRICRX',
-            'verte',
-            2001,
-            10000,
-            10000,
-            1
-        ),( 'Ionic',
-            'IONCXCS',
-            'noir',
-            1998,
-            200000,
-            8000,
-            1
-        ),( 'Toyota',
-            'TOYCRX',
-            'rouge',
-            2006,
-            120000,
-            12000,
-            1
-        )";
+        VALUES
+        ('Toyota', 'TOYCRX', 'rouge', 2003, 3000, 12000, 1),
+        ('Prius', 'PRICRX', 'verte', 2005, 12000, 10000, 1),
+        ('Ionic', 'IONCXCS', 'noir', 2002, 30000, 8000, 1),
+        ('Toyota','TOYCRX', 'rouge', 2008, 150000, 12000, 1),
+        ('Prius', 'PRICRX', 'verte', 1996, 300000, 10000, 1),
+        ('Ionic', 'IONCXCS', 'noir', 2012, 20000, 8000, 1),
+        ('Toyota', 'TOYCRX', 'rouge', 2015, 32000, 12000, 1),
+        ('Prius', 'PRICRX', 'verte', 2001, 10000, 10000, 1),
+        ('Ionic', 'IONCXCS', 'noir', 1998, 200000, 8000, 1),
+        ('Toyota', 'TOYCRX', 'rouge', 2006, 120000, 12000, 1)";
 
-        $result = $wpdb->query($sql);
-        return $result;
+    $result = $wpdb->query($sql);
+    return $result;
 }
 
 /**
