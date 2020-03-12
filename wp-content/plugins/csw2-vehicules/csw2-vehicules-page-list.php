@@ -103,17 +103,22 @@ function csw2_vehicules_html_list_code()
 
                 <hr>
                 <article style="display: flex">
-                    <?php if (current_user_can('administrator') || get_current_user_id() == $vehicule->vehicule_proprietaire_id) :  ?>
+                    <?php // Si l'utilisateur conecté est connecté où si il est celui qui a publié l'annonce
+                    if (current_user_can('administrator') || get_current_user_id() == $vehicule->vehicule_proprietaire_id) :  ?>
+                        <!-- Nom complet de l'annonce + lien vers sa page dédiée -->
                         <h4 style="margin: 0; width: 300px;">
                             <a href="<?php echo $single_permalink . '?id=' . $vehicule->vehicule_id ?>"><?= stripslashes($vehicule->vehicule_marque) . " " . stripslashes($vehicule->vehicule_modele) . " " . stripslashes($vehicule->vehicule_couleur) ?></a>
                         </h4>
                     <?php else : ?>
+                        <!-- Sinon, Nom comple de l'annonce sans lien -->
                         <h4 style="margin: 0; width: 300px;">
                             <?= stripslashes($vehicule->vehicule_marque) . " " . stripslashes($vehicule->vehicule_modele) . " " . stripslashes($vehicule->vehicule_couleur) ?>
                         </h4>
                     <?php endif; ?>
                     <div>
-                        <?php if (current_user_can('administrator')) : ?>
+                        <?php // Si l'utilisateur connecté est administrateur
+                        if (current_user_can('administrator')) : ?>
+                            <!-- Afficher le nom du propriétaire du véhicule annoncé -->
                             <div style="display: flex">
                                 <p style="width:270px; padding: 5px; color: #777">Propriétaire :</p>
                                 <p style="padding: 5px"><?= $propietaire->user_login ?></p>
@@ -150,7 +155,8 @@ function csw2_vehicules_html_list_code()
                             <p style="padding: 5px"><?= $vehicule->vehicule_prix ?> $</p>
                         </div>
 
-                        <?php if (current_user_can('administrator') || get_current_user_id() == $vehicule->vehicule_proprietaire_id) : ?>
+                        <?php // Si l'utilisateur conecté est connecté où si il est celui qui a publié l'annonce
+                        if (current_user_can('administrator') || get_current_user_id() == $vehicule->vehicule_proprietaire_id) : ?>
                             <div>
                                 <button>Supprimmer</button>
                                 <button>Modifier</button>
