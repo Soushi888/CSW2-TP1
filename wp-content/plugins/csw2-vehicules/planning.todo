@@ -4,8 +4,8 @@
     ✔ Vérifier proprietaire_id @done (2020-03-09 17 h 35 min 41 s)
     ☐ Système d'images
 ☐ Consultation des annonces
-    ☐ Liste des annonces
-    ☐ Filtre et trie
+    ✔ Liste des annonces @done (2020-03-10 23 h 02 min 30 s)
+    ✔ Filtre et trie @done (2020-03-10 23 h 02 min 31 s)
     ☐ Gestion des rôles
         ☐ Lien vers la page de création d'une annonce
         ☐ Administrateur
@@ -20,6 +20,10 @@
         ☐ Valeur par defaut "visibilité de l'annonce"
     ☐ Interface admin
 
-☐ Vérifications
+
+
+    
+☐ Finalisation
+    ☐ Fichier lisez-moi
     ☐ Commentaires
     ☐ Tests
