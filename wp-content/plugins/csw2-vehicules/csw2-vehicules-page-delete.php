@@ -9,79 +9,84 @@
 function html_delete_vehicule_code()
 {
     global $wpdb;
-    $postmeta = $wpdb->get_row("SELECT * FROM $wpdb->postmeta WHERE meta_key = 'csw2_vehicules' AND meta_value = 'list'");
-    
+
+    $current_user = wp_get_current_user();
+    if (empty($current_user->roles)) $current_user->roles = ["annonyme"];
+
+    $settings = get_option('csw2_vehicules_settings');
+
     $vehicule_id = isset($_GET['id']) ? $_GET['id'] : null;
     $sql = "SELECT * FROM $wpdb->prefix" . "vehicules
     WHERE vehicule_id = %d";
-    $vehicule = $wpdb->get_results($wpdb->prepare($sql, $vehicule_id));
 
-?>
-    <form action="<?php echo esc_url($_SERVER['REQUEST_URI']) ?>" method="post" enctype="multipart/form-data">
-        <label for="marque">Voulez-vous vraiment supprmier le véhicule <?= stripslashes($vehicule->vehicule_marque) . " " . stripslashes($vehicule->vehicule_modele) . " " . stripslashes($vehicule->vehicule_couleur) ?>
-            <input type="text" name="marque" id="marque" required></label><br>
-        
+    $vehicule = $wpdb->get_row($wpdb->prepare($sql, $vehicule_id));
 
-        <input type="hidden" name="proprietaire_id" id="proprietaire_id" value="<?= get_current_user_id() ?>" required>
+    // if ($vehicule === null) $vehicule = (object)$vehicule;
 
+    // var_dump($vehicule);
 
-        <input type="submit" style="margin-top: 30px;" name="submitted" value="Envoyez">
-    </form>
-    <?php
+    if ($vehicule === null) : ?>
+        <p>Ce véhicule n'existe pas.</p>
+    <?php elseif (get_current_user_id() == $vehicule->vehicule_proprietaire_id && in_array($current_user->roles[0], $settings["roles_permis"])) : ?>
+        <form action="<?php echo esc_url($_SERVER['REQUEST_URI']) ?>" method="post" enctype="multipart/form-data">
+            <p>Voulez-vous vraiment supprimer le véhicule no.<?= stripslashes($vehicule->vehicule_id) . " : " . stripslashes($vehicule->vehicule_marque) . " " . stripslashes($vehicule->vehicule_modele) . " " . stripslashes($vehicule->vehicule_couleur) ?></p>
+
+            <div style="display: flex; justify-content: center;">
+                <label for="oui">Oui<input type="radio" name="confirmation" id="oui" value="oui" required></label>
+                <label for="non">Non<input type="radio" name="confirmation" id="non" value="non" required></label>
+            </div>
+
+            <input type="submit" style="margin-top: 30px;" name="submitted" value="Envoyez">
+        </form>
+    <?php else : ?>
+        <p>Vous n'avez pas l'autorisation de supprimer ce véhicule.</p>
+        <?php endif;
 }
 
 /**
- * Insertion d'une véhicule dans la table vehicules
+ * Suppression d'une véhicule dans la table vehicules
  *
  * @param none
  * @return none
  */
 function delete_vehicule()
 {
+    global $wpdb;
+    $postmeta = $wpdb->get_row(
+        "SELECT * FROM $wpdb->postmeta WHERE meta_key = 'csw2_vehicules' AND meta_value = 'single'"
+    );
+    $single_permalink = get_permalink($postmeta->post_id);
     // si le bouton submit est cliqué
     if (isset($_POST['submitted'])) {
-        // assainir les valeurs du formulaire
-        $marque = sanitize_text_field($_POST["marque"]);
-        $modele = sanitize_text_field($_POST["modele"]);
-        $couleur = sanitize_text_field($_POST["couleur"]);
-        $annee_circulation = sanitize_text_field($_POST["annee_circulation"]);
-        $kilometrage = sanitize_text_field($_POST["kilometrage"]);
-        $prix = sanitize_text_field($_POST["prix"]);
-        $proprietaire_id = sanitize_text_field($_POST["proprietaire_id"]);
 
-        // insertion dans la table
         global $wpdb;
-        try {
-            $wpdb->insert(
-                $wpdb->prefix . 'vehicules',
-                array(
-                    'vehicule_marque' => $marque,
-                    'vehicule_modele' => $modele,
-                    'vehicule_couleur' => $couleur,
-                    'vehicule_annee_circulation' => $annee_circulation,
-                    'vehicule_kilometrage' => $kilometrage,
-                    'vehicule_prix' => $prix,
-                    'vehicule_proprietaire_id' => $proprietaire_id
-                ),
-                array(
-                    '%s',
-                    '%s',
-                    '%s',
-                    '%d',
-                    '%d',
-                    '%d',
-                    '%d'
-                )
-            );
-    ?>
-            <p>Le véhicule a été enregistré.</p>
-        <?php
-        } catch (Exception $e) { ?>
-            <p>Le véhicule n'a pas été enregistré.</p>
+        $vehicule_id = isset($_GET['id']) ? $_GET['id'] : null;
+
+        if ($_POST["confirmation"] == "oui") :
+            try {
+                $wpdb->delete(
+                    $wpdb->prefix . 'vehicules',
+                    array(
+                        "vehicule_id" => $vehicule_id
+                    )
+                );
+        ?>
+                <p>Le véhicule a été supprimé.</p>
+            <?php
+                exit;
+            } catch (Exception $e) { ?>
+                <p>Le véhicule n'a pas été supprimé.</p>
+            <?php
+                echo "Erreur : " . $e->getMessage();
+            } elseif ($_POST["confirmation"] == "non") : ?>
+            <p>Le véhicule n'a pas été supprimé.</p>
+            <p><a href="<?= $single_permalink . "?id=" . $vehicule_id ?>">Retour à la page du véhicule.</a></p>
 <?php
-            echo "Erreur : " . $e->getMessage();
-        }
+            exit;
+        endif;
     }
+    // supression dans la table
+
     // génèrer le titre de l'image avec l'id de le véhicule insérée dans la table vehicules
     // $vehicule_image_title = "vehicule-" . $wpdb->insert_id;
 
@@ -109,7 +114,7 @@ function delete_vehicule()
 function shortcode_input_delete_vehicule()
 {
     ob_start(); // temporisation de sortie
-    insert_vehicule();
+    delete_vehicule();
     html_delete_vehicule_code();
     return ob_get_clean(); // fin de la temporisation de sortie pour l'envoi au navigateur
 }

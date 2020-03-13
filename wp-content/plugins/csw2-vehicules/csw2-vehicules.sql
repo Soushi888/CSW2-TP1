@@ -23,7 +23,7 @@ INSERT INTO csw2_vehicules(
     vehicule_proprietaire_id)        
 VALUES
     ('Toyota', 'TOYCRX', 'rouge', 2003, 3000, 12000, 1),
-    ('Prius', 'PRICRX', 'verte', 2005, 12000, 10000, 1),
+    ('Prius', 'PRICRX', 'verte', 2005, 12000, 10000, 0),
     ('Ionic', 'IONCXCS', 'noir', 2002, 30000, 8000, 1),
     ('Toyota','TOYCRX', 'rouge', 2008, 150000, 12000, 2),
     ('Prius', 'PRICRX', 'verte', 1996, 300000, 10000, 3),

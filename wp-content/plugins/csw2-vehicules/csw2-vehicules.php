@@ -30,6 +30,9 @@ require_once("csw2-vehicules-page-add.php");
 // Section pour la page de modification d'une annonce de véhicule
 require_once("csw2-vehicules-page-update.php");
 
+// Section pour la page de suppression d'une annonce de véhicule
+require_once("csw2-vehicules-page-delete.php");
+
 // Section pour le traitement de la page de liste des véhicules
 require_once("csw2-vehicules-page-list.php");
 

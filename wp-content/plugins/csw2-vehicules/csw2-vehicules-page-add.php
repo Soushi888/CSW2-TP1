@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Création du formulaire de saisie d'un véhicule
+ * Création du formulaire d'annonce d'un véhicule à vendre
  *
  * @param none
  * @return echo html form vehicule code

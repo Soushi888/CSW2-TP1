@@ -489,3 +489,61 @@ Stack trace:
 [13-Mar-2020 09:32:05 UTC] PHP Fatal error:  Cannot redeclare insert_vehicule() (previously declared in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-add.php:45) in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-mod.php on line 45
 [13-Mar-2020 09:33:44 UTC] PHP Warning:  require_once(C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-mod.php): failed to open stream: No such file or directory in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 31
 [13-Mar-2020 09:33:44 UTC] PHP Fatal error:  require_once(): Failed opening required 'C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-mod.php' (include_path='.;C:\php\pear') in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 31
+[13-Mar-2020 10:07:48 UTC] PHP Notice:  Trying to get property 'post_id' of non-object in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-list.php on line 24
+[13-Mar-2020 10:09:46 UTC] PHP Notice:  Trying to get property 'vehicule_marque' of non-object in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-delete.php on line 21
+[13-Mar-2020 10:09:46 UTC] PHP Notice:  Trying to get property 'vehicule_modele' of non-object in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-delete.php on line 21
+[13-Mar-2020 10:09:46 UTC] PHP Notice:  Trying to get property 'vehicule_couleur' of non-object in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-delete.php on line 21
+[13-Mar-2020 10:10:11 UTC] PHP Notice:  Trying to get property 'vehicule_marque' of non-object in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-delete.php on line 21
+[13-Mar-2020 10:10:11 UTC] PHP Notice:  Trying to get property 'vehicule_modele' of non-object in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-delete.php on line 21
+[13-Mar-2020 10:10:11 UTC] PHP Notice:  Trying to get property 'vehicule_couleur' of non-object in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-delete.php on line 21
+[13-Mar-2020 10:18:45 UTC] PHP Notice:  Trying to get property 'vehicule_marque' of non-object in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-delete.php on line 21
+[13-Mar-2020 10:18:45 UTC] PHP Notice:  Trying to get property 'vehicule_modele' of non-object in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-delete.php on line 21
+[13-Mar-2020 10:18:45 UTC] PHP Notice:  Trying to get property 'vehicule_couleur' of non-object in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-delete.php on line 21
+[13-Mar-2020 10:18:51 UTC] PHP Notice:  Trying to get property 'post_id' of non-object in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-list.php on line 24
+[13-Mar-2020 11:29:51 UTC] PHP Notice:  Trying to get property 'post_id' of non-object in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-list.php on line 24
+[13-Mar-2020 11:43:04 UTC] PHP Notice:  Trying to get property 'vehicule_marque' of non-object in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-delete.php on line 21
+[13-Mar-2020 11:43:04 UTC] PHP Notice:  Trying to get property 'vehicule_modele' of non-object in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-delete.php on line 21
+[13-Mar-2020 11:43:04 UTC] PHP Notice:  Trying to get property 'vehicule_couleur' of non-object in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-delete.php on line 21
+[13-Mar-2020 12:14:16 UTC] PHP Parse error:  syntax error, unexpected '{' in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-delete.php on line 48
+[13-Mar-2020 12:19:46 UTC] Erreur de la base de données WordPress Champ 'ID' inconnu dans where clause pour la requête DELETE FROM `csw2_vehicules` WHERE `ID` = 10 faite par require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/twentytwenty/singular.php'), get_template_part, locate_template, load_template, require('/themes/twentytwenty/template-parts/content.php'), the_content, apply_filters('the_content'), WP_Hook->apply_filters, do_shortcode, preg_replace_callback, do_shortcode_tag, shortcode_input_delete_vehicule, delete_vehicule
+[13-Mar-2020 12:20:18 UTC] PHP Notice:  Trying to get property 'vehicule_id' of non-object in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-delete.php on line 21
+[13-Mar-2020 12:20:18 UTC] PHP Notice:  Trying to get property 'vehicule_marque' of non-object in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-delete.php on line 21
+[13-Mar-2020 12:20:18 UTC] PHP Notice:  Trying to get property 'vehicule_modele' of non-object in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-delete.php on line 21
+[13-Mar-2020 12:20:18 UTC] PHP Notice:  Trying to get property 'vehicule_couleur' of non-object in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-delete.php on line 21
+[13-Mar-2020 12:21:07 UTC] PHP Notice:  Trying to get property 'vehicule_id' of non-object in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-delete.php on line 21
+[13-Mar-2020 12:21:07 UTC] PHP Notice:  Trying to get property 'vehicule_marque' of non-object in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-delete.php on line 21
+[13-Mar-2020 12:21:07 UTC] PHP Notice:  Trying to get property 'vehicule_modele' of non-object in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-delete.php on line 21
+[13-Mar-2020 12:21:07 UTC] PHP Notice:  Trying to get property 'vehicule_couleur' of non-object in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-delete.php on line 21
+[13-Mar-2020 12:24:14 UTC] PHP Notice:  Trying to get property 'vehicule_id' of non-object in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-delete.php on line 21
+[13-Mar-2020 12:24:14 UTC] PHP Notice:  Trying to get property 'vehicule_marque' of non-object in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-delete.php on line 21
+[13-Mar-2020 12:24:14 UTC] PHP Notice:  Trying to get property 'vehicule_modele' of non-object in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-delete.php on line 21
+[13-Mar-2020 12:24:14 UTC] PHP Notice:  Trying to get property 'vehicule_couleur' of non-object in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-delete.php on line 21
+[13-Mar-2020 12:25:01 UTC] PHP Notice:  Trying to get property 'vehicule_id' of non-object in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-delete.php on line 22
+[13-Mar-2020 12:25:01 UTC] PHP Notice:  Trying to get property 'vehicule_marque' of non-object in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-delete.php on line 22
+[13-Mar-2020 12:25:01 UTC] PHP Notice:  Trying to get property 'vehicule_modele' of non-object in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-delete.php on line 22
+[13-Mar-2020 12:25:01 UTC] PHP Notice:  Trying to get property 'vehicule_couleur' of non-object in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-delete.php on line 22
+[13-Mar-2020 12:27:55 UTC] PHP Notice:  Trying to get property 'post_id' of non-object in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-list.php on line 24
+[13-Mar-2020 12:28:00 UTC] PHP Notice:  Trying to get property 'post_id' of non-object in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-list.php on line 24
+[13-Mar-2020 12:31:26 UTC] PHP Notice:  Trying to get property 'post_id' of non-object in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-list.php on line 24
+[13-Mar-2020 12:41:10 UTC] PHP Notice:  Undefined variable: wpdb in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-delete.php on line 44
+[13-Mar-2020 12:41:10 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get_row() on null in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-delete.php:44
+Stack trace:
+#0 C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-delete.php(105): delete_vehicule()
+#1 C:\wamp64\www\CSW2-TP1\wp-includes\shortcodes.php(325): shortcode_input_delete_vehicule('', '', 'supprimer_vehic...')
+#2 [internal function]: do_shortcode_tag(Array)
+#3 C:\wamp64\www\CSW2-TP1\wp-includes\shortcodes.php(199): preg_replace_callback('/\\[(\\[?)(suppri...', 'do_shortcode_ta...', '[supprimer_vehi...')
+#4 C:\wamp64\www\CSW2-TP1\wp-includes\class-wp-hook.php(288): do_shortcode('[supprimer_vehi...')
+#5 C:\wamp64\www\CSW2-TP1\wp-includes\plugin.php(206): WP_Hook->apply_filters('[supprimer_vehi...', Array)
+#6 C:\wamp64\www\CSW2-TP1\wp-includes\post-template.php(253): apply_filters('the_content', '[supprimer_vehi...')
+#7 C:\wamp64\www\CSW2-TP1\wp-content\themes\twentytwenty\template-parts\content.php(36): the_content('Lire  in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-delete.php on line 44
+[13-Mar-2020 12:45:15 UTC] PHP Notice:  Trying to get property 'post_id' of non-object in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-list.php on line 24
+[13-Mar-2020 12:46:07 UTC] PHP Notice:  Trying to get property 'post_id' of non-object in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-list.php on line 24
+[13-Mar-2020 12:46:17 UTC] PHP Notice:  Trying to get property 'post_id' of non-object in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-list.php on line 24
+[13-Mar-2020 12:46:28 UTC] PHP Notice:  Trying to get property 'post_id' of non-object in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-list.php on line 24
+[13-Mar-2020 12:55:47 UTC] PHP Notice:  Trying to get property 'vehicule_proprietaire_id' of non-object in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-delete.php on line 36
+[13-Mar-2020 12:56:02 UTC] PHP Notice:  Trying to get property 'vehicule_proprietaire_id' of non-object in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-delete.php on line 36
+[13-Mar-2020 13:02:31 UTC] PHP Notice:  Trying to get property 'vehicule_proprietaire_id' of non-object in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-delete.php on line 25
+[13-Mar-2020 13:03:08 UTC] PHP Notice:  Undefined property: stdClass::$vehicule_proprietaire_id in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-delete.php on line 27
+[13-Mar-2020 13:04:05 UTC] PHP Notice:  Trying to get property 'vehicule_proprietaire_id' of non-object in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-delete.php on line 28
+[13-Mar-2020 13:04:13 UTC] PHP Notice:  Undefined property: stdClass::$vehicule_proprietaire_id in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-delete.php on line 28
+[13-Mar-2020 13:04:46 UTC] PHP Notice:  Trying to get property 'vehicule_proprietaire_id' of non-object in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-delete.php on line 28

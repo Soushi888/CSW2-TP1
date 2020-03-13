@@ -125,7 +125,7 @@ function csw2_vehicules_html_list_code()
                     <article style="display: flex">
 
                         <h4 style="margin: 0; width: 400px;">
-                            <a href="<?php echo $single_permalink . '?id=' . $vehicule->vehicule_id ?>"><?= stripslashes($vehicule->vehicule_marque) . " " . stripslashes($vehicule->vehicule_modele) . " " . stripslashes($vehicule->vehicule_couleur) ?></a>
+                            <a href="<?php echo $single_permalink . '?id=' . $vehicule->vehicule_id ?>">#<?= stripslashes($vehicule->vehicule_id) . " " . stripslashes($vehicule->vehicule_marque) . " " . stripslashes($vehicule->vehicule_modele) . " " . stripslashes($vehicule->vehicule_couleur) ?></a>
                         </h4>
                         <div>
                             <div style="display: flex">
@@ -169,10 +169,14 @@ function csw2_vehicules_html_list_code()
                             </div>
 
                             <?php // Si l'utilisateur conecté est un administrateur où si il est celui qui a publié l'annonce
-                            if ((current_user_can('administrator') || (get_current_user_id() == $vehicule->vehicule_proprietaire_id)) && (in_array($current_user->roles[0], $settings["roles_permis"]))) : ?>
+                            if ((current_user_can('administrator') || (get_current_user_id() == $vehicule->vehicule_proprietaire_id)) && (in_array($current_user->roles[0], $settings["roles_permis"]))) :
+                                $postmeta = $wpdb->get_row(
+                                    "SELECT * FROM $wpdb->postmeta WHERE meta_key = 'csw2_vehicules' AND meta_value = 'delete'"
+                                );
+                                $delete_permalink = get_permalink($postmeta->post_id); ?>
                                 <!-- Il peut Supprimmer ou modifer son annonce (ou toutes si il est administrateur) -->
                                 <div>
-                                    <button><a style="color: #fff; text-decoration: none;" href="<?php echo 'supprimer-vehicule?id=' . $vehicule->vehicule_id ?>">Supprimmer</a></button>
+                                    <button><a style="color: #fff; text-decoration: none;" href="<?= $delete_permalink . "?id=" . $vehicule->vehicule_id ?>">Supprimmer</a></button>
                                     <button>Modifier</button>
                                 </div>
                             <?php endif; ?>

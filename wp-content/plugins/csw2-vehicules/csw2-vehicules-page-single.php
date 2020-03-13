@@ -85,7 +85,7 @@ function csw2_vehicules_html_single_code()
 			if ((current_user_can('administrator') || (get_current_user_id() == $vehicule->vehicule_proprietaire_id)) && (in_array($current_user->roles[0], $settings["roles_permis"]))) : ?>
 				<!-- Il peut Supprimmer ou modifer son annonce (ou toutes si il est administrateur) -->
 				<div>
-					<button>Supprimmer</button>
+				<button><a style="color: #fff; text-decoration: none;" href="<?= 'supprimer-vehicule?id=' . $vehicule->vehicule_id ?>">Supprimmer</a></button>
 					<button>Modifier</button>
 				</div>
 			<?php endif; ?>
