@@ -95,7 +95,7 @@ function csw2_vehicules_default_settings()
         'csw2_vehicules_settings',
         array(
             "duree_affichage"  => '15',
-            "roles_permis" => 'administrator',
+            "roles_permis" => ['administrator', "author"],
             "visibilite_annonce" => true
         )
     );

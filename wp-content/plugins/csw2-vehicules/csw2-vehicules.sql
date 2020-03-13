@@ -1,4 +1,4 @@
-CREATE TABLE csw2_vehicules (
+CREATE TABLE IF NOT EXISTS csw2_vehicules (
         vehicule_id INT NOT NULL AUTO_INCREMENT,
         vehicule_marque VARCHAR(255) NOT NULL,
         vehicule_modele VARCHAR(255) NOT NULL,
