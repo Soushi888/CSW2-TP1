@@ -70,6 +70,7 @@ function csw2_vehicules_html_list_code()
                             <option value="couleur">Couleur</option>
                             <option value="annee_circulation">Année mise en circulation</option>
                             <option value="prix">Prix</option>
+                            <option value="date_enregistrement">Date d'enregistrement</option>
                         </select>
                     </fieldset>
                     <fieldset>
@@ -102,81 +103,83 @@ function csw2_vehicules_html_list_code()
             );
             $single_permalink = get_permalink($postmeta->post_id);
 
-            // $settings = get_option('csw2_vehicules_settings');
+            $current_user = wp_get_current_user();
+            if (empty($current_user->roles)) $current_user->roles = ["annonyme"];
 
+            $settings = get_option('csw2_vehicules_settings'); ?>
+
+            <!-- <pre><?= var_dump($current_user->roles); ?></pre>
+            <pre><?= var_dump(in_array($current_user->roles[0], $settings["roles_permis"])); ?></pre> -->
+
+            <?php
             foreach ($vehicules as $vehicule) :
                 $propietaire = get_user_by("id", $vehicule->vehicule_proprietaire_id);
+
                 if ($propietaire === false) { // Si le propriétaire de l'annonce n'est pas un utilisateur enregistré,
                     $propietaire = (object) $propietaire;
                     $propietaire->user_login = "annonyme"; // lui donner l'identifiant "annonyme"
-                } ?>
+                }
+                // Si l'utilisateur n'est pas connecté ou si il simple abonné ou administrateur : afficher toutes les annonces ou alors seulement celles de l'utilisateur autorisé
+                if ((current_user_can('administrator') || in_array("annonyme", $current_user->roles) or in_array("subscriber", $current_user->roles)) || (get_current_user_id() == $vehicule->vehicule_proprietaire_id)) :  ?>
+                    <hr>
+                    <article style="display: flex">
 
-                <hr>
-                <article style="display: flex">
-                    <?php // Si l'utilisateur conecté est connecté où si il est celui qui a publié l'annonce
-                    if (current_user_can('administrator') || get_current_user_id() == $vehicule->vehicule_proprietaire_id) :  ?>
-                        <!-- Nom complet de l'annonce + lien vers sa page dédiée -->
                         <h4 style="margin: 0; width: 300px;">
                             <a href="<?php echo $single_permalink . '?id=' . $vehicule->vehicule_id ?>"><?= stripslashes($vehicule->vehicule_marque) . " " . stripslashes($vehicule->vehicule_modele) . " " . stripslashes($vehicule->vehicule_couleur) ?></a>
                         </h4>
-                    <?php else : ?>
-                        <!-- Sinon, Nom comple de l'annonce sans lien -->
-                        <h4 style="margin: 0; width: 300px;">
-                            <?= stripslashes($vehicule->vehicule_marque) . " " . stripslashes($vehicule->vehicule_modele) . " " . stripslashes($vehicule->vehicule_couleur) ?>
-                        </h4>
-                    <?php endif; ?>
-                    <div>
-                        <?php // Si l'utilisateur connecté est administrateur
-                        if (current_user_can('administrator')) : ?>
-                            <!-- Afficher le nom du propriétaire du véhicule annoncé -->
+                        <div>
                             <div style="display: flex">
                                 <p style="width:270px; padding: 5px; color: #777">Propriétaire :</p>
                                 <p style="padding: 5px"><?= $propietaire->user_login ?></p>
                             </div>
-                        <?php endif; ?>
 
-                        <!-- Dans tout les cas, afficher Marque, Modèle, Coueleur, etc... -->
-                        <div style="display: flex">
-                            <p style="width:270px; padding: 5px; color: #777">Marque :</p>
-                            <p style="padding: 5px"><?= stripslashes(nl2br($vehicule->vehicule_marque)) ?></p>
-                        </div>
-
-                        <div style="display: flex">
-                            <p style="width:270px; padding: 5px; color: #777">Modèle :</p>
-                            <p style="padding: 5px"><?= stripslashes(nl2br($vehicule->vehicule_modele)) ?></p>
-                        </div>
-
-                        <div style="display: flex">
-                            <p style="width:270px; padding: 5px; color: #777">Couleur :</p>
-                            <p style="padding: 5px"><?= stripslashes(nl2br($vehicule->vehicule_couleur)) ?></p>
-                        </div>
-
-                        <div style="display: flex">
-                            <p style="width:270px; padding: 5px; color: #777">Année de mise en circulation : </p>
-                            <p style="padding: 5px"><?= $vehicule->vehicule_annee_circulation ?></p>
-                        </div>
-
-                        <div style="display: flex">
-                            <p style="width:270px; padding: 5px; color: #777">Kilométrage :</p>
-                            <p style="padding: 5px"><?= $vehicule->vehicule_kilometrage ?>km</p>
-                        </div>
-
-                        <div style="display: flex">
-                            <p style="width:270px; padding: 5px; color: #777">Prix :</p>
-                            <p style="padding: 5px"><?= $vehicule->vehicule_prix ?> $</p>
-                        </div>
-
-                        <?php // Si l'utilisateur conecté est connecté où si il est celui qui a publié l'annonce
-                        if (current_user_can('administrator') || get_current_user_id() == $vehicule->vehicule_proprietaire_id) : ?>
-                            <!-- Il peut Supprimmer ou modifer son annonce (ou toutes si il est administrateur) -->
-                            <div>
-                                <button>Supprimmer</button>
-                                <button>Modifier</button>
+                            <div style="display: flex">
+                                <p style="width:270px; padding: 5px; color: #777">Marque :</p>
+                                <p style="padding: 5px"><?= stripslashes(nl2br($vehicule->vehicule_marque)) ?></p>
                             </div>
-                        <?php endif; ?>
-                    </div>
-                </article>
+
+                            <div style="display: flex">
+                                <p style="width:270px; padding: 5px; color: #777">Modèle :</p>
+                                <p style="padding: 5px"><?= stripslashes(nl2br($vehicule->vehicule_modele)) ?></p>
+                            </div>
+
+                            <div style="display: flex">
+                                <p style="width:270px; padding: 5px; color: #777">Couleur :</p>
+                                <p style="padding: 5px"><?= stripslashes(nl2br($vehicule->vehicule_couleur)) ?></p>
+                            </div>
+
+                            <div style="display: flex">
+                                <p style="width:270px; padding: 5px; color: #777">Année de mise en circulation : </p>
+                                <p style="padding: 5px"><?= $vehicule->vehicule_annee_circulation ?></p>
+                            </div>
+
+                            <div style="display: flex">
+                                <p style="width:270px; padding: 5px; color: #777">Kilométrage :</p>
+                                <p style="padding: 5px"><?= $vehicule->vehicule_kilometrage ?>km</p>
+                            </div>
+
+                            <div style="display: flex">
+                                <p style="width:270px; padding: 5px; color: #777">Prix :</p>
+                                <p style="padding: 5px"><?= $vehicule->vehicule_prix ?> $</p>
+                            </div>
+
+                            <div style="display: flex">
+                                <p style="width:270px; padding: 5px; color: #777">Date d'enregistrement :</p>
+                                <p style="padding: 5px"><?= $vehicule->vehicule_date_enregistrement ?></p>
+                            </div>
+
+                            <?php // Si l'utilisateur conecté est un administrateur où si il est celui qui a publié l'annonce
+                            if ((current_user_can('administrator') || (get_current_user_id() == $vehicule->vehicule_proprietaire_id)) && (in_array($current_user->roles[0], $settings["roles_permis"]))) : ?>
+                                <!-- Il peut Supprimmer ou modifer son annonce (ou toutes si il est administrateur) -->
+                                <div>
+                                    <button>Supprimmer</button>
+                                    <button>Modifier</button>
+                                </div>
+                            <?php endif; ?>
+                        </div>
+                    </article>
             <?php
+                endif;
             endforeach;
             ?>
             </table>

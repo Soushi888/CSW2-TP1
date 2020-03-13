@@ -29,3 +29,6 @@ require_once("csw2-vehicules-page-form.php");
 
 // Section pour le traitement de la page de liste des véhicules
 require_once("csw2-vehicules-page-list.php");
+
+// Section pour le traitement de la page d'affichage d'un véhicule
+require_once("csw2-vehicules-page-single.php");

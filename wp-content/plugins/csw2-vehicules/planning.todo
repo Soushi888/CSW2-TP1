@@ -6,20 +6,23 @@
 ☐ Consultation des annonces
     ✔ Liste des annonces @done (2020-03-10 23 h 02 min 30 s)
     ✔ Filtre et trie @done (2020-03-10 23 h 02 min 31 s)
-    ☐ Gestion des rôles
+    ✔ Gestion des rôles @done (2020-03-13 04 h 48 min 46 s)
         ✔ Lien vers la page de création d'une annonce @done (2020-03-11 21 h 53 min 44 s)
         ✔ Administrateur @done (2020-03-13 01 h 28 min 34 s)
-        ☐ Autorisés
-        ☐ Annonyme
+        ✔ Autorisés @done (2020-03-13 04 h 48 min 42 s)
+        ✔ Annonyme @done (2020-03-13 04 h 48 min 43 s)
+    ☐ Page annonce individuelle
 ☐ Formulaire Modification d'une annonce
 ☐ Page confirmation suppression annonce
 ☐ Interface Administrateur et options
     ☐ Options
         ☐ Temps d'affichage
-        ☐ Permission création
+        ✔ Rôles Autorisés @done (2020-03-13 04 h 49 min 32 s)
         ☐ Valeur par defaut "visibilité de l'annonce"
     ☐ Interface admin
-
+        ☐ Temps d'affichage
+        ☐ Rôles Autorisés
+        ☐ Valeur par defaut "visibilité de l'annonce"
 
 
     

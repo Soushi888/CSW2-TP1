@@ -421,3 +421,66 @@ Stack trace:
 [11-Mar-2020 03:38:59 UTC] PHP Notice:  Trying to get property 'user_login' of non-object in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-list.php on line 112
 [11-Mar-2020 03:39:17 UTC] PHP Notice:  Trying to get property 'user_login' of non-object in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-list.php on line 113
 [11-Mar-2020 03:39:53 UTC] PHP Warning:  Creating default object from empty value in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-list.php on line 99
+[13-Mar-2020 07:59:57 UTC] PHP Fatal error:  Uncaught Error: Cannot use object of type WP_User as array in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-list.php:109
+Stack trace:
+#0 C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-list.php(208): csw2_vehicules_html_list_code()
+#1 C:\wamp64\www\CSW2-TP1\wp-includes\shortcodes.php(325): csw2_vehicules_shortcode_list('', '', 'csw2_vehicules_...')
+#2 [internal function]: do_shortcode_tag(Array)
+#3 C:\wamp64\www\CSW2-TP1\wp-includes\shortcodes.php(199): preg_replace_callback('/\\[(\\[?)(csw2_v...', 'do_shortcode_ta...', '[csw2_vehicules...')
+#4 C:\wamp64\www\CSW2-TP1\wp-includes\class-wp-hook.php(288): do_shortcode('[csw2_vehicules...')
+#5 C:\wamp64\www\CSW2-TP1\wp-includes\plugin.php(206): WP_Hook->apply_filters('[csw2_vehicules...', Array)
+#6 C:\wamp64\www\CSW2-TP1\wp-includes\post-template.php(253): apply_filters('the_content', '[csw2_vehicules...')
+#7 C:\wamp64\www\CSW2-TP1\wp-content\themes\twentytwenty\template-parts\content.php(36): the_conten in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-list.php on line 109
+[13-Mar-2020 08:10:39 UTC] PHP Recoverable fatal error:  Object of class WP_User could not be converted to string in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-list.php on line 109
+[13-Mar-2020 08:39:22 UTC] PHP Parse error:  syntax error, unexpected ':' in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-list.php on line 125
+[13-Mar-2020 08:55:29 UTC] PHP Warning:  require_once(csw2-vehicules-page-single.php): failed to open stream: No such file or directory in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 34
+[13-Mar-2020 08:55:29 UTC] PHP Fatal error:  require_once(): Failed opening required 'csw2-vehicules-page-single.php' (include_path='.;C:\php\pear') in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 34
+[13-Mar-2020 08:55:47 UTC] Erreur de la base de données WordPress Champ 'id' inconnu dans where clause pour la requête SELECT * FROM csw2_vehicules WHERE id =6 faite par require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/twentytwenty/singular.php'), get_template_part, locate_template, load_template, require('/themes/twentytwenty/template-parts/content.php'), the_content, apply_filters('the_content'), WP_Hook->apply_filters, do_shortcode, preg_replace_callback, do_shortcode_tag, csw2_vehicules_shortcode_single, csw2_vehicules_html_single_code
+[13-Mar-2020 08:56:18 UTC] PHP Notice:  Undefined property: stdClass::$id in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-single.php on line 34
+[13-Mar-2020 08:56:18 UTC] PHP Notice:  Trying to get property 'ID' of non-object in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-single.php on line 37
+[13-Mar-2020 08:56:18 UTC] PHP Notice:  Undefined property: stdClass::$title in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-single.php on line 37
+[13-Mar-2020 08:56:18 UTC] PHP Notice:  Undefined property: stdClass::$ingredients in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-single.php on line 40
+[13-Mar-2020 08:56:18 UTC] PHP Notice:  Undefined property: stdClass::$instructions in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-single.php on line 44
+[13-Mar-2020 08:56:18 UTC] PHP Notice:  Undefined property: stdClass::$prep_time in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-single.php on line 48
+[13-Mar-2020 08:56:18 UTC] PHP Notice:  Undefined property: stdClass::$cook_time in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-single.php on line 52
+[13-Mar-2020 08:58:08 UTC] PHP Notice:  Undefined variable: vehicule_image_post in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-single.php on line 38
+[13-Mar-2020 08:58:08 UTC] PHP Notice:  Trying to get property 'ID' of non-object in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-single.php on line 38
+[13-Mar-2020 08:58:08 UTC] PHP Notice:  Undefined property: stdClass::$title in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-single.php on line 38
+[13-Mar-2020 08:58:08 UTC] PHP Notice:  Undefined property: stdClass::$ingredients in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-single.php on line 41
+[13-Mar-2020 08:58:08 UTC] PHP Notice:  Undefined property: stdClass::$instructions in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-single.php on line 45
+[13-Mar-2020 08:58:08 UTC] PHP Notice:  Undefined property: stdClass::$prep_time in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-single.php on line 49
+[13-Mar-2020 08:58:08 UTC] PHP Notice:  Undefined property: stdClass::$cook_time in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-single.php on line 53
+[13-Mar-2020 08:58:25 UTC] PHP Notice:  Undefined variable: vehicule_image_post in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-single.php on line 38
+[13-Mar-2020 08:58:25 UTC] PHP Notice:  Trying to get property 'ID' of non-object in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-single.php on line 38
+[13-Mar-2020 08:58:25 UTC] PHP Notice:  Undefined property: stdClass::$title in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-single.php on line 38
+[13-Mar-2020 08:58:25 UTC] PHP Notice:  Undefined property: stdClass::$ingredients in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-single.php on line 41
+[13-Mar-2020 08:58:25 UTC] PHP Notice:  Undefined property: stdClass::$instructions in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-single.php on line 45
+[13-Mar-2020 08:58:25 UTC] PHP Notice:  Undefined property: stdClass::$prep_time in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-single.php on line 49
+[13-Mar-2020 08:58:25 UTC] PHP Notice:  Undefined property: stdClass::$cook_time in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-single.php on line 53
+[13-Mar-2020 08:58:43 UTC] PHP Notice:  Undefined variable: vehicule_image_post in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-single.php on line 38
+[13-Mar-2020 08:58:43 UTC] PHP Notice:  Trying to get property 'ID' of non-object in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-single.php on line 38
+[13-Mar-2020 08:58:43 UTC] PHP Notice:  Undefined property: stdClass::$title in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-single.php on line 38
+[13-Mar-2020 08:58:43 UTC] PHP Notice:  Undefined property: stdClass::$ingredients in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-single.php on line 41
+[13-Mar-2020 08:58:43 UTC] PHP Notice:  Undefined property: stdClass::$instructions in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-single.php on line 45
+[13-Mar-2020 08:58:43 UTC] PHP Notice:  Undefined property: stdClass::$prep_time in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-single.php on line 49
+[13-Mar-2020 08:58:43 UTC] PHP Notice:  Undefined property: stdClass::$cook_time in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-single.php on line 53
+[13-Mar-2020 08:59:23 UTC] PHP Notice:  Undefined variable: vehicule_image_post in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-single.php on line 38
+[13-Mar-2020 08:59:23 UTC] PHP Notice:  Trying to get property 'ID' of non-object in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-single.php on line 38
+[13-Mar-2020 08:59:23 UTC] PHP Notice:  Undefined property: stdClass::$title in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-single.php on line 38
+[13-Mar-2020 08:59:23 UTC] PHP Notice:  Undefined variable: propietaire in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-single.php on line 41
+[13-Mar-2020 08:59:23 UTC] PHP Notice:  Trying to get property 'user_login' of non-object in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-single.php on line 41
+[13-Mar-2020 08:59:57 UTC] PHP Notice:  Undefined variable: vehicule_image_post in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-single.php on line 44
+[13-Mar-2020 08:59:57 UTC] PHP Notice:  Trying to get property 'ID' of non-object in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-single.php on line 44
+[13-Mar-2020 08:59:57 UTC] PHP Notice:  Undefined property: stdClass::$title in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-single.php on line 44
+[13-Mar-2020 09:00:54 UTC] PHP Notice:  Undefined variable: vehicule_image_post in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-single.php on line 44
+[13-Mar-2020 09:00:54 UTC] PHP Notice:  Trying to get property 'ID' of non-object in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-single.php on line 44
+[13-Mar-2020 09:00:54 UTC] PHP Notice:  Undefined property: stdClass::$title in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-single.php on line 44
+[13-Mar-2020 09:01:00 UTC] PHP Notice:  Undefined variable: vehicule_image_post in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-single.php on line 44
+[13-Mar-2020 09:01:00 UTC] PHP Notice:  Trying to get property 'ID' of non-object in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-single.php on line 44
+[13-Mar-2020 09:01:00 UTC] PHP Notice:  Undefined property: stdClass::$title in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-single.php on line 44
+[13-Mar-2020 09:01:23 UTC] PHP Notice:  Undefined variable: vehicule_image_post in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-single.php on line 44
+[13-Mar-2020 09:01:23 UTC] PHP Notice:  Trying to get property 'ID' of non-object in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-single.php on line 44
+[13-Mar-2020 09:01:23 UTC] PHP Notice:  Undefined property: stdClass::$title in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-single.php on line 44
+[13-Mar-2020 09:01:29 UTC] PHP Notice:  Undefined variable: vehicule_image_post in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-single.php on line 44
+[13-Mar-2020 09:01:29 UTC] PHP Notice:  Trying to get property 'ID' of non-object in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-single.php on line 44
+[13-Mar-2020 09:01:29 UTC] PHP Notice:  Undefined property: stdClass::$title in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-single.php on line 44
