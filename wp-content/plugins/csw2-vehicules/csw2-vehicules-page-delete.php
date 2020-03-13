@@ -1,29 +1,26 @@
 <?php
 
 /**
- * Création du formulaire de saisie d'une véhicule
+ * Création du formulaire de supression d'un véhicule
  *
  * @param none
  * @return echo html delete vehicule code
  */
 function html_delete_vehicule_code()
 {
+    global $wpdb;
+    $postmeta = $wpdb->get_row("SELECT * FROM $wpdb->postmeta WHERE meta_key = 'csw2_vehicules' AND meta_value = 'list'");
+    
+    $vehicule_id = isset($_GET['id']) ? $_GET['id'] : null;
+    $sql = "SELECT * FROM $wpdb->prefix" . "vehicules
+    WHERE vehicule_id = %d";
+    $vehicule = $wpdb->get_results($wpdb->prepare($sql, $vehicule_id));
+
 ?>
     <form action="<?php echo esc_url($_SERVER['REQUEST_URI']) ?>" method="post" enctype="multipart/form-data">
-        <label for="marque">Marque du véhicule
+        <label for="marque">Voulez-vous vraiment supprmier le véhicule <?= stripslashes($vehicule->vehicule_marque) . " " . stripslashes($vehicule->vehicule_modele) . " " . stripslashes($vehicule->vehicule_couleur) ?>
             <input type="text" name="marque" id="marque" required></label><br>
-        <label for="modele">Modèle du véhicule
-            <input type="text" name="modele" id="modele" required></label><br>
-        <label for="couleur">Couleur du véhicule
-            <input type="text" name="couleur" id="couleur" required></label><br>
-        <!-- <label>Photo du véhicule
-            <input type="file" name="photo" required></label><br> -->
-        <label for="annee-circulation">Année de mise en circulation du véhicule
-            <input type="number" min="1900" max="<?= date("Y") ?>" step="1" value="<?= date("Y") ?>" name="annee_circulation" id="annee_circulation" required></label><br>
-        <label for="kilometrage">Kilométrage du véhicule
-            <input type="text" name="kilometrage" id="kilometrage" required></label><br>
-        <label for="prix">Prix du véhicule
-            <input type="text" name="prix" id="prix" required></label><br>
+        
 
         <input type="hidden" name="proprietaire_id" id="proprietaire_id" value="<?= get_current_user_id() ?>" required>
 
