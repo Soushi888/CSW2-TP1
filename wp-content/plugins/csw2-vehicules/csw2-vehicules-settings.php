@@ -50,8 +50,10 @@ function csw2_vehicules_register_setting()
 function csw2_vehicules_sanitize_option($input)
 {
 	$input['duree_affichage']  = sanitize_text_field($input['duree_affichage']);
+	$i = 0;
 	foreach ($input['roles_permis'] as $roles) {
-		$input['roles_permis'][] = sanitize_text_field($roles);
+		$input['roles_permis'][$i] = sanitize_text_field($roles);
+		$i++;
 	}
 	$input['visibilite_annonces'] = sanitize_text_field($input['visibilite_annonces']);
 ?>
@@ -78,7 +80,7 @@ function csw2_vehicules_settings_page()
 					<th scope="row">Durée de l'affichage des annonces</th>
 					<td>
 						<p>
-							<input type="number" name="csw2_vehicules_settings[duree_affichage]" value="<?= $csw2_vehicules_settings["duree_affichage"] ?>"> jours
+							<input type="number" name="csw2_vehicules_settings[duree_affichage]" value="<?= $csw2_vehicules_settings["duree_affichage"] ?>" min="1" max="30"> jours
 						</p>
 					</td>
 				</tr>
@@ -86,9 +88,7 @@ function csw2_vehicules_settings_page()
 					<th scope="row">Rôles permis</th>
 					<td>
 						<p>
-							<input type="checkbox" name="csw2_vehicules_settings[roles_permis][]" value="administrator" <?php checked(in_array("administrator", $csw2_vehicules_settings["roles_permis"])) ?>>
-							Administrateurs
-							<br>
+							<input type="hidden" name="csw2_vehicules_settings[roles_permis][]" value="administrator" <?php checked(in_array("administrator", $csw2_vehicules_settings["roles_permis"])) ?>>
 							<input type="checkbox" name="csw2_vehicules_settings[roles_permis][]" value="editor" <?php checked(in_array("editor", $csw2_vehicules_settings["roles_permis"])) ?>>
 							Éditeurs
 							<br>
@@ -108,10 +108,10 @@ function csw2_vehicules_settings_page()
 					<th scope="row">Visibilité par défaut des annonces</th>
 					<td>
 						<p>
-							<input type="radio" name="csw2_vehicules_settings[visibilite_annonces]" value="yes" <?php checked(!isset($csw2_vehicules_settings['visibilite_annonces']) || $csw2_vehicules_settings['visibilite_annonces'] === 'oui') ?>>
+							<input type="radio" name="csw2_vehicules_settings[visibilite_annonces]" value="oui" <?php checked(!isset($csw2_vehicules_settings['visibilite_annonces']) || $csw2_vehicules_settings['visibilite_annonces'] === 'oui') ?> required>
 							oui
 							<br>
-							<input type="radio" name="csw2_vehicules_settings[visibilite_annonces]" value="no" <?php checked(isset($csw2_vehicules_settings['visibilite_annonces']) && $csw2_vehicules_settings['visibilite_annonces'] === 'non') ?>>
+							<input type="radio" name="csw2_vehicules_settings[visibilite_annonces]" value="non" <?php checked(isset($csw2_vehicules_settings['visibilite_annonces']) && $csw2_vehicules_settings['visibilite_annonces'] === 'non') ?> required>
 							non
 						</p>
 					</td>
