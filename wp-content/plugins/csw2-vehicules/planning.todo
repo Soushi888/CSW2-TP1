@@ -3,7 +3,7 @@
 ✔ Page Annoncer un véhicule @done (2020-03-06 00 h 52 min 32 s)
     ✔ Vérifier proprietaire_id @done (2020-03-09 17 h 35 min 41 s)
     ☐ Système d'images
-☐ Consultation des annonces
+✔ Consultation des annonces @done (2020-03-13 05 h 08 min 51 s)
     ✔ Liste des annonces @done (2020-03-10 23 h 02 min 30 s)
     ✔ Filtre et trie @done (2020-03-10 23 h 02 min 31 s)
     ✔ Gestion des rôles @done (2020-03-13 04 h 48 min 46 s)
@@ -11,7 +11,7 @@
         ✔ Administrateur @done (2020-03-13 01 h 28 min 34 s)
         ✔ Autorisés @done (2020-03-13 04 h 48 min 42 s)
         ✔ Annonyme @done (2020-03-13 04 h 48 min 43 s)
-    ☐ Page annonce individuelle
+    ✔ Page annonce individuelle @done (2020-03-13 05 h 08 min 50 s)
 ☐ Formulaire Modification d'une annonce
 ☐ Page confirmation suppression annonce
 ☐ Interface Administrateur et options

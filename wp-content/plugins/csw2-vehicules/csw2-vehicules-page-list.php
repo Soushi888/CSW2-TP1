@@ -124,7 +124,7 @@ function csw2_vehicules_html_list_code()
                     <hr>
                     <article style="display: flex">
 
-                        <h4 style="margin: 0; width: 300px;">
+                        <h4 style="margin: 0; width: 400px;">
                             <a href="<?php echo $single_permalink . '?id=' . $vehicule->vehicule_id ?>"><?= stripslashes($vehicule->vehicule_marque) . " " . stripslashes($vehicule->vehicule_modele) . " " . stripslashes($vehicule->vehicule_couleur) ?></a>
                         </h4>
                         <div>

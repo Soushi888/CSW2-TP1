@@ -78,7 +78,7 @@ function csw2_vehicules_html_single_code()
 			<?php
 		else :
 			?>
-				<p>Cette véhicule n'est pas enregistrée.</p>
+				<p>Ce véhicule n'est pas enregistré.</p>
 			<?php
 		endif;
 			?>
