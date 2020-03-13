@@ -53,21 +53,31 @@ function csw2_vehicules_html_list_code()
         </style>
 
         <form class="form_vehicules_search" style="margin-top: 30px" action="<?= esc_url($_SERVER['REQUEST_URI']) ?>" method="post">
-            <input type="text" style="display: inline-block; width: 500px; padding: 0 10px; line-height: 50px" name="vehicule-search" placeholder="Filtrer les véhicules par marque, modèle, couleur ou prix max" value="<?= $vehicule_search ?>">
             <fieldset>
-                <legend>Propriété</legend>
-                <select name="vehicule-prop" id="vehicule-prop">
-                    <option value="id">Id</option>
-                    <option value="marque">Marque</option>
-                    <option value="modele">Modèle</option>
-                    <option value="couleur">Couleur</option>
-                    <option value="annee_circulation">Année mise en circulation</option>
-                </select>
-            </fieldset>
-            <fieldset>
-                <legend>Sens</legend>
-                <label for="ASC">ASC<input type="radio" name="vehicule-sens" id="ASC" value="ASC"></label>
-                <label for="DESC">DESC<input type="radio" name="vehicule-sens" id="DESC" value="DESC" checked></label>
+                <legend>Recherche</legend>
+                <fieldset>
+                    <legend>Mots-clés</legend>
+                    <input type="text" style="display: inline-block; width: 500px; padding: 0 10px; line-height: 50px" name="vehicule-search" placeholder="Filtrer les véhicules par marque, modèle, couleur ou prix max" value="<?= $vehicule_search ?>">
+                </fieldset>
+                <fieldset>
+                    <legend>Trie</legend>
+                    <fieldset>
+                        <legend>Propriété</legend>
+                        <select name="vehicule-prop" id="vehicule-prop">
+                            <option value="id">Id</option>
+                            <option value="marque">Marque</option>
+                            <option value="modele">Modèle</option>
+                            <option value="couleur">Couleur</option>
+                            <option value="annee_circulation">Année mise en circulation</option>
+                            <option value="prix">Prix</option>
+                        </select>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Sens</legend>
+                        <label for="ASC">ASC<input type="radio" name="vehicule-sens" id="ASC" value="ASC"></label>
+                        <label for="DESC">DESC<input type="radio" name="vehicule-sens" id="DESC" value="DESC" checked></label>
+                    </fieldset>
+                </fieldset>
             </fieldset>
 
             <input type="submit" style="display: inline-block; margin-left: 20px; padding: 0 24px; line-height: 50px;" name="submitted" value="Recherchez">
@@ -78,11 +88,11 @@ function csw2_vehicules_html_list_code()
 	   ---------------------------------- */
 
         $sql  = "SELECT * FROM $wpdb->prefix" . "vehicules
-			 WHERE (vehicule_marque LIKE '%s') OR (vehicule_modele LIKE '%s') OR (vehicule_couleur LIKE '%s') OR (vehicule_prix < '%d')
+			 WHERE (vehicule_marque LIKE '%s') OR (vehicule_modele LIKE '%s') OR (vehicule_couleur LIKE '%s') OR (vehicule_prix <= '%d')
                 ORDER BY $vehicule_prop $vehicule_sens;";
 
 
-        $vehicules = $wpdb->get_results($wpdb->prepare($sql, '%' . $vehicule_search . '%', '%' . $vehicule_search . '%', '%' . $vehicule_search . '%', '%' . $vehicule_search . '%'));
+        $vehicules = $wpdb->get_results($wpdb->prepare($sql, '%' . $vehicule_search . '%', '%' . $vehicule_search . '%', '%' . $vehicule_search . '%',  $vehicule_search));
 
         // die($wpdb->prepare($sql, '%' . $vehicule_search . '%', '%' . $vehicule_search . '%', '%' . $vehicule_search . '%', '%' . $vehicule_search . '%'));
 
@@ -96,9 +106,9 @@ function csw2_vehicules_html_list_code()
 
             foreach ($vehicules as $vehicule) :
                 $propietaire = get_user_by("id", $vehicule->vehicule_proprietaire_id);
-                if ($propietaire === false) {
+                if ($propietaire === false) { // Si le propriétaire de l'annonce n'est pas un utilisateur enregistré,
                     $propietaire = (object) $propietaire;
-                    $propietaire->user_login = "annonyme";
+                    $propietaire->user_login = "annonyme"; // lui donner l'identifiant "annonyme"
                 } ?>
 
                 <hr>
@@ -125,6 +135,7 @@ function csw2_vehicules_html_list_code()
                             </div>
                         <?php endif; ?>
 
+                        <!-- Dans tout les cas, afficher Marque, Modèle, Coueleur, etc... -->
                         <div style="display: flex">
                             <p style="width:270px; padding: 5px; color: #777">Marque :</p>
                             <p style="padding: 5px"><?= stripslashes(nl2br($vehicule->vehicule_marque)) ?></p>
@@ -157,6 +168,7 @@ function csw2_vehicules_html_list_code()
 
                         <?php // Si l'utilisateur conecté est connecté où si il est celui qui a publié l'annonce
                         if (current_user_can('administrator') || get_current_user_id() == $vehicule->vehicule_proprietaire_id) : ?>
+                            <!-- Il peut Supprimmer ou modifer son annonce (ou toutes si il est administrateur) -->
                             <div>
                                 <button>Supprimmer</button>
                                 <button>Modifier</button>

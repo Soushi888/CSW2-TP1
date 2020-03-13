@@ -6,7 +6,7 @@
  */
 /*
 Plugin Name: CSW2_vehicules
-Description: Ceci est un plugin permettant à des utilisteurs de gérer la vente de leur véhicule d'occasion. 
+Description: Ceci est un plugin permettant à des utilisteurs de gérer la vente de leurs véhicules d'occasion. 
 Author: Sacha Pignot
 Version: 0.1
 Author URI: https://www.linkedin.com/in/sacha-pignot-75b645160/
