@@ -29,6 +29,11 @@ function csw2_vehicules_html_single_code()
 
 		$vehicule = $wpdb->get_row($wpdb->prepare($sql, $vehicule_id));
 		if ($vehicule !== null) :
+			$current_user = wp_get_current_user();
+            if (empty($current_user->roles)) $current_user->roles = ["annonyme"];
+
+            $settings = get_option('csw2_vehicules_settings');
+
 			$propietaire = get_user_by("id", $vehicule->vehicule_proprietaire_id);
 
 			if ($propietaire === false) { // Si le propriétaire de l'annonce n'est pas un utilisateur enregistré,
@@ -36,52 +41,61 @@ function csw2_vehicules_html_single_code()
 				$propietaire->user_login = "annonyme"; // lui donner l'identifiant "annonyme"
 			}
 		?>
-				<div style="display: flex">
-					<p style="width:270px; padding: 5px; color: #777">Propriétaire :</p>
-					<p style="padding: 5px"><?= $propietaire->user_login ?></p>
-				</div>
+			<div style="display: flex">
+				<p style="width:270px; padding: 5px; color: #777">Propriétaire :</p>
+				<p style="padding: 5px"><?= $propietaire->user_login ?></p>
+			</div>
 
-				<div style="display: flex">
-					<p style="width:270px; padding: 5px; color: #777">Marque :</p>
-					<p style="padding: 5px"><?= stripslashes(nl2br($vehicule->vehicule_marque)) ?></p>
-				</div>
+			<div style="display: flex">
+				<p style="width:270px; padding: 5px; color: #777">Marque :</p>
+				<p style="padding: 5px"><?= stripslashes(nl2br($vehicule->vehicule_marque)) ?></p>
+			</div>
 
-				<div style="display: flex">
-					<p style="width:270px; padding: 5px; color: #777">Modèle :</p>
-					<p style="padding: 5px"><?= stripslashes(nl2br($vehicule->vehicule_modele)) ?></p>
-				</div>
+			<div style="display: flex">
+				<p style="width:270px; padding: 5px; color: #777">Modèle :</p>
+				<p style="padding: 5px"><?= stripslashes(nl2br($vehicule->vehicule_modele)) ?></p>
+			</div>
 
-				<div style="display: flex">
-					<p style="width:270px; padding: 5px; color: #777">Couleur :</p>
-					<p style="padding: 5px"><?= stripslashes(nl2br($vehicule->vehicule_couleur)) ?></p>
-				</div>
+			<div style="display: flex">
+				<p style="width:270px; padding: 5px; color: #777">Couleur :</p>
+				<p style="padding: 5px"><?= stripslashes(nl2br($vehicule->vehicule_couleur)) ?></p>
+			</div>
 
-				<div style="display: flex">
-					<p style="width:270px; padding: 5px; color: #777">Année de mise en circulation : </p>
-					<p style="padding: 5px"><?= $vehicule->vehicule_annee_circulation ?></p>
-				</div>
+			<div style="display: flex">
+				<p style="width:270px; padding: 5px; color: #777">Année de mise en circulation : </p>
+				<p style="padding: 5px"><?= $vehicule->vehicule_annee_circulation ?></p>
+			</div>
 
-				<div style="display: flex">
-					<p style="width:270px; padding: 5px; color: #777">Kilométrage :</p>
-					<p style="padding: 5px"><?= $vehicule->vehicule_kilometrage ?>km</p>
-				</div>
+			<div style="display: flex">
+				<p style="width:270px; padding: 5px; color: #777">Kilométrage :</p>
+				<p style="padding: 5px"><?= $vehicule->vehicule_kilometrage ?>km</p>
+			</div>
 
-				<div style="display: flex">
-					<p style="width:270px; padding: 5px; color: #777">Prix :</p>
-					<p style="padding: 5px"><?= $vehicule->vehicule_prix ?> $</p>
-				</div>
+			<div style="display: flex">
+				<p style="width:270px; padding: 5px; color: #777">Prix :</p>
+				<p style="padding: 5px"><?= $vehicule->vehicule_prix ?> $</p>
+			</div>
 
-				<div style="display: flex">
-					<p style="width:270px; padding: 5px; color: #777">Date d'enregistrement :</p>
-					<p style="padding: 5px"><?= $vehicule->vehicule_date_enregistrement ?></p>
+			<div style="display: flex">
+				<p style="width:270px; padding: 5px; color: #777">Date d'enregistrement :</p>
+				<p style="padding: 5px"><?= $vehicule->vehicule_date_enregistrement ?></p>
+			</div>
+
+			<?php // Si l'utilisateur conecté est un administrateur où si il est celui qui a publié l'annonce et qu'il a un rôle autorisé
+			if ((current_user_can('administrator') || (get_current_user_id() == $vehicule->vehicule_proprietaire_id)) && (in_array($current_user->roles[0], $settings["roles_permis"]))) : ?>
+				<!-- Il peut Supprimmer ou modifer son annonce (ou toutes si il est administrateur) -->
+				<div>
+					<button>Supprimmer</button>
+					<button>Modifier</button>
 				</div>
-			<?php
+			<?php endif; ?>
+		<?php
 		else :
-			?>
-				<p>Ce véhicule n'est pas enregistré.</p>
-			<?php
+		?>
+			<p>Ce véhicule n'est pas enregistré.</p>
+		<?php
 		endif;
-			?>
+		?>
 	</section>
 <?php
 }

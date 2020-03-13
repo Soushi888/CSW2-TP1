@@ -4,9 +4,9 @@
  * Création du formulaire de saisie d'une véhicule
  *
  * @param none
- * @return echo html form vehicule code
+ * @return echo html update vehicule code
  */
-function html_form_vehicule_code()
+function html_update_vehicule_code()
 {
 ?>
     <form action="<?php echo esc_url($_SERVER['REQUEST_URI']) ?>" method="post" enctype="multipart/form-data">
@@ -39,7 +39,7 @@ function html_form_vehicule_code()
  * @param none
  * @return none
  */
-function insert_vehicule()
+function update_vehicule()
 {
     // si le bouton submit est cliqué
     if (isset($_POST['submitted'])) {
@@ -109,13 +109,13 @@ function insert_vehicule()
  * @param none
  * @return the content of the output buffer (end output buffering)
  */
-function shortcode_input_form_vehicule()
+function shortcode_input_update_vehicule()
 {
     ob_start(); // temporisation de sortie
     insert_vehicule();
-    html_form_vehicule_code();
+    html_update_vehicule_code();
     return ob_get_clean(); // fin de la temporisation de sortie pour l'envoi au navigateur
 }
 
 // créer un shortcode pour afficher et traiter le formulaire
-add_shortcode('annoncer_vehicule', 'shortcode_input_form_vehicule');
+add_shortcode('modifier_vehicule', 'shortcode_input_update_vehicule');

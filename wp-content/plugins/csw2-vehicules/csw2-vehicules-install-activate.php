@@ -118,7 +118,33 @@ function csw2_vehicules_create_pages()
         'post_status'    => 'publish',
         'comment_status' => 'closed',
         'ping_status'    => 'closed',
-        'meta_input'     => array('csw2_vehicules' => 'form')
+        'meta_input'     => array('csw2_vehicules' => 'add')
+    );
+    wp_insert_post($csw2_vehicules_page);
+
+    // Formulaire pour modifier un véhicule
+    $csw2_vehicules_page = array(
+        'post_title'     => "Modifier un véhicule",
+        'post_name'      => "modifier-vehicule",
+        'post_content'   => "[modifier_vehicule]",
+        'post_type'      => 'page',
+        'post_status'    => 'publish',
+        'comment_status' => 'closed',
+        'ping_status'    => 'closed',
+        'meta_input'     => array('csw2_vehicules' => 'update')
+    );
+    wp_insert_post($csw2_vehicules_page);
+
+    // Formulaire pour supprimer un véhicule
+    $csw2_vehicules_page = array(
+        'post_title'     => "Supprimer un véhicule",
+        'post_name'      => "supprimer-vehicule",
+        'post_content'   => "[supprimer_vehicule]",
+        'post_type'      => 'page',
+        'post_status'    => 'publish',
+        'comment_status' => 'closed',
+        'ping_status'    => 'closed',
+        'meta_input'     => array('csw2_vehicules' => 'delete')
     );
     wp_insert_post($csw2_vehicules_page);
 
