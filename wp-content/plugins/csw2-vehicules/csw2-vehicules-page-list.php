@@ -173,11 +173,17 @@ function csw2_vehicules_html_list_code()
                                 $postmeta = $wpdb->get_row(
                                     "SELECT * FROM $wpdb->postmeta WHERE meta_key = 'csw2_vehicules' AND meta_value = 'delete'"
                                 );
-                                $delete_permalink = get_permalink($postmeta->post_id); ?>
+                                $delete_permalink = get_permalink($postmeta->post_id); 
+
+                                $postmeta = $wpdb->get_row(
+                                    "SELECT * FROM $wpdb->postmeta WHERE meta_key = 'csw2_vehicules' AND meta_value = 'update'"
+                                );
+                                $update_permalink = get_permalink($postmeta->post_id); ?>
+                                
                                 <!-- Il peut Supprimmer ou modifer son annonce (ou toutes si il est administrateur) -->
                                 <div>
                                     <button><a style="color: #fff; text-decoration: none;" href="<?= $delete_permalink . "?id=" . $vehicule->vehicule_id ?>">Supprimmer</a></button>
-                                    <button>Modifier</button>
+                                    <button><a style="color: #fff; text-decoration: none;" href="<?= $update_permalink . "?id=" . $vehicule->vehicule_id ?>">Modifier</a></button>
                                 </div>
                             <?php endif; ?>
                         </div>

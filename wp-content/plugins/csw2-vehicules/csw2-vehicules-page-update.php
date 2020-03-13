@@ -1,46 +1,71 @@
 <?php
 
 /**
- * Création du formulaire de saisie d'une véhicule
+ * Création du formulaire de modification d'un véhicule
  *
  * @param none
  * @return echo html update vehicule code
  */
 function html_update_vehicule_code()
 {
-?>
-    <form action="<?php echo esc_url($_SERVER['REQUEST_URI']) ?>" method="post" enctype="multipart/form-data">
-        <label for="marque">Marque du véhicule
-            <input type="text" name="marque" id="marque" required></label><br>
-        <label for="modele">Modèle du véhicule
-            <input type="text" name="modele" id="modele" required></label><br>
-        <label for="couleur">Couleur du véhicule
-            <input type="text" name="couleur" id="couleur" required></label><br>
-        <!-- <label>Photo du véhicule
+    global $wpdb;
+
+    $current_user = wp_get_current_user();
+    if (empty($current_user->roles)) $current_user->roles = ["annonyme"];
+
+    $settings = get_option('csw2_vehicules_settings');
+
+    $postmeta = $wpdb->get_row(
+        "SELECT * FROM $wpdb->postmeta WHERE meta_key = 'csw2_vehicules' AND meta_value = 'single'"
+    );
+    $single_permalink = get_permalink($postmeta->post_id);
+
+    $vehicule_id = isset($_GET['id']) ? $_GET['id'] : null;
+    $sql = "SELECT * FROM $wpdb->prefix" . "vehicules
+    WHERE vehicule_id = %d";
+
+    $vehicule = $wpdb->get_row($wpdb->prepare($sql, $vehicule_id));
+    if ($vehicule === null) : ?>
+        <p>Ce véhicule n'existe pas.</p>
+    <?php elseif (get_current_user_id() == $vehicule->vehicule_proprietaire_id && in_array($current_user->roles[0], $settings["roles_permis"])) : ?>
+        <h4>véhicule no.<?= stripslashes($vehicule->vehicule_id) . " : " . stripslashes($vehicule->vehicule_marque) . " " . stripslashes($vehicule->vehicule_modele) . " " . stripslashes($vehicule->vehicule_couleur) ?></h4>
+        <p><a href="<?= $single_permalink . "?id=" . $vehicule_id ?>">Retour à la page du véhicule.</a></p>
+        <form action="<?php echo esc_url($_SERVER['REQUEST_URI']) ?>" method="post" enctype="multipart/form-data">
+            <label for="marque">Marque du véhicule
+                <input type="text" name="marque" id="marque" value="<?= $vehicule->vehicule_marque ?>" required></label><br>
+            <label for="modele">Modèle du véhicule
+                <input type="text" name="modele" id="modele" value="<?= $vehicule->vehicule_modele ?>" required></label><br>
+            <label for="couleur">Couleur du véhicule
+                <input type="text" name="couleur" id="couleur" value="<?= $vehicule->vehicule_couleur ?>" required></label><br>
+            <!-- <label>Photo du véhicule
             <input type="file" name="photo" required></label><br> -->
-        <label for="annee-circulation">Année de mise en circulation du véhicule
-            <input type="number" min="1900" max="<?= date("Y") ?>" step="1" value="<?= date("Y") ?>" name="annee_circulation" id="annee_circulation" required></label><br>
-        <label for="kilometrage">Kilométrage du véhicule
-            <input type="text" name="kilometrage" id="kilometrage" required></label><br>
-        <label for="prix">Prix du véhicule
-            <input type="text" name="prix" id="prix" required></label><br>
+            <label for="annee-circulation">Année de mise en circulation du véhicule
+                <input type="number" min="1900" max="<?= date("Y") + 1 ?>" step="1" value="<?= date("Y") ?>" name="annee_circulation" id="annee_circulation" required></label><br>
+            <label for="kilometrage">Kilométrage du véhicule
+                <input type="text" name="kilometrage" id="kilometrage" value="<?= $vehicule->vehicule_kilometrage ?>" required></label><br>
+            <label for="prix">Prix du véhicule
+                <input type="text" name="prix" id="prix" value="<?= $vehicule->vehicule_prix ?>" required></label><br>
 
-        <input type="hidden" name="proprietaire_id" id="proprietaire_id" value="<?= get_current_user_id() ?>" required>
+            <input type="hidden" name="proprietaire_id" id="proprietaire_id" value="<?= get_current_user_id() ?>" required>
 
-
-        <input type="submit" style="margin-top: 30px;" name="submitted" value="Envoyez">
-    </form>
-    <?php
+            <input type="submit" style="margin-top: 30px;" name="submitted" value="Envoyez">
+        </form>
+    <?php else : ?>
+        <p>Vous n'avez pas l'autorisation de supprimer ce véhicule.</p>
+        <?php endif;
 }
 
 /**
- * Insertion d'une véhicule dans la table vehicules
+ * Modification d'un véhicule dans la table vehicules
  *
  * @param none
  * @return none
  */
 function update_vehicule()
 {
+    global $wpdb;
+    
+    $vehicule_id = isset($_GET['id']) ? $_GET['id'] : null;
     // si le bouton submit est cliqué
     if (isset($_POST['submitted'])) {
         // assainir les valeurs du formulaire
@@ -50,12 +75,11 @@ function update_vehicule()
         $annee_circulation = sanitize_text_field($_POST["annee_circulation"]);
         $kilometrage = sanitize_text_field($_POST["kilometrage"]);
         $prix = sanitize_text_field($_POST["prix"]);
-        $proprietaire_id = sanitize_text_field($_POST["proprietaire_id"]);
 
-        // insertion dans la table
+        // Modification dans la table
         global $wpdb;
         try {
-            $wpdb->insert(
+            $wpdb->update(
                 $wpdb->prefix . 'vehicules',
                 array(
                     'vehicule_marque' => $marque,
@@ -63,24 +87,17 @@ function update_vehicule()
                     'vehicule_couleur' => $couleur,
                     'vehicule_annee_circulation' => $annee_circulation,
                     'vehicule_kilometrage' => $kilometrage,
-                    'vehicule_prix' => $prix,
-                    'vehicule_proprietaire_id' => $proprietaire_id
+                    'vehicule_prix' => $prix
                 ),
                 array(
-                    '%s',
-                    '%s',
-                    '%s',
-                    '%d',
-                    '%d',
-                    '%d',
-                    '%d'
+                    'vehicule_id' => $vehicule_id,
                 )
             );
-    ?>
-            <p>Le véhicule a été enregistré.</p>
+        ?>
+            <p>Les modifications ont été enregistrées.</p>
         <?php
         } catch (Exception $e) { ?>
-            <p>Le véhicule n'a pas été enregistré.</p>
+            <p>Les modifications n'ont pas été enregistrées.</p>
 <?php
             echo "Erreur : " . $e->getMessage();
         }
@@ -112,7 +129,7 @@ function update_vehicule()
 function shortcode_input_update_vehicule()
 {
     ob_start(); // temporisation de sortie
-    insert_vehicule();
+    update_vehicule();
     html_update_vehicule_code();
     return ob_get_clean(); // fin de la temporisation de sortie pour l'envoi au navigateur
 }

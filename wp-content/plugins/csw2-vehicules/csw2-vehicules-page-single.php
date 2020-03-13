@@ -15,10 +15,21 @@ function csw2_vehicules_html_single_code()
 	/* Affichage d'un lien vers la page de liste des véhicules
 	   ------------------------------------------------------ */
 	global $wpdb;
-	$postmeta = $wpdb->get_row("SELECT * FROM $wpdb->postmeta WHERE meta_key = 'csw2_vehicules' AND meta_value = 'list'");
+	$postmeta = $wpdb->get_row("SELECT * FROM $wpdb->postmeta WHERE meta_key = 'csw2_vehicules' AND meta_value = 'delete'");
+	$delete_permalink = get_permalink($postmeta->post_id);
+
+	$postmeta = $wpdb->get_row(
+		"SELECT * FROM $wpdb->postmeta WHERE meta_key = 'csw2_vehicules' AND meta_value = 'list'"
+	);
+	$list_permalink = get_permalink($postmeta->post_id);
+	
+	$postmeta = $wpdb->get_row(
+		"SELECT * FROM $wpdb->postmeta WHERE meta_key = 'csw2_vehicules' AND meta_value = 'update'"
+	);
+	$update_permalink = get_permalink($postmeta->post_id);
 ?>
 	<section style="margin: 0 auto; width: 80%; max-width: 100%; padding: 0">
-		<a style="display: inline-block; margin-bottom: 30px;" href="<?php echo get_permalink($postmeta->post_id) ?>">Liste des véhicules</a>
+		<a style="display: inline-block; margin-bottom: 30px;" href="<?= $list_permalink ?>">Liste des véhicules</a>
 		<?php
 
 		/* Affichage du véhicule 
@@ -30,9 +41,9 @@ function csw2_vehicules_html_single_code()
 		$vehicule = $wpdb->get_row($wpdb->prepare($sql, $vehicule_id));
 		if ($vehicule !== null) :
 			$current_user = wp_get_current_user();
-            if (empty($current_user->roles)) $current_user->roles = ["annonyme"];
+			if (empty($current_user->roles)) $current_user->roles = ["annonyme"];
 
-            $settings = get_option('csw2_vehicules_settings');
+			$settings = get_option('csw2_vehicules_settings');
 
 			$propietaire = get_user_by("id", $vehicule->vehicule_proprietaire_id);
 
@@ -85,8 +96,8 @@ function csw2_vehicules_html_single_code()
 			if ((current_user_can('administrator') || (get_current_user_id() == $vehicule->vehicule_proprietaire_id)) && (in_array($current_user->roles[0], $settings["roles_permis"]))) : ?>
 				<!-- Il peut Supprimmer ou modifer son annonce (ou toutes si il est administrateur) -->
 				<div>
-				<button><a style="color: #fff; text-decoration: none;" href="<?= 'supprimer-vehicule?id=' . $vehicule->vehicule_id ?>">Supprimmer</a></button>
-					<button>Modifier</button>
+					<button><a style="color: #fff; text-decoration: none;" href="<?= $delete_permalink . "?id=" . $vehicule->vehicule_id ?>">Supprimmer</a></button>
+					<button><a style="color: #fff; text-decoration: none;" href="<?= $update_permalink . "?id=" . $vehicule->vehicule_id ?>">Modifier</a></button>
 				</div>
 			<?php endif; ?>
 		<?php

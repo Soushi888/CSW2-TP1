@@ -59,6 +59,11 @@ function delete_vehicule()
     // si le bouton submit est cliqué
     if (isset($_POST['submitted'])) {
 
+        $postmeta = $wpdb->get_row(
+            "SELECT * FROM $wpdb->postmeta WHERE meta_key = 'csw2_vehicules' AND meta_value = 'list'"
+        );
+        $list_permalink = get_permalink($postmeta->post_id);
+
         global $wpdb;
         $vehicule_id = isset($_GET['id']) ? $_GET['id'] : null;
 
@@ -72,18 +77,21 @@ function delete_vehicule()
                 );
         ?>
                 <p>Le véhicule a été supprimé.</p>
+                <p><a href="<?= $list_permalink ?>">Retour à la liste des véhicules.</a></p>
             <?php
                 exit;
             } catch (Exception $e) { ?>
                 <p>Le véhicule n'a pas été supprimé.</p>
+                <p><a href="<?= $single_permalink . "?id=" . $vehicule_id ?>">Retour à la page du véhicule.</a></p>
             <?php
                 echo "Erreur : " . $e->getMessage();
             } elseif ($_POST["confirmation"] == "non") : ?>
             <p>Le véhicule n'a pas été supprimé.</p>
             <p><a href="<?= $single_permalink . "?id=" . $vehicule_id ?>">Retour à la page du véhicule.</a></p>
-<?php
+        <?php
             exit;
-        endif;
+        endif; ?>
+<?php
     }
     // supression dans la table
 
