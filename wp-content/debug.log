@@ -565,3 +565,17 @@ Stack trace:
 [13-Mar-2020 15:53:14 UTC] PHP Parse error:  syntax error, unexpected '}', expecting ')' in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-settings.php on line 41
 [13-Mar-2020 15:55:14 UTC] PHP Parse error:  syntax error, unexpected '}', expecting ')' in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-settings.php on line 41
 [13-Mar-2020 15:57:27 UTC] PHP Parse error:  syntax error, unexpected '}', expecting ')' in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-settings.php on line 41
+[13-Mar-2020 18:08:23 UTC] PHP Notice:  Undefined index: view_ingredients in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-settings.php on line 52
+[13-Mar-2020 18:08:23 UTC] PHP Notice:  Undefined index: view_instructions in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-settings.php on line 53
+[13-Mar-2020 18:08:23 UTC] PHP Notice:  Undefined index: view_cook_time in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-settings.php on line 55
+[13-Mar-2020 18:08:23 UTC] PHP Notice:  Undefined index: duree_affichage in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-settings.php on line 78
+[13-Mar-2020 18:08:23 UTC] PHP Notice:  Undefined index: roles_permis in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-settings.php on line 86
+[13-Mar-2020 18:08:23 UTC] PHP Warning:  in_array() expects parameter 2 to be array, null given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-settings.php on line 86
+[13-Mar-2020 18:08:23 UTC] PHP Notice:  Undefined index: roles_permis in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-settings.php on line 89
+[13-Mar-2020 18:08:23 UTC] PHP Warning:  in_array() expects parameter 2 to be array, null given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-settings.php on line 89
+[13-Mar-2020 18:08:23 UTC] PHP Notice:  Undefined index: roles_permis in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-settings.php on line 92
+[13-Mar-2020 18:08:23 UTC] PHP Warning:  in_array() expects parameter 2 to be array, null given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-settings.php on line 92
+[13-Mar-2020 18:08:23 UTC] PHP Notice:  Undefined index: roles_permis in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-settings.php on line 95
+[13-Mar-2020 18:08:23 UTC] PHP Warning:  in_array() expects parameter 2 to be array, null given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-settings.php on line 95
+[13-Mar-2020 18:08:23 UTC] PHP Notice:  Undefined index: roles_permis in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-settings.php on line 98
+[13-Mar-2020 18:08:23 UTC] PHP Warning:  in_array() expects parameter 2 to be array, null given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-settings.php on line 98

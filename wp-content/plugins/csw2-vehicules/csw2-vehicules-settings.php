@@ -40,6 +40,7 @@ function csw2_vehicules_register_setting()
 		'csw2_vehicules_sanitize_option' // fonction pour assainir les valeurs de l'option des réglages	
 	);
 }
+
 /**
  * Assainissement des valeurs de l'option renvoyées par le formulaire des réglages
  *
@@ -68,61 +69,52 @@ function csw2_vehicules_settings_page()
 		<h2>Réglages de CSW2_vehicules</h2>
 		<form method="post" action="options.php">
 			<?php settings_fields('csw2_vehicules_option_group'); // génération de balises input cachés pour faire le lien avec la fonction register_setting par le paramètre option_group 
-			?>
-			<?php $csw2_vehicules_settings = get_option('csw2_vehicules_settings'); ?>
-			<h3>Visibilité des rubriques sur la page de liste</h3>
+			$csw2_vehicules_settings = get_option('csw2_vehicules_settings'); ?>
 			<table class="form-table">
 				<tr>
-					<th scope="row">Ingrédients</th>
+					<th scope="row">Durée de l'affichage des annonces</th>
 					<td>
 						<p>
-							<input type="radio" name="csw2_vehicules_settings[view_ingredients]" value="yes" <?php checked(!isset($csw2_vehicules_settings['view_ingredients']) || $csw2_vehicules_settings['view_ingredients'] === 'yes') ?>>
-							oui
-							<br>
-							<input type="radio" name="csw2_vehicules_settings[view_ingredients]" value="no" <?php checked(isset($csw2_vehicules_settings['view_ingredients']) && $csw2_vehicules_settings['view_ingredients'] === 'no') ?>>
-							non
+							<input type="number" name="csw2_vehicules_settings['duree_affichage']" value="<?= $csw2_vehicules_settings["duree_affichage"] ?>"> jours
 						</p>
 					</td>
 				</tr>
 				<tr>
-					<th scope="row">Instructions</th>
+					<th scope="row">Rôles permis</th>
 					<td>
 						<p>
-							<input type="radio" name="csw2_vehicules_settings[view_instructions]" value="yes" <?php checked(!isset($csw2_vehicules_settings['view_instructions']) || $csw2_vehicules_settings['view_instructions'] === 'yes') ?>>
-							oui
+							<input type="checkbox" name="csw2_vehicules_settings['roles_permis']" value="administrator" <?php checked(in_array("administrator", $csw2_vehicules_settings["roles_permis"])) ?>>
+							Administrateurs
 							<br>
-							<input type="radio" name="csw2_vehicules_settings[view_instructions]" value="no" <?php checked(isset($csw2_vehicules_settings['view_instructions']) && $csw2_vehicules_settings['view_instructions'] === 'no') ?>>
-							non
+							<input type="checkbox" name="csw2_vehicules_settings['roles_permis']" value="editor" <?php checked(in_array("editor", $csw2_vehicules_settings["roles_permis"])) ?>>
+							Éditeurs
+							<br>
+							<input type="checkbox" name="csw2_vehicules_settings['roles_permis']" value="author" <?php checked(in_array("author", $csw2_vehicules_settings["roles_permis"])) ?>>
+							Auteurs
+							<br>
+							<input type="checkbox" name="csw2_vehicules_settings['roles_permis']" value="contributor" <?php checked(in_array("contributor", $csw2_vehicules_settings["roles_permis"])) ?>>
+							Contributeurs
+							<br>
+							<input type="checkbox" name="csw2_vehicules_settings['roles_permis']" value="subscriber" <?php checked(in_array("subscriber", $csw2_vehicules_settings["roles_permis"])) ?>>
+							Abonnés
+
 						</p>
 					</td>
 				</tr>
 				<tr>
-					<th scope="row">Temps de préparation</th>
+					<th scope="row">Visibilité par défaut des annonces</th>
 					<td>
 						<p>
-							<input type="radio" name="csw2_vehicules_settings[view_prep_time]" value="yes" <?php checked(!isset($csw2_vehicules_settings['view_prep_time']) || $csw2_vehicules_settings['view_prep_time'] === 'yes') ?>>
+							<input type="radio" name="csw2_vehicules_settings[visibilite_annonces]" value="yes" <?php checked(!isset($csw2_vehicules_settings['visibilite_annonces']) || $csw2_vehicules_settings['visibilite_annonces'] === 'yes') ?>>
 							oui
 							<br>
-							<input type="radio" name="csw2_vehicules_settings[view_prep_time]" value="no" <?php checked(isset($csw2_vehicules_settings['view_prep_time']) && $csw2_vehicules_settings['view_prep_time'] === 'no') ?>>
-							non
-						</p>
-					</td>
-				</tr>
-				<tr>
-					<th scope="row">Temps de cuisson</th>
-					<td>
-						<p>
-							<input type="radio" name="csw2_vehicules_settings[view_cook_time]" value="yes" <?php checked(!isset($csw2_vehicules_settings['view_cook_time']) || $csw2_vehicules_settings['view_cook_time'] === 'yes') ?>>
-							oui
-							<br>
-							<input type="radio" name="csw2_vehicules_settings[view_cook_time]" value="no" <?php checked(isset($csw2_vehicules_settings['view_cook_time']) && $csw2_vehicules_settings['view_cook_time'] === 'no') ?>>
+							<input type="radio" name="csw2_vehicules_settings[visibilite_annonces]" value="no" <?php checked(isset($csw2_vehicules_settings['visibilite_annonces']) && $csw2_vehicules_settings['visibilite_annonces'] === 'no') ?>>
 							non
 						</p>
 					</td>
 				</tr>
 			</table>
-			<pre><?php // print_r($csw2_vehicules_settings); 
-					?></pre>
+			<pre><?php print_r($csw2_vehicules_settings) ?></pre>
 			<p class="submit">
 				<input type="submit" class="button-primary" value="Enregistrer les modifications">
 			</p>
