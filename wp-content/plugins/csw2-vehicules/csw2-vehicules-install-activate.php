@@ -48,6 +48,7 @@ function csw2_vehicules_create_table()
         vehicule_kilometrage INT NOT NULL,
         vehicule_prix INT NOT NULL,
         vehicule_date_enregistrement TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+        vehicule_visibilite BOOLEAN NOT NULL,
         vehicule_proprietaire_id INT NOT NULL,
         PRIMARY KEY (vehicule_id))
       ENGINE = InnoDB " . $wpdb->get_charset_collate();
@@ -66,6 +67,7 @@ function csw2_vehicules_add_data()
         vehicule_annee_circulation,
         vehicule_kilometrage,
         vehicule_prix,
+        vehicule_visibilite,
         vehicule_proprietaire_id)        
         VALUES
         ('Toyota', 'TOYCRX', 'rouge', 2003, 3000, 12000, 1, 1),

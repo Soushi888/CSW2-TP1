@@ -7,7 +7,7 @@ CREATE TABLE IF NOT EXISTS csw2_vehicules (
         vehicule_kilometrage INT NOT NULL,
         vehicule_prix INT NOT NULL,
         vehicule_date_enregistrement TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-        vehicule_visibilite VARCHAR(255) NOT NULL,
+        vehicule_visibilite BOOLEAN NOT NULL,
         vehicule_proprietaire_id INT NOT NULL,
         PRIMARY KEY (vehicule_id))
     ENGINE = InnoDB;
@@ -21,6 +21,7 @@ INSERT INTO csw2_vehicules(
     vehicule_annee_circulation,
     vehicule_kilometrage,
     vehicule_prix,
+    vehicule_visibilite,
     vehicule_proprietaire_id)        
 VALUES
     ('Toyota', 'TOYCRX', 'rouge', 2003, 3000, 12000, 1, 1),
