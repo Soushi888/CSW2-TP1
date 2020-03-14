@@ -48,10 +48,10 @@ function html_update_vehicule_code()
             <fieldset style="display: flex; justify-content: center;">
                 <legend>Visibilite du véhicule</legend>
                 <label for="oui">Oui
-                    <input type="radio" name="visibilite" id="oui" value="oui" required>
+                    <input type="radio" name="visibilite" id="oui" value="oui" <?php checked($vehicule->vehicule_visibilite == "oui") ?> required>
                 </label>
                 <label for="non">Non
-                    <input type="radio" name="visibilite" id="non" value="non" required>
+                    <input type="radio" name="visibilite" id="non" value="non" <?php checked($vehicule->vehicule_visibilite == "non") ?> required>
                 </label>
             </fieldset>
 
@@ -83,6 +83,7 @@ function update_vehicule()
         $couleur = sanitize_text_field($_POST["couleur"]);
         $annee_circulation = sanitize_text_field($_POST["annee_circulation"]);
         $kilometrage = sanitize_text_field($_POST["kilometrage"]);
+        $visibilite = sanitize_text_field($_POST["visibilite"]);
         $prix = sanitize_text_field($_POST["prix"]);
 
         // Modification dans la table
@@ -96,7 +97,8 @@ function update_vehicule()
                     'vehicule_couleur' => $couleur,
                     'vehicule_annee_circulation' => $annee_circulation,
                     'vehicule_kilometrage' => $kilometrage,
-                    'vehicule_prix' => $prix
+                    'vehicule_prix' => $prix,
+                    'vehicule_visibilite' => $visibilite
                 ),
                 array(
                     'vehicule_id' => $vehicule_id,

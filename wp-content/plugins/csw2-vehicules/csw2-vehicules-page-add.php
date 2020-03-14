@@ -28,10 +28,10 @@ function html_form_vehicule_code()
         <fieldset style="display: flex; justify-content: center;">
             <legend>Visibilite du véhicule</legend>
             <label for="oui">Oui
-                <input type="radio" name="visibilite" id="oui" value="oui" <?php checked($settings["visbilite_annonces"] == "oui") ?> required>
+                <input type="radio" name="visibilite" id="oui" value="oui" <?php checked($settings["visibilite_annonces"] == "oui") ?> required>
             </label>
             <label for="non">Non
-                <input type="radio" name="visibilite" id="non" value="non" <?php checked($settings["visbilite_annonces"] == "non") ?> required>
+                <input type="radio" name="visibilite" id="non" value="non" <?php checked($settings["visibilite_annonces"] == "non") ?> required>
             </label>
         </fieldset>
 

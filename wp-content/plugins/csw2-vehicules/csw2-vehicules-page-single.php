@@ -22,7 +22,7 @@ function csw2_vehicules_html_single_code()
 		"SELECT * FROM $wpdb->postmeta WHERE meta_key = 'csw2_vehicules' AND meta_value = 'list'"
 	);
 	$list_permalink = get_permalink($postmeta->post_id);
-	
+
 	$postmeta = $wpdb->get_row(
 		"SELECT * FROM $wpdb->postmeta WHERE meta_key = 'csw2_vehicules' AND meta_value = 'update'"
 	);
@@ -56,6 +56,13 @@ function csw2_vehicules_html_single_code()
 				<p style="width:270px; padding: 5px; color: #777">Propriétaire :</p>
 				<p style="padding: 5px"><?= $propietaire->user_login ?></p>
 			</div>
+
+			<?php if ((current_user_can('administrator')) || get_current_user_id() == $vehicule->vehicule_proprietaire_id) : ?>
+				<div style="display: flex">
+					<p style="width:270px; padding: 5px; color: #777">Visibilité :</p>
+					<p style="padding: 5px"><?= $vehicule->vehicule_visibilite ?></p>
+				</div>
+			<?php endif; ?>
 
 			<div style="display: flex">
 				<p style="width:270px; padding: 5px; color: #777">Marque :</p>
