@@ -12,7 +12,7 @@ Ce plugin wordpress, développé par Sacha Pignot dans le cadre du cours "Créat
 - mot de passe : ^rm)5KfGw&J(9soHh6UxE%LW
 #### abonné
 - identifiant : abonne
-- mot de passe : bRWlAu0^b$XqEMaQfkJ)zSUV
+- mot de passe : YQNKt&iE5F%2kGgwsa$e!Y^f
 #### auteur (rôle autorisé par défaut)
 - identifiant : auteur
 - mot de passe : QAqW^W5wBOZh96wUjt24@1ZV

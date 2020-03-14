@@ -120,7 +120,7 @@ function csw2_vehicules_html_list_code()
                     $propietaire->user_login = "annonyme"; // lui donner l'identifiant "annonyme"
                 }
                 // Si l'utilisateur n'est pas connecté ou si il simple abonné ou administrateur : afficher toutes les annonces ou alors seulement celles de l'utilisateur autorisé
-                if (((current_user_can('administrator') || (in_array("annonyme", $current_user->roles)  && $vehicule->vehicule_visibilite == "oui)" || (in_array("subscriber", $current_user->roles)  && $vehicule->vehicule_visibilite == "oui")) || (get_current_user_id() == $vehicule->vehicule_proprietaire_id)))) :  ?>
+                if (((current_user_can('administrator') || ((in_array("annonyme", $current_user->roles)  && $vehicule->vehicule_visibilite == "oui")|| ((in_array("subscriber", $current_user->roles)  && $vehicule->vehicule_visibilite == "oui"))) || (get_current_user_id() == $vehicule->vehicule_proprietaire_id)))) :  ?>
                     <hr>
                     <article style="display: flex">
 
