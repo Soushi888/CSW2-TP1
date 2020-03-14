@@ -8,8 +8,14 @@ Ce plugin wordpress, développé par Sacha Pignot dans le cadre du cours "Créat
 [https://cmaisonneuve.sacha-pignot.website/tp1/](https://cmaisonneuve.sacha-pignot.website/tp1/)
 ### Utiliateurs
 #### admin
+- identifiant : admin
+- mot de passe : ^rm)5KfGw&J(9soHh6UxE%LW
 #### abonné
+- identifiant : abonne
+- mot de passe : bRWlAu0^b$XqEMaQfkJ)zSUV
 #### auteur (rôle autorisé par défaut)
+- identifiant : auteur
+- mot de passe : QAqW^W5wBOZh96wUjt24@1ZV
 
 ## Liste des fichiers
 - csw2-vehicules.php 
