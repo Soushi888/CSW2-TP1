@@ -5,5 +5,5 @@ Ce plugin wordpress, développé par Sacha Pignot dans le cadre du cours "Créat
 
 ## Liste des fichiers
 - csw2-vehicules.php
-fichier principale qui inclut tout les autres fichiers
+-- fichier principale qui inclut tout les autres fichiers
 - csw2-vehicules.php
