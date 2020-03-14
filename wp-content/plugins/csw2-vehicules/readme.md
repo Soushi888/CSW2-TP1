@@ -34,4 +34,5 @@ Ce plugin wordpress, développé par Sacha Pignot dans le cadre du cours "Créat
     - fichier contenant le script qui affiche la liste de tout les vehicules en fonction du rôle de l'utilisateur et de si il est propriétaire ou pas des annonces
 - csw2-vehicules-page-single.php
     - fichier contenant le script qui affiche la page d'un véhicule en particulier
-
+- csw2-vehicules-settings.php
+    - fichier contenant le script qui gère les otpions du plugin et le panneau de configuration de l'administrateur dans le back office
