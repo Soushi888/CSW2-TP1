@@ -98,7 +98,7 @@ function csw2_vehicules_default_settings()
         array(
             "duree_affichage"  => '15',
             "roles_permis" => ['administrator', "author"],
-            "visibilite_annonces" => true
+            "visibilite_annonces" => "oui"
         )
     );
 }
