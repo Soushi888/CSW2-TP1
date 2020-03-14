@@ -29,7 +29,7 @@ function html_update_vehicule_code()
     
     if ($vehicule === null) : ?>
         <p>Ce véhicule n'existe pas.</p>
-    <?php elseif (get_current_user_id() == $vehicule->vehicule_proprietaire_id && in_array($current_user->roles[0], $csw2_vehicules_settings["roles_permis"])) : ?>
+    <?php elseif (get_current_user_id() == $vehicule->vehicule_proprietaire_id && in_array($current_user->roles[0], $csw2_vehicules_settings["roles_permis"]) || current_user_can("administrator")) : ?>
         <h4>véhicule no.<?= stripslashes($vehicule->vehicule_id) . " : " . stripslashes($vehicule->vehicule_marque) . " " . stripslashes($vehicule->vehicule_modele) . " " . stripslashes($vehicule->vehicule_couleur) ?></h4>
         <p><a href="<?= $single_permalink . "?id=" . $vehicule_id ?>">Retour à la page du véhicule.</a></p>
         <form action="<?php echo esc_url($_SERVER['REQUEST_URI']) ?>" method="post" enctype="multipart/form-data">
