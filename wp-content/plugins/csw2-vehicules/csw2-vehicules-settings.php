@@ -122,7 +122,6 @@ function csw2_vehicules_settings_page()
 				<input type="submit" class="button-primary" value="Enregistrer les modifications">
 			</p>
 		</form>
-			<pre><?php print_r($csw2_vehicules_settings) ?></pre>
 	</div>
 <?php
 }

@@ -1,4 +1,6 @@
 <?php
+// Incomplet
+
 $sql = "SELECT * FROM $wpdb->prefix" . "vehicules";
 $vehicules = $wpdb->get_results($sql);
 
