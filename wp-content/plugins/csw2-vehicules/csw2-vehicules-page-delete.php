@@ -13,6 +13,7 @@ function html_delete_vehicule_code()
     
     $current_user = wp_get_current_user();
     if (empty($current_user->roles)) $current_user->roles = ["annonyme"];
+    
     $vehicule_id = isset($_GET['id']) ? $_GET['id'] : null;
     $sql = "SELECT * FROM $wpdb->prefix" . "vehicules
     WHERE vehicule_id = %d";

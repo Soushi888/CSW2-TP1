@@ -13,8 +13,10 @@ function html_update_vehicule_code()
     $current_user = wp_get_current_user();
     if (empty($current_user->roles)) $current_user->roles = ["annonyme"];
 
+    // Optenir les options du plugins
     global $csw2_vehicules_settings;
 
+    // Obtenir le permalink de la page actuelle
     $postmeta = $wpdb->get_row(
         "SELECT * FROM $wpdb->postmeta WHERE meta_key = 'csw2_vehicules' AND meta_value = 'single'"
     );
@@ -23,8 +25,8 @@ function html_update_vehicule_code()
     $vehicule_id = isset($_GET['id']) ? $_GET['id'] : null;
     $sql = "SELECT * FROM $wpdb->prefix" . "vehicules
     WHERE vehicule_id = %d";
-
     $vehicule = $wpdb->get_row($wpdb->prepare($sql, $vehicule_id));
+    
     if ($vehicule === null) : ?>
         <p>Ce véhicule n'existe pas.</p>
     <?php elseif (get_current_user_id() == $vehicule->vehicule_proprietaire_id && in_array($current_user->roles[0], $csw2_vehicules_settings["roles_permis"])) : ?>

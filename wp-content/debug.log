@@ -867,3 +867,415 @@ Stack trace:
 #5 {main}
   thrown in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 16
 [14-Mar-2020 01:56:20 UTC] PHP Notice:  Trying to get property 'post_id' of non-object in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-list.php on line 24
+[14-Mar-2020 02:07:23 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get_page_permastruct() on null in C:\wamp64\www\CSW2-TP1\wp-includes\link-template.php:376
+Stack trace:
+#0 C:\wamp64\www\CSW2-TP1\wp-includes\link-template.php(338): _get_page_link(Object(WP_Post), false, false)
+#1 C:\wamp64\www\CSW2-TP1\wp-includes\link-template.php(146): get_page_link(Object(WP_Post), false, false)
+#2 C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php(20): get_permalink(Object(WP_Post))
+#3 C:\wamp64\www\CSW2-TP1\wp-settings.php(360): include_once('C:\\wamp64\\www\\C...')
+#4 C:\wamp64\www\CSW2-TP1\wp-config.php(96): require_once('C:\\wamp64\\www\\C...')
+#5 C:\wamp64\www\CSW2-TP1\wp-load.php(37): require_once('C:\\wamp64\\www\\C...')
+#6 C:\wamp64\www\CSW2-TP1\wp-admin\admin-ajax.php(22): require_once('C:\\wamp64\\www\\C...')
+#7 {main}
+  thrown in C:\wamp64\www\CSW2-TP1\wp-includes\link-template.php on line 376
+[14-Mar-2020 02:07:32 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get_page_permastruct() on null in C:\wamp64\www\CSW2-TP1\wp-includes\link-template.php:376
+Stack trace:
+#0 C:\wamp64\www\CSW2-TP1\wp-includes\link-template.php(338): _get_page_link(Object(WP_Post), false, false)
+#1 C:\wamp64\www\CSW2-TP1\wp-includes\link-template.php(146): get_page_link(Object(WP_Post), false, false)
+#2 C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php(20): get_permalink(Object(WP_Post))
+#3 C:\wamp64\www\CSW2-TP1\wp-settings.php(360): include_once('C:\\wamp64\\www\\C...')
+#4 C:\wamp64\www\CSW2-TP1\wp-config.php(96): require_once('C:\\wamp64\\www\\C...')
+#5 C:\wamp64\www\CSW2-TP1\wp-load.php(37): require_once('C:\\wamp64\\www\\C...')
+#6 C:\wamp64\www\CSW2-TP1\wp-blog-header.php(13): require_once('C:\\wamp64\\www\\C...')
+#7 C:\wamp64\www\CSW2-TP1\index.php(17): require('C:\\wamp64\\www\\C...')
+#8 {main}
+  thrown in C:\wamp64\www\CSW2-TP1\wp-includes\link-template.php on line 376
+[14-Mar-2020 02:07:48 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get_page_permastruct() on null in C:\wamp64\www\CSW2-TP1\wp-includes\link-template.php:376
+Stack trace:
+#0 C:\wamp64\www\CSW2-TP1\wp-includes\link-template.php(338): _get_page_link(Object(WP_Post), false, false)
+#1 C:\wamp64\www\CSW2-TP1\wp-includes\link-template.php(146): get_page_link(Object(WP_Post), false, false)
+#2 C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php(20): get_permalink(Object(WP_Post))
+#3 C:\wamp64\www\CSW2-TP1\wp-settings.php(360): include_once('C:\\wamp64\\www\\C...')
+#4 C:\wamp64\www\CSW2-TP1\wp-config.php(96): require_once('C:\\wamp64\\www\\C...')
+#5 C:\wamp64\www\CSW2-TP1\wp-load.php(37): require_once('C:\\wamp64\\www\\C...')
+#6 C:\wamp64\www\CSW2-TP1\wp-blog-header.php(13): require_once('C:\\wamp64\\www\\C...')
+#7 C:\wamp64\www\CSW2-TP1\index.php(17): require('C:\\wamp64\\www\\C...')
+#8 {main}
+  thrown in C:\wamp64\www\CSW2-TP1\wp-includes\link-template.php on line 376
+[14-Mar-2020 02:12:53 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get_page_permastruct() on null in C:\wamp64\www\CSW2-TP1\wp-includes\link-template.php:376
+Stack trace:
+#0 C:\wamp64\www\CSW2-TP1\wp-includes\link-template.php(338): _get_page_link(Object(WP_Post), false, false)
+#1 C:\wamp64\www\CSW2-TP1\wp-includes\link-template.php(146): get_page_link(Object(WP_Post), false, false)
+#2 C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php(47): get_permalink(Object(WP_Post))
+#3 C:\wamp64\www\CSW2-TP1\wp-settings.php(360): include_once('C:\\wamp64\\www\\C...')
+#4 C:\wamp64\www\CSW2-TP1\wp-config.php(96): require_once('C:\\wamp64\\www\\C...')
+#5 C:\wamp64\www\CSW2-TP1\wp-load.php(37): require_once('C:\\wamp64\\www\\C...')
+#6 C:\wamp64\www\CSW2-TP1\wp-blog-header.php(13): require_once('C:\\wamp64\\www\\C...')
+#7 C:\wamp64\www\CSW2-TP1\index.php(17): require('C:\\wamp64\\www\\C...')
+#8 {main}
+  thrown in C:\wamp64\www\CSW2-TP1\wp-includes\link-template.php on line 376
+[14-Mar-2020 02:13:03 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get_page_permastruct() on null in C:\wamp64\www\CSW2-TP1\wp-includes\link-template.php:376
+Stack trace:
+#0 C:\wamp64\www\CSW2-TP1\wp-includes\link-template.php(338): _get_page_link(Object(WP_Post), false, false)
+#1 C:\wamp64\www\CSW2-TP1\wp-includes\link-template.php(146): get_page_link(Object(WP_Post), false, false)
+#2 C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php(47): get_permalink(Object(WP_Post))
+#3 C:\wamp64\www\CSW2-TP1\wp-settings.php(360): include_once('C:\\wamp64\\www\\C...')
+#4 C:\wamp64\www\CSW2-TP1\wp-config.php(96): require_once('C:\\wamp64\\www\\C...')
+#5 C:\wamp64\www\CSW2-TP1\wp-load.php(37): require_once('C:\\wamp64\\www\\C...')
+#6 C:\wamp64\www\CSW2-TP1\wp-blog-header.php(13): require_once('C:\\wamp64\\www\\C...')
+#7 C:\wamp64\www\CSW2-TP1\index.php(17): require('C:\\wamp64\\www\\C...')
+#8 {main}
+  thrown in C:\wamp64\www\CSW2-TP1\wp-includes\link-template.php on line 376
+[14-Mar-2020 02:13:16 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get_page_permastruct() on null in C:\wamp64\www\CSW2-TP1\wp-includes\link-template.php:376
+Stack trace:
+#0 C:\wamp64\www\CSW2-TP1\wp-includes\link-template.php(338): _get_page_link(Object(WP_Post), false, false)
+#1 C:\wamp64\www\CSW2-TP1\wp-includes\link-template.php(146): get_page_link(Object(WP_Post), false, false)
+#2 C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php(47): get_permalink(Object(WP_Post))
+#3 C:\wamp64\www\CSW2-TP1\wp-settings.php(360): include_once('C:\\wamp64\\www\\C...')
+#4 C:\wamp64\www\CSW2-TP1\wp-config.php(96): require_once('C:\\wamp64\\www\\C...')
+#5 C:\wamp64\www\CSW2-TP1\wp-load.php(37): require_once('C:\\wamp64\\www\\C...')
+#6 C:\wamp64\www\CSW2-TP1\wp-blog-header.php(13): require_once('C:\\wamp64\\www\\C...')
+#7 C:\wamp64\www\CSW2-TP1\index.php(17): require('C:\\wamp64\\www\\C...')
+#8 {main}
+  thrown in C:\wamp64\www\CSW2-TP1\wp-includes\link-template.php on line 376
+[14-Mar-2020 02:19:06 UTC] PHP Notice:  Undefined variable: vehicules in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 46
+[14-Mar-2020 02:19:06 UTC] PHP Warning:  Invalid argument supplied for foreach() in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 46
+[14-Mar-2020 02:19:15 UTC] PHP Notice:  Undefined variable: vehicules in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 46
+[14-Mar-2020 02:19:15 UTC] PHP Warning:  Invalid argument supplied for foreach() in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 46
+[14-Mar-2020 02:19:16 UTC] PHP Notice:  Undefined variable: vehicules in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 46
+[14-Mar-2020 02:19:16 UTC] PHP Warning:  Invalid argument supplied for foreach() in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 46
+[14-Mar-2020 02:19:23 UTC] PHP Notice:  Undefined variable: vehicules in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 46
+[14-Mar-2020 02:19:23 UTC] PHP Warning:  Invalid argument supplied for foreach() in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 46
+[14-Mar-2020 02:20:08 UTC] PHP Notice:  Undefined variable: vehicule_id in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 47
+[14-Mar-2020 02:20:08 UTC] PHP Notice:  Undefined variable: vehicules in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 49
+[14-Mar-2020 02:20:08 UTC] PHP Warning:  Invalid argument supplied for foreach() in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 49
+[14-Mar-2020 02:20:58 UTC] PHP Warning:  date_diff() expects parameter 2 to be DateTimeInterface, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 49
+[14-Mar-2020 02:20:58 UTC] PHP Warning:  date_diff() expects parameter 2 to be DateTimeInterface, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 49
+[14-Mar-2020 02:20:58 UTC] PHP Warning:  date_diff() expects parameter 2 to be DateTimeInterface, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 49
+[14-Mar-2020 02:20:58 UTC] PHP Warning:  date_diff() expects parameter 2 to be DateTimeInterface, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 49
+[14-Mar-2020 02:20:58 UTC] PHP Warning:  date_diff() expects parameter 2 to be DateTimeInterface, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 49
+[14-Mar-2020 02:20:58 UTC] PHP Warning:  date_diff() expects parameter 2 to be DateTimeInterface, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 49
+[14-Mar-2020 02:20:58 UTC] PHP Warning:  date_diff() expects parameter 2 to be DateTimeInterface, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 49
+[14-Mar-2020 02:20:58 UTC] PHP Warning:  date_diff() expects parameter 2 to be DateTimeInterface, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 49
+[14-Mar-2020 02:20:58 UTC] PHP Warning:  date_diff() expects parameter 2 to be DateTimeInterface, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 49
+[14-Mar-2020 02:20:58 UTC] PHP Warning:  date_diff() expects parameter 2 to be DateTimeInterface, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 49
+[14-Mar-2020 02:20:58 UTC] PHP Warning:  date_diff() expects parameter 2 to be DateTimeInterface, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 49
+[14-Mar-2020 02:20:58 UTC] PHP Warning:  date_diff() expects parameter 2 to be DateTimeInterface, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 49
+[14-Mar-2020 02:20:58 UTC] PHP Warning:  date_diff() expects parameter 2 to be DateTimeInterface, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 49
+[14-Mar-2020 02:21:23 UTC] PHP Warning:  date_diff() expects parameter 2 to be DateTimeInterface, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 49
+[14-Mar-2020 02:21:23 UTC] PHP Warning:  date_diff() expects parameter 2 to be DateTimeInterface, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 49
+[14-Mar-2020 02:21:23 UTC] PHP Warning:  date_diff() expects parameter 2 to be DateTimeInterface, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 49
+[14-Mar-2020 02:21:23 UTC] PHP Warning:  date_diff() expects parameter 2 to be DateTimeInterface, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 49
+[14-Mar-2020 02:21:23 UTC] PHP Warning:  date_diff() expects parameter 2 to be DateTimeInterface, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 49
+[14-Mar-2020 02:21:23 UTC] PHP Warning:  date_diff() expects parameter 2 to be DateTimeInterface, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 49
+[14-Mar-2020 02:21:23 UTC] PHP Warning:  date_diff() expects parameter 2 to be DateTimeInterface, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 49
+[14-Mar-2020 02:21:23 UTC] PHP Warning:  date_diff() expects parameter 2 to be DateTimeInterface, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 49
+[14-Mar-2020 02:21:23 UTC] PHP Warning:  date_diff() expects parameter 2 to be DateTimeInterface, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 49
+[14-Mar-2020 02:21:23 UTC] PHP Warning:  date_diff() expects parameter 2 to be DateTimeInterface, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 49
+[14-Mar-2020 02:21:23 UTC] PHP Warning:  date_diff() expects parameter 2 to be DateTimeInterface, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 49
+[14-Mar-2020 02:21:23 UTC] PHP Warning:  date_diff() expects parameter 2 to be DateTimeInterface, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 49
+[14-Mar-2020 02:21:23 UTC] PHP Warning:  date_diff() expects parameter 2 to be DateTimeInterface, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 49
+[14-Mar-2020 02:22:10 UTC] PHP Warning:  date_diff() expects parameter 2 to be DateTimeInterface, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 50
+[14-Mar-2020 02:22:10 UTC] PHP Warning:  date_diff() expects parameter 2 to be DateTimeInterface, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 50
+[14-Mar-2020 02:22:10 UTC] PHP Warning:  date_diff() expects parameter 2 to be DateTimeInterface, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 50
+[14-Mar-2020 02:22:10 UTC] PHP Warning:  date_diff() expects parameter 2 to be DateTimeInterface, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 50
+[14-Mar-2020 02:22:10 UTC] PHP Warning:  date_diff() expects parameter 2 to be DateTimeInterface, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 50
+[14-Mar-2020 02:22:10 UTC] PHP Warning:  date_diff() expects parameter 2 to be DateTimeInterface, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 50
+[14-Mar-2020 02:22:10 UTC] PHP Warning:  date_diff() expects parameter 2 to be DateTimeInterface, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 50
+[14-Mar-2020 02:22:10 UTC] PHP Warning:  date_diff() expects parameter 2 to be DateTimeInterface, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 50
+[14-Mar-2020 02:22:10 UTC] PHP Warning:  date_diff() expects parameter 2 to be DateTimeInterface, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 50
+[14-Mar-2020 02:22:10 UTC] PHP Warning:  date_diff() expects parameter 2 to be DateTimeInterface, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 50
+[14-Mar-2020 02:22:10 UTC] PHP Warning:  date_diff() expects parameter 2 to be DateTimeInterface, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 50
+[14-Mar-2020 02:22:10 UTC] PHP Warning:  date_diff() expects parameter 2 to be DateTimeInterface, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 50
+[14-Mar-2020 02:22:10 UTC] PHP Warning:  date_diff() expects parameter 2 to be DateTimeInterface, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 50
+[14-Mar-2020 02:22:21 UTC] PHP Warning:  date_diff() expects parameter 2 to be DateTimeInterface, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 49
+[14-Mar-2020 02:22:21 UTC] PHP Warning:  date_diff() expects parameter 2 to be DateTimeInterface, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 49
+[14-Mar-2020 02:22:21 UTC] PHP Warning:  date_diff() expects parameter 2 to be DateTimeInterface, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 49
+[14-Mar-2020 02:22:21 UTC] PHP Warning:  date_diff() expects parameter 2 to be DateTimeInterface, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 49
+[14-Mar-2020 02:22:21 UTC] PHP Warning:  date_diff() expects parameter 2 to be DateTimeInterface, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 49
+[14-Mar-2020 02:22:21 UTC] PHP Warning:  date_diff() expects parameter 2 to be DateTimeInterface, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 49
+[14-Mar-2020 02:22:21 UTC] PHP Warning:  date_diff() expects parameter 2 to be DateTimeInterface, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 49
+[14-Mar-2020 02:22:21 UTC] PHP Warning:  date_diff() expects parameter 2 to be DateTimeInterface, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 49
+[14-Mar-2020 02:22:21 UTC] PHP Warning:  date_diff() expects parameter 2 to be DateTimeInterface, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 49
+[14-Mar-2020 02:22:21 UTC] PHP Warning:  date_diff() expects parameter 2 to be DateTimeInterface, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 49
+[14-Mar-2020 02:22:21 UTC] PHP Warning:  date_diff() expects parameter 2 to be DateTimeInterface, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 49
+[14-Mar-2020 02:22:21 UTC] PHP Warning:  date_diff() expects parameter 2 to be DateTimeInterface, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 49
+[14-Mar-2020 02:22:21 UTC] PHP Warning:  date_diff() expects parameter 2 to be DateTimeInterface, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 49
+[14-Mar-2020 02:22:40 UTC] PHP Warning:  date_diff() expects parameter 2 to be DateTimeInterface, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 49
+[14-Mar-2020 02:22:40 UTC] PHP Warning:  date_diff() expects parameter 2 to be DateTimeInterface, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 49
+[14-Mar-2020 02:22:40 UTC] PHP Warning:  date_diff() expects parameter 2 to be DateTimeInterface, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 49
+[14-Mar-2020 02:22:40 UTC] PHP Warning:  date_diff() expects parameter 2 to be DateTimeInterface, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 49
+[14-Mar-2020 02:22:40 UTC] PHP Warning:  date_diff() expects parameter 2 to be DateTimeInterface, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 49
+[14-Mar-2020 02:22:40 UTC] PHP Warning:  date_diff() expects parameter 2 to be DateTimeInterface, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 49
+[14-Mar-2020 02:22:40 UTC] PHP Warning:  date_diff() expects parameter 2 to be DateTimeInterface, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 49
+[14-Mar-2020 02:22:40 UTC] PHP Warning:  date_diff() expects parameter 2 to be DateTimeInterface, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 49
+[14-Mar-2020 02:22:40 UTC] PHP Warning:  date_diff() expects parameter 2 to be DateTimeInterface, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 49
+[14-Mar-2020 02:22:40 UTC] PHP Warning:  date_diff() expects parameter 2 to be DateTimeInterface, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 49
+[14-Mar-2020 02:22:40 UTC] PHP Warning:  date_diff() expects parameter 2 to be DateTimeInterface, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 49
+[14-Mar-2020 02:22:40 UTC] PHP Warning:  date_diff() expects parameter 2 to be DateTimeInterface, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 49
+[14-Mar-2020 02:22:40 UTC] PHP Warning:  date_diff() expects parameter 2 to be DateTimeInterface, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 49
+[14-Mar-2020 02:25:02 UTC] PHP Fatal error:  Uncaught Error: Cannot use object of type DateTime as array in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php:45
+Stack trace:
+#0 C:\wamp64\www\CSW2-TP1\wp-settings.php(360): include_once()
+#1 C:\wamp64\www\CSW2-TP1\wp-config.php(96): require_once('C:\\wamp64\\www\\C...')
+#2 C:\wamp64\www\CSW2-TP1\wp-load.php(37): require_once('C:\\wamp64\\www\\C...')
+#3 C:\wamp64\www\CSW2-TP1\wp-blog-header.php(13): require_once('C:\\wamp64\\www\\C...')
+#4 C:\wamp64\www\CSW2-TP1\index.php(17): require('C:\\wamp64\\www\\C...')
+#5 {main}
+  thrown in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 45
+[14-Mar-2020 02:25:08 UTC] PHP Fatal error:  Uncaught Error: Cannot use object of type DateTime as array in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php:45
+Stack trace:
+#0 C:\wamp64\www\CSW2-TP1\wp-settings.php(360): include_once()
+#1 C:\wamp64\www\CSW2-TP1\wp-config.php(96): require_once('C:\\wamp64\\www\\C...')
+#2 C:\wamp64\www\CSW2-TP1\wp-load.php(37): require_once('C:\\wamp64\\www\\C...')
+#3 C:\wamp64\www\CSW2-TP1\wp-blog-header.php(13): require_once('C:\\wamp64\\www\\C...')
+#4 C:\wamp64\www\CSW2-TP1\index.php(17): require('C:\\wamp64\\www\\C...')
+#5 {main}
+  thrown in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 45
+[14-Mar-2020 02:25:10 UTC] PHP Fatal error:  Uncaught Error: Cannot use object of type DateTime as array in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php:45
+Stack trace:
+#0 C:\wamp64\www\CSW2-TP1\wp-settings.php(360): include_once()
+#1 C:\wamp64\www\CSW2-TP1\wp-config.php(96): require_once('C:\\wamp64\\www\\C...')
+#2 C:\wamp64\www\CSW2-TP1\wp-load.php(37): require_once('C:\\wamp64\\www\\C...')
+#3 C:\wamp64\www\CSW2-TP1\wp-blog-header.php(13): require_once('C:\\wamp64\\www\\C...')
+#4 C:\wamp64\www\CSW2-TP1\index.php(17): require('C:\\wamp64\\www\\C...')
+#5 {main}
+  thrown in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 45
+[14-Mar-2020 02:25:27 UTC] PHP Fatal error:  Uncaught Error: Cannot use object of type DateTime as array in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php:45
+Stack trace:
+#0 C:\wamp64\www\CSW2-TP1\wp-settings.php(360): include_once()
+#1 C:\wamp64\www\CSW2-TP1\wp-config.php(96): require_once('C:\\wamp64\\www\\C...')
+#2 C:\wamp64\www\CSW2-TP1\wp-load.php(37): require_once('C:\\wamp64\\www\\C...')
+#3 C:\wamp64\www\CSW2-TP1\wp-blog-header.php(13): require_once('C:\\wamp64\\www\\C...')
+#4 C:\wamp64\www\CSW2-TP1\index.php(17): require('C:\\wamp64\\www\\C...')
+#5 {main}
+  thrown in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 45
+[14-Mar-2020 02:25:41 UTC] PHP Fatal error:  Uncaught Error: Cannot use object of type DateTime as array in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php:46
+Stack trace:
+#0 C:\wamp64\www\CSW2-TP1\wp-settings.php(360): include_once()
+#1 C:\wamp64\www\CSW2-TP1\wp-config.php(96): require_once('C:\\wamp64\\www\\C...')
+#2 C:\wamp64\www\CSW2-TP1\wp-load.php(37): require_once('C:\\wamp64\\www\\C...')
+#3 C:\wamp64\www\CSW2-TP1\wp-blog-header.php(13): require_once('C:\\wamp64\\www\\C...')
+#4 C:\wamp64\www\CSW2-TP1\index.php(17): require('C:\\wamp64\\www\\C...')
+#5 {main}
+  thrown in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 46
+[14-Mar-2020 02:25:51 UTC] PHP Notice:  Undefined property: DateTime::$date in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 45
+[14-Mar-2020 02:25:51 UTC] PHP Warning:  date_diff() expects parameter 1 to be DateTimeInterface, null given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 54
+[14-Mar-2020 02:25:51 UTC] PHP Warning:  date_diff() expects parameter 1 to be DateTimeInterface, null given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 54
+[14-Mar-2020 02:25:51 UTC] PHP Warning:  date_diff() expects parameter 1 to be DateTimeInterface, null given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 54
+[14-Mar-2020 02:25:51 UTC] PHP Warning:  date_diff() expects parameter 1 to be DateTimeInterface, null given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 54
+[14-Mar-2020 02:25:51 UTC] PHP Warning:  date_diff() expects parameter 1 to be DateTimeInterface, null given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 54
+[14-Mar-2020 02:25:51 UTC] PHP Warning:  date_diff() expects parameter 1 to be DateTimeInterface, null given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 54
+[14-Mar-2020 02:25:51 UTC] PHP Warning:  date_diff() expects parameter 1 to be DateTimeInterface, null given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 54
+[14-Mar-2020 02:25:51 UTC] PHP Warning:  date_diff() expects parameter 1 to be DateTimeInterface, null given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 54
+[14-Mar-2020 02:25:51 UTC] PHP Warning:  date_diff() expects parameter 1 to be DateTimeInterface, null given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 54
+[14-Mar-2020 02:25:51 UTC] PHP Warning:  date_diff() expects parameter 1 to be DateTimeInterface, null given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 54
+[14-Mar-2020 02:25:51 UTC] PHP Warning:  date_diff() expects parameter 1 to be DateTimeInterface, null given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 54
+[14-Mar-2020 02:25:51 UTC] PHP Warning:  date_diff() expects parameter 1 to be DateTimeInterface, null given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 54
+[14-Mar-2020 02:25:51 UTC] PHP Warning:  date_diff() expects parameter 1 to be DateTimeInterface, null given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 54
+[14-Mar-2020 02:26:05 UTC] PHP Warning:  date_diff() expects parameter 2 to be DateTimeInterface, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 54
+[14-Mar-2020 02:26:05 UTC] PHP Warning:  date_diff() expects parameter 2 to be DateTimeInterface, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 54
+[14-Mar-2020 02:26:05 UTC] PHP Warning:  date_diff() expects parameter 2 to be DateTimeInterface, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 54
+[14-Mar-2020 02:26:05 UTC] PHP Warning:  date_diff() expects parameter 2 to be DateTimeInterface, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 54
+[14-Mar-2020 02:26:05 UTC] PHP Warning:  date_diff() expects parameter 2 to be DateTimeInterface, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 54
+[14-Mar-2020 02:26:05 UTC] PHP Warning:  date_diff() expects parameter 2 to be DateTimeInterface, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 54
+[14-Mar-2020 02:26:05 UTC] PHP Warning:  date_diff() expects parameter 2 to be DateTimeInterface, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 54
+[14-Mar-2020 02:26:05 UTC] PHP Warning:  date_diff() expects parameter 2 to be DateTimeInterface, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 54
+[14-Mar-2020 02:26:05 UTC] PHP Warning:  date_diff() expects parameter 2 to be DateTimeInterface, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 54
+[14-Mar-2020 02:26:05 UTC] PHP Warning:  date_diff() expects parameter 2 to be DateTimeInterface, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 54
+[14-Mar-2020 02:26:05 UTC] PHP Warning:  date_diff() expects parameter 2 to be DateTimeInterface, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 54
+[14-Mar-2020 02:26:05 UTC] PHP Warning:  date_diff() expects parameter 2 to be DateTimeInterface, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 54
+[14-Mar-2020 02:26:05 UTC] PHP Warning:  date_diff() expects parameter 2 to be DateTimeInterface, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 54
+[14-Mar-2020 02:26:11 UTC] PHP Warning:  date_diff() expects parameter 2 to be DateTimeInterface, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 54
+[14-Mar-2020 02:26:11 UTC] PHP Warning:  date_diff() expects parameter 2 to be DateTimeInterface, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 54
+[14-Mar-2020 02:26:11 UTC] PHP Warning:  date_diff() expects parameter 2 to be DateTimeInterface, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 54
+[14-Mar-2020 02:26:11 UTC] PHP Warning:  date_diff() expects parameter 2 to be DateTimeInterface, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 54
+[14-Mar-2020 02:26:11 UTC] PHP Warning:  date_diff() expects parameter 2 to be DateTimeInterface, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 54
+[14-Mar-2020 02:26:11 UTC] PHP Warning:  date_diff() expects parameter 2 to be DateTimeInterface, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 54
+[14-Mar-2020 02:26:11 UTC] PHP Warning:  date_diff() expects parameter 2 to be DateTimeInterface, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 54
+[14-Mar-2020 02:26:11 UTC] PHP Warning:  date_diff() expects parameter 2 to be DateTimeInterface, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 54
+[14-Mar-2020 02:26:11 UTC] PHP Warning:  date_diff() expects parameter 2 to be DateTimeInterface, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 54
+[14-Mar-2020 02:26:11 UTC] PHP Warning:  date_diff() expects parameter 2 to be DateTimeInterface, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 54
+[14-Mar-2020 02:26:11 UTC] PHP Warning:  date_diff() expects parameter 2 to be DateTimeInterface, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 54
+[14-Mar-2020 02:26:11 UTC] PHP Warning:  date_diff() expects parameter 2 to be DateTimeInterface, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 54
+[14-Mar-2020 02:26:11 UTC] PHP Warning:  date_diff() expects parameter 2 to be DateTimeInterface, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 54
+[14-Mar-2020 02:26:29 UTC] PHP Notice:  Undefined property: DateTime::$date in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 45
+[14-Mar-2020 02:26:29 UTC] PHP Warning:  date_diff() expects parameter 1 to be DateTimeInterface, null given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 54
+[14-Mar-2020 02:26:29 UTC] PHP Warning:  date_diff() expects parameter 1 to be DateTimeInterface, null given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 54
+[14-Mar-2020 02:26:29 UTC] PHP Warning:  date_diff() expects parameter 1 to be DateTimeInterface, null given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 54
+[14-Mar-2020 02:26:29 UTC] PHP Warning:  date_diff() expects parameter 1 to be DateTimeInterface, null given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 54
+[14-Mar-2020 02:26:29 UTC] PHP Warning:  date_diff() expects parameter 1 to be DateTimeInterface, null given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 54
+[14-Mar-2020 02:26:29 UTC] PHP Warning:  date_diff() expects parameter 1 to be DateTimeInterface, null given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 54
+[14-Mar-2020 02:26:29 UTC] PHP Warning:  date_diff() expects parameter 1 to be DateTimeInterface, null given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 54
+[14-Mar-2020 02:26:29 UTC] PHP Warning:  date_diff() expects parameter 1 to be DateTimeInterface, null given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 54
+[14-Mar-2020 02:26:29 UTC] PHP Warning:  date_diff() expects parameter 1 to be DateTimeInterface, null given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 54
+[14-Mar-2020 02:26:29 UTC] PHP Warning:  date_diff() expects parameter 1 to be DateTimeInterface, null given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 54
+[14-Mar-2020 02:26:29 UTC] PHP Warning:  date_diff() expects parameter 1 to be DateTimeInterface, null given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 54
+[14-Mar-2020 02:26:29 UTC] PHP Warning:  date_diff() expects parameter 1 to be DateTimeInterface, null given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 54
+[14-Mar-2020 02:26:29 UTC] PHP Warning:  date_diff() expects parameter 1 to be DateTimeInterface, null given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 54
+[14-Mar-2020 02:26:39 UTC] PHP Notice:  Undefined property: DateTime::$date in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 45
+[14-Mar-2020 02:27:04 UTC] PHP Notice:  Undefined property: DateTime::$date in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 47
+[14-Mar-2020 02:27:24 UTC] PHP Fatal error:  Uncaught Error: Cannot use object of type DateTime as array in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php:47
+Stack trace:
+#0 C:\wamp64\www\CSW2-TP1\wp-settings.php(360): include_once()
+#1 C:\wamp64\www\CSW2-TP1\wp-config.php(96): require_once('C:\\wamp64\\www\\C...')
+#2 C:\wamp64\www\CSW2-TP1\wp-load.php(37): require_once('C:\\wamp64\\www\\C...')
+#3 C:\wamp64\www\CSW2-TP1\wp-blog-header.php(13): require_once('C:\\wamp64\\www\\C...')
+#4 C:\wamp64\www\CSW2-TP1\index.php(17): require('C:\\wamp64\\www\\C...')
+#5 {main}
+  thrown in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 47
+[14-Mar-2020 02:29:09 UTC] PHP Notice:  Undefined variable: row in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 45
+[14-Mar-2020 02:29:09 UTC] PHP Notice:  Trying to get property 'expireDate' of non-object in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 45
+[14-Mar-2020 02:29:09 UTC] PHP Notice:  Undefined variable: date in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 52
+[14-Mar-2020 02:29:47 UTC] PHP Notice:  Undefined variable: row in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 45
+[14-Mar-2020 02:29:47 UTC] PHP Notice:  Trying to get property 'expireDate' of non-object in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 45
+[14-Mar-2020 02:29:58 UTC] PHP Notice:  Undefined variable: expire in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 48
+[14-Mar-2020 02:29:58 UTC] PHP Notice:  Undefined variable: expire in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 48
+[14-Mar-2020 02:35:37 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function DateTime() in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php:44
+Stack trace:
+#0 C:\wamp64\www\CSW2-TP1\wp-settings.php(360): include_once()
+#1 C:\wamp64\www\CSW2-TP1\wp-config.php(96): require_once('C:\\wamp64\\www\\C...')
+#2 C:\wamp64\www\CSW2-TP1\wp-load.php(37): require_once('C:\\wamp64\\www\\C...')
+#3 C:\wamp64\www\CSW2-TP1\wp-admin\admin-ajax.php(22): require_once('C:\\wamp64\\www\\C...')
+#4 {main}
+  thrown in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 44
+[14-Mar-2020 02:35:38 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function DateTime() in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php:44
+Stack trace:
+#0 C:\wamp64\www\CSW2-TP1\wp-settings.php(360): include_once()
+#1 C:\wamp64\www\CSW2-TP1\wp-config.php(96): require_once('C:\\wamp64\\www\\C...')
+#2 C:\wamp64\www\CSW2-TP1\wp-load.php(37): require_once('C:\\wamp64\\www\\C...')
+#3 C:\wamp64\www\CSW2-TP1\wp-blog-header.php(13): require_once('C:\\wamp64\\www\\C...')
+#4 C:\wamp64\www\CSW2-TP1\index.php(17): require('C:\\wamp64\\www\\C...')
+#5 {main}
+  thrown in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 44
+[14-Mar-2020 02:36:03 UTC] PHP Warning:  strtotime() expects parameter 1 to be string, object given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 47
+[14-Mar-2020 02:36:03 UTC] PHP Warning:  date_add() expects parameter 1 to be DateTime, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 59
+[14-Mar-2020 02:36:03 UTC] PHP Warning:  date_add() expects parameter 1 to be DateTime, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 59
+[14-Mar-2020 02:36:03 UTC] PHP Warning:  date_add() expects parameter 1 to be DateTime, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 59
+[14-Mar-2020 02:36:03 UTC] PHP Warning:  date_add() expects parameter 1 to be DateTime, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 59
+[14-Mar-2020 02:36:03 UTC] PHP Warning:  date_add() expects parameter 1 to be DateTime, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 59
+[14-Mar-2020 02:36:03 UTC] PHP Warning:  date_add() expects parameter 1 to be DateTime, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 59
+[14-Mar-2020 02:36:03 UTC] PHP Warning:  date_add() expects parameter 1 to be DateTime, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 59
+[14-Mar-2020 02:36:03 UTC] PHP Warning:  date_add() expects parameter 1 to be DateTime, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 59
+[14-Mar-2020 02:36:03 UTC] PHP Warning:  date_add() expects parameter 1 to be DateTime, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 59
+[14-Mar-2020 02:36:03 UTC] PHP Warning:  date_add() expects parameter 1 to be DateTime, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 59
+[14-Mar-2020 02:36:03 UTC] PHP Warning:  date_add() expects parameter 1 to be DateTime, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 59
+[14-Mar-2020 02:36:03 UTC] PHP Warning:  date_add() expects parameter 1 to be DateTime, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 59
+[14-Mar-2020 02:36:03 UTC] PHP Warning:  date_add() expects parameter 1 to be DateTime, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 59
+[14-Mar-2020 02:36:37 UTC] PHP Warning:  strtotime() expects parameter 1 to be string, object given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 47
+[14-Mar-2020 02:36:37 UTC] PHP Warning:  date_add() expects parameter 1 to be DateTime, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 59
+[14-Mar-2020 02:36:37 UTC] PHP Warning:  date_add() expects parameter 1 to be DateTime, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 59
+[14-Mar-2020 02:36:37 UTC] PHP Warning:  date_add() expects parameter 1 to be DateTime, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 59
+[14-Mar-2020 02:36:37 UTC] PHP Warning:  date_add() expects parameter 1 to be DateTime, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 59
+[14-Mar-2020 02:36:37 UTC] PHP Warning:  date_add() expects parameter 1 to be DateTime, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 59
+[14-Mar-2020 02:36:37 UTC] PHP Warning:  date_add() expects parameter 1 to be DateTime, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 59
+[14-Mar-2020 02:36:37 UTC] PHP Warning:  date_add() expects parameter 1 to be DateTime, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 59
+[14-Mar-2020 02:36:37 UTC] PHP Warning:  date_add() expects parameter 1 to be DateTime, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 59
+[14-Mar-2020 02:36:37 UTC] PHP Warning:  date_add() expects parameter 1 to be DateTime, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 59
+[14-Mar-2020 02:36:37 UTC] PHP Warning:  date_add() expects parameter 1 to be DateTime, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 59
+[14-Mar-2020 02:36:37 UTC] PHP Warning:  date_add() expects parameter 1 to be DateTime, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 59
+[14-Mar-2020 02:36:37 UTC] PHP Warning:  date_add() expects parameter 1 to be DateTime, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 59
+[14-Mar-2020 02:36:37 UTC] PHP Warning:  date_add() expects parameter 1 to be DateTime, string given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 59
+[14-Mar-2020 02:37:29 UTC] PHP Warning:  strtotime() expects parameter 1 to be string, object given in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 47
+[14-Mar-2020 02:37:39 UTC] PHP Notice:  Undefined variable: today in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 52
+[14-Mar-2020 02:37:45 UTC] PHP Notice:  Undefined variable: today in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 52
+[14-Mar-2020 02:38:04 UTC] PHP Notice:  Undefined variable: today in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 52
+[14-Mar-2020 02:38:11 UTC] PHP Notice:  Undefined variable: today in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 52
+[14-Mar-2020 02:38:37 UTC] PHP Notice:  Undefined variable: today in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 52
+[14-Mar-2020 02:38:37 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php:62) in C:\wamp64\www\CSW2-TP1\wp-includes\http.php on line 494
+[14-Mar-2020 02:38:37 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php:62) in C:\wamp64\www\CSW2-TP1\wp-includes\http.php on line 495
+[14-Mar-2020 02:38:37 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php:62) in C:\wamp64\www\CSW2-TP1\wp-admin\admin-ajax.php on line 27
+[14-Mar-2020 02:38:37 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php:62) in C:\wamp64\www\CSW2-TP1\wp-admin\admin-ajax.php on line 28
+[14-Mar-2020 02:38:37 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php:62) in C:\wamp64\www\CSW2-TP1\wp-includes\functions.php on line 5915
+[14-Mar-2020 02:38:37 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php:62) in C:\wamp64\www\CSW2-TP1\wp-includes\functions.php on line 6029
+[14-Mar-2020 02:38:37 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php:62) in C:\wamp64\www\CSW2-TP1\wp-admin\includes\misc.php on line 1252
+[14-Mar-2020 02:39:05 UTC] PHP Notice:  Undefined variable: today in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 52
+[14-Mar-2020 02:39:37 UTC] PHP Notice:  Undefined variable: today in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 52
+[14-Mar-2020 02:39:45 UTC] PHP Notice:  Undefined variable: today in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 52
+[14-Mar-2020 02:40:02 UTC] PHP Notice:  Undefined variable: today in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 52
+[14-Mar-2020 02:40:38 UTC] PHP Notice:  Undefined variable: today in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 52
+[14-Mar-2020 02:40:49 UTC] PHP Notice:  Undefined variable: today in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 52
+[14-Mar-2020 02:41:37 UTC] PHP Notice:  Undefined variable: today in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 52
+[14-Mar-2020 02:43:37 UTC] PHP Notice:  Undefined variable: today in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 52
+[14-Mar-2020 02:45:37 UTC] PHP Notice:  Undefined variable: today in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 52
+[14-Mar-2020 02:47:03 UTC] PHP Notice:  Undefined variable: today in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 52
+[14-Mar-2020 02:47:05 UTC] PHP Notice:  Undefined variable: today in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 52
+[14-Mar-2020 02:47:10 UTC] PHP Notice:  Undefined variable: today in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 52
+[14-Mar-2020 02:47:11 UTC] PHP Notice:  Undefined variable: today in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 52
+[14-Mar-2020 02:48:03 UTC] PHP Notice:  Undefined variable: today in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 52
+[14-Mar-2020 02:49:31 UTC] PHP Notice:  Undefined variable: today in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 52
+[14-Mar-2020 02:49:31 UTC] PHP Fatal error:  Uncaught Error: Call to a member function add() on string in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php:61
+Stack trace:
+#0 C:\wamp64\www\CSW2-TP1\wp-settings.php(360): include_once()
+#1 C:\wamp64\www\CSW2-TP1\wp-config.php(96): require_once('C:\\wamp64\\www\\C...')
+#2 C:\wamp64\www\CSW2-TP1\wp-load.php(37): require_once('C:\\wamp64\\www\\C...')
+#3 C:\wamp64\www\CSW2-TP1\wp-blog-header.php(13): require_once('C:\\wamp64\\www\\C...')
+#4 C:\wamp64\www\CSW2-TP1\index.php(17): require('C:\\wamp64\\www\\C...')
+#5 {main}
+  thrown in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 61
+[14-Mar-2020 02:50:03 UTC] PHP Notice:  Undefined variable: today in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 52
+[14-Mar-2020 02:50:03 UTC] PHP Fatal error:  Uncaught Error: Call to a member function getTimestamp() on string in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php:64
+Stack trace:
+#0 C:\wamp64\www\CSW2-TP1\wp-settings.php(360): include_once()
+#1 C:\wamp64\www\CSW2-TP1\wp-config.php(96): require_once('C:\\wamp64\\www\\C...')
+#2 C:\wamp64\www\CSW2-TP1\wp-load.php(37): require_once('C:\\wamp64\\www\\C...')
+#3 C:\wamp64\www\CSW2-TP1\wp-blog-header.php(13): require_once('C:\\wamp64\\www\\C...')
+#4 C:\wamp64\www\CSW2-TP1\index.php(17): require('C:\\wamp64\\www\\C...')
+#5 {main}
+  thrown in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 64
+[14-Mar-2020 02:50:03 UTC] PHP Notice:  Undefined variable: today in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 52
+[14-Mar-2020 02:50:03 UTC] PHP Fatal error:  Uncaught Error: Call to a member function getTimestamp() on string in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php:64
+Stack trace:
+#0 C:\wamp64\www\CSW2-TP1\wp-settings.php(360): include_once()
+#1 C:\wamp64\www\CSW2-TP1\wp-config.php(96): require_once('C:\\wamp64\\www\\C...')
+#2 C:\wamp64\www\CSW2-TP1\wp-load.php(37): require_once('C:\\wamp64\\www\\C...')
+#3 C:\wamp64\www\CSW2-TP1\wp-admin\admin-ajax.php(22): require_once('C:\\wamp64\\www\\C...')
+#4 {main}
+  thrown in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 64
+[14-Mar-2020 02:50:29 UTC] PHP Notice:  Undefined variable: today in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 52
+[14-Mar-2020 02:55:56 UTC] PHP Notice:  A non well formed numeric value encountered in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 57
+[14-Mar-2020 02:55:56 UTC] PHP Notice:  A non well formed numeric value encountered in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 57
+[14-Mar-2020 02:55:56 UTC] PHP Notice:  A non well formed numeric value encountered in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 57
+[14-Mar-2020 02:55:56 UTC] PHP Notice:  A non well formed numeric value encountered in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 57
+[14-Mar-2020 02:55:56 UTC] PHP Notice:  A non well formed numeric value encountered in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 57
+[14-Mar-2020 02:55:56 UTC] PHP Notice:  A non well formed numeric value encountered in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 57
+[14-Mar-2020 02:55:56 UTC] PHP Notice:  A non well formed numeric value encountered in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 57
+[14-Mar-2020 02:55:56 UTC] PHP Notice:  A non well formed numeric value encountered in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 57
+[14-Mar-2020 02:55:56 UTC] PHP Notice:  A non well formed numeric value encountered in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 57
+[14-Mar-2020 02:55:56 UTC] PHP Notice:  A non well formed numeric value encountered in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 57
+[14-Mar-2020 02:55:56 UTC] PHP Notice:  A non well formed numeric value encountered in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 57
+[14-Mar-2020 02:55:56 UTC] PHP Notice:  A non well formed numeric value encountered in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 57
+[14-Mar-2020 02:55:56 UTC] PHP Notice:  A non well formed numeric value encountered in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 57
+[14-Mar-2020 02:55:56 UTC] PHP Notice:  A non well formed numeric value encountered in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 57
+[14-Mar-2020 02:55:56 UTC] PHP Notice:  A non well formed numeric value encountered in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 57
+[14-Mar-2020 02:55:56 UTC] PHP Notice:  A non well formed numeric value encountered in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 57
+[14-Mar-2020 02:55:56 UTC] PHP Notice:  A non well formed numeric value encountered in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 57
+[14-Mar-2020 02:55:56 UTC] PHP Notice:  A non well formed numeric value encountered in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 57
+[14-Mar-2020 02:55:56 UTC] PHP Notice:  A non well formed numeric value encountered in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 57
+[14-Mar-2020 02:55:56 UTC] PHP Notice:  A non well formed numeric value encountered in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 57
+[14-Mar-2020 02:55:56 UTC] PHP Notice:  A non well formed numeric value encountered in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 57
+[14-Mar-2020 02:55:56 UTC] PHP Notice:  A non well formed numeric value encountered in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 57
+[14-Mar-2020 02:55:56 UTC] PHP Notice:  A non well formed numeric value encountered in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 57
+[14-Mar-2020 02:55:56 UTC] PHP Notice:  A non well formed numeric value encountered in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 57
+[14-Mar-2020 02:55:56 UTC] PHP Notice:  A non well formed numeric value encountered in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 57
+[14-Mar-2020 02:55:56 UTC] PHP Notice:  A non well formed numeric value encountered in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 57
+[14-Mar-2020 02:58:55 UTC] PHP Fatal error:  Uncaught Exception: DateTime::__construct(): Failed to parse time string (1274378) at position 4 (3): Unexpected character in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php:53
+Stack trace:
+#0 C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php(53): DateTime->__construct('1274378')
+#1 C:\wamp64\www\CSW2-TP1\wp-settings.php(360): include_once('C:\\wamp64\\www\\C...')
+#2 C:\wamp64\www\CSW2-TP1\wp-config.php(96): require_once('C:\\wamp64\\www\\C...')
+#3 C:\wamp64\www\CSW2-TP1\wp-load.php(37): require_once('C:\\wamp64\\www\\C...')
+#4 C:\wamp64\www\CSW2-TP1\wp-blog-header.php(13): require_once('C:\\wamp64\\www\\C...')
+#5 C:\wamp64\www\CSW2-TP1\index.php(17): require('C:\\wamp64\\www\\C...')
+#6 {main}
+  thrown in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 53
+[14-Mar-2020 02:59:03 UTC] PHP Fatal error:  Uncaught Exception: DateTime::__construct(): Failed to parse time string (1274370) at position 4 (3): Unexpected character in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php:53
+Stack trace:
+#0 C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php(53): DateTime->__construct('1274370')
+#1 C:\wamp64\www\CSW2-TP1\wp-settings.php(360): include_once('C:\\wamp64\\www\\C...')
+#2 C:\wamp64\www\CSW2-TP1\wp-config.php(96): require_once('C:\\wamp64\\www\\C...')
+#3 C:\wamp64\www\CSW2-TP1\wp-load.php(37): require_once('C:\\wamp64\\www\\C...')
+#4 C:\wamp64\www\CSW2-TP1\wp-admin\admin-ajax.php(22): require_once('C:\\wamp64\\www\\C...')
+#5 {main}
+  thrown in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 53
+[14-Mar-2020 03:43:27 UTC] PHP Notice:  Trying to get property 'post_id' of non-object in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-list.php on line 24

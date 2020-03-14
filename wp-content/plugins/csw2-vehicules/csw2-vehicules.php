@@ -14,7 +14,6 @@ Author URI: https://www.linkedin.com/in/sacha-pignot-75b645160/
 
 $csw2_vehicules_settings = get_option('csw2_vehicules_settings');
 
-
 // Section pour la gestion des réglages dans l'administration
 require_once("csw2-vehicules-settings.php");
 
