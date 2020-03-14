@@ -106,10 +106,10 @@ function csw2_vehicules_html_list_code()
             $current_user = wp_get_current_user();
             if (empty($current_user->roles)) $current_user->roles = ["annonyme"];
 
-            $settings = get_option('csw2_vehicules_settings'); ?>
+            global $csw2_vehicules_settings; ?>
 
             <!-- <pre><?= var_dump($current_user->roles); ?></pre>
-            <pre><?= var_dump(in_array($current_user->roles[0], $settings["roles_permis"])); ?></pre> -->
+            <pre><?= var_dump(in_array($current_user->roles[0], $csw2_vehicules_settings["roles_permis"])); ?></pre> -->
 
             <?php
             foreach ($vehicules as $vehicule) :
@@ -176,7 +176,7 @@ function csw2_vehicules_html_list_code()
                             </div>
 
                             <?php // Si l'utilisateur conecté est un administrateur où si il est celui qui a publié l'annonce
-                            if ((current_user_can('administrator') || (get_current_user_id() == $vehicule->vehicule_proprietaire_id)) && (in_array($current_user->roles[0], $settings["roles_permis"]))) :
+                            if ((current_user_can('administrator') || (get_current_user_id() == $vehicule->vehicule_proprietaire_id)) && (in_array($current_user->roles[0], $csw2_vehicules_settings["roles_permis"]))) :
                                 $postmeta = $wpdb->get_row(
                                     "SELECT * FROM $wpdb->postmeta WHERE meta_key = 'csw2_vehicules' AND meta_value = 'delete'"
                                 );

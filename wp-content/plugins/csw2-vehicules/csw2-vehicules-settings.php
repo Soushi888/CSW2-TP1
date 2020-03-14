@@ -74,7 +74,8 @@ function csw2_vehicules_settings_page()
 		<h2>Réglages de CSW2_vehicules</h2>
 		<form method="post" action="options.php">
 			<?php settings_fields('csw2_vehicules_option_group'); // génération de balises input cachés pour faire le lien avec la fonction register_setting par le paramètre option_group 
-			$csw2_vehicules_settings = get_option('csw2_vehicules_settings'); ?>
+			
+			global $csw2_vehicules_settings; ?>
 			<table class="form-table">
 				<tr>
 					<th scope="row">Durée de l'affichage des annonces</th>

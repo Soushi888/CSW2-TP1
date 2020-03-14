@@ -8,7 +8,7 @@
  */
 function html_form_vehicule_code()
 {
-    $settings = get_option('csw2_vehicules_settings');
+    global $csw2_vehicules_settings;
 ?>
     <form action="<?php echo esc_url($_SERVER['REQUEST_URI']) ?>" method="post" enctype="multipart/form-data">
         <label for="marque">Marque du véhicule
@@ -28,10 +28,10 @@ function html_form_vehicule_code()
         <fieldset style="display: flex; justify-content: center;">
             <legend>Visibilite du véhicule</legend>
             <label for="oui">Oui
-                <input type="radio" name="visibilite" id="oui" value="oui" <?php checked($settings["visibilite_annonces"] == "oui") ?> required>
+                <input type="radio" name="visibilite" id="oui" value="oui" <?php checked($csw2_vehicules_settings["visibilite_annonces"] == "oui") ?> required>
             </label>
             <label for="non">Non
-                <input type="radio" name="visibilite" id="non" value="non" <?php checked($settings["visibilite_annonces"] == "non") ?> required>
+                <input type="radio" name="visibilite" id="non" value="non" <?php checked($csw2_vehicules_settings["visibilite_annonces"] == "non") ?> required>
             </label>
         </fieldset>
 

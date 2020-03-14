@@ -9,12 +9,10 @@
 function html_delete_vehicule_code()
 {
     global $wpdb;
-
+    global $csw2_vehicules_settings;
+    
     $current_user = wp_get_current_user();
     if (empty($current_user->roles)) $current_user->roles = ["annonyme"];
-
-    $settings = get_option('csw2_vehicules_settings');
-
     $vehicule_id = isset($_GET['id']) ? $_GET['id'] : null;
     $sql = "SELECT * FROM $wpdb->prefix" . "vehicules
     WHERE vehicule_id = %d";
@@ -27,7 +25,7 @@ function html_delete_vehicule_code()
 
     if ($vehicule === null) : ?>
         <p>Ce véhicule n'existe pas.</p>
-    <?php elseif (get_current_user_id() == $vehicule->vehicule_proprietaire_id && in_array($current_user->roles[0], $settings["roles_permis"])) : ?>
+    <?php elseif (get_current_user_id() == $vehicule->vehicule_proprietaire_id && in_array($current_user->roles[0], $csw2_vehicules_settings["roles_permis"])) : ?>
         <form action="<?php echo esc_url($_SERVER['REQUEST_URI']) ?>" method="post" enctype="multipart/form-data">
             <p>Voulez-vous vraiment supprimer le véhicule no.<?= stripslashes($vehicule->vehicule_id) . " : " . stripslashes($vehicule->vehicule_marque) . " " . stripslashes($vehicule->vehicule_modele) . " " . stripslashes($vehicule->vehicule_couleur) ?></p>
 

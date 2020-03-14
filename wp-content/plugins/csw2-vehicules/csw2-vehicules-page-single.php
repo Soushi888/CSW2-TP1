@@ -43,7 +43,7 @@ function csw2_vehicules_html_single_code()
 			$current_user = wp_get_current_user();
 			if (empty($current_user->roles)) $current_user->roles = ["annonyme"];
 
-			$settings = get_option('csw2_vehicules_settings');
+			global $csw2_vehicules_settings;
 
 			$propietaire = get_user_by("id", $vehicule->vehicule_proprietaire_id);
 
@@ -100,7 +100,7 @@ function csw2_vehicules_html_single_code()
 			</div>
 
 			<?php // Si l'utilisateur conecté est un administrateur où si il est celui qui a publié l'annonce et qu'il a un rôle autorisé
-			if ((current_user_can('administrator') || (get_current_user_id() == $vehicule->vehicule_proprietaire_id)) && (in_array($current_user->roles[0], $settings["roles_permis"]))) : ?>
+			if ((current_user_can('administrator') || (get_current_user_id() == $vehicule->vehicule_proprietaire_id)) && (in_array($current_user->roles[0], $csw2_vehicules_settings["roles_permis"]))) : ?>
 				<!-- Il peut Supprimmer ou modifer son annonce (ou toutes si il est administrateur) -->
 				<div>
 					<button><a style="color: #fff; text-decoration: none;" href="<?= $delete_permalink . "?id=" . $vehicule->vehicule_id ?>">Supprimmer</a></button>

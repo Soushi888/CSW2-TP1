@@ -848,3 +848,22 @@ Stack trace:
 [14-Mar-2020 01:21:39 UTC] PHP Notice:  Trying to get property 'post_id' of non-object in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-list.php on line 24
 [14-Mar-2020 01:25:45 UTC] PHP Notice:  Trying to get property 'post_id' of non-object in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-list.php on line 24
 [14-Mar-2020 01:36:44 UTC] PHP Notice:  Trying to get property 'post_id' of non-object in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-list.php on line 24
+[14-Mar-2020 01:50:57 UTC] PHP Notice:  Trying to get property 'post_id' of non-object in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-list.php on line 24
+[14-Mar-2020 01:53:35 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function wp_get_current_user() in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php:16
+Stack trace:
+#0 C:\wamp64\www\CSW2-TP1\wp-settings.php(360): include_once()
+#1 C:\wamp64\www\CSW2-TP1\wp-config.php(96): require_once('C:\\wamp64\\www\\C...')
+#2 C:\wamp64\www\CSW2-TP1\wp-load.php(37): require_once('C:\\wamp64\\www\\C...')
+#3 C:\wamp64\www\CSW2-TP1\wp-admin\admin-ajax.php(22): require_once('C:\\wamp64\\www\\C...')
+#4 {main}
+  thrown in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 16
+[14-Mar-2020 01:55:11 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function wp_get_current_user() in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php:16
+Stack trace:
+#0 C:\wamp64\www\CSW2-TP1\wp-settings.php(360): include_once()
+#1 C:\wamp64\www\CSW2-TP1\wp-config.php(96): require_once('C:\\wamp64\\www\\C...')
+#2 C:\wamp64\www\CSW2-TP1\wp-load.php(37): require_once('C:\\wamp64\\www\\C...')
+#3 C:\wamp64\www\CSW2-TP1\wp-blog-header.php(13): require_once('C:\\wamp64\\www\\C...')
+#4 C:\wamp64\www\CSW2-TP1\index.php(17): require('C:\\wamp64\\www\\C...')
+#5 {main}
+  thrown in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules.php on line 16
+[14-Mar-2020 01:56:20 UTC] PHP Notice:  Trying to get property 'post_id' of non-object in C:\wamp64\www\CSW2-TP1\wp-content\plugins\csw2-vehicules\csw2-vehicules-page-list.php on line 24
