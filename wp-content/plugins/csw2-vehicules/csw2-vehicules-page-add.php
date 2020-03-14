@@ -24,6 +24,15 @@ function html_form_vehicule_code()
             <input type="text" name="kilometrage" id="kilometrage" required></label><br>
         <label for="prix">Prix du véhicule
             <input type="text" name="prix" id="prix" required></label><br>
+        <fieldset style="display: flex; justify-content: center;">
+            <legend>Visibilite du véhicule</legend>
+            <label for="oui">Oui
+                <input type="radio" name="visibilite" id="oui" value="oui" required>
+            </label>
+                <label for="non">Non
+                <input type="radio" name="visibilite" id="non" value="non" required>
+            </label>
+        </fieldset>
 
         <input type="hidden" name="proprietaire_id" id="proprietaire_id" value="<?= get_current_user_id() ?>" required>
 
@@ -50,6 +59,7 @@ function insert_vehicule()
         $annee_circulation = sanitize_text_field($_POST["annee_circulation"]);
         $kilometrage = sanitize_text_field($_POST["kilometrage"]);
         $prix = sanitize_text_field($_POST["prix"]);
+        $visibilite = sanitize_text_field($_POST["visibilite"]);
         $proprietaire_id = sanitize_text_field($_POST["proprietaire_id"]);
 
         // insertion dans la table
@@ -64,6 +74,7 @@ function insert_vehicule()
                     'vehicule_annee_circulation' => $annee_circulation,
                     'vehicule_kilometrage' => $kilometrage,
                     'vehicule_prix' => $prix,
+                    'vehicule_visibilite' => $visibilite,
                     'vehicule_proprietaire_id' => $proprietaire_id
                 ),
                 array(
@@ -73,6 +84,7 @@ function insert_vehicule()
                     '%d',
                     '%d',
                     '%d',
+                    '%s',
                     '%d'
                 )
             );

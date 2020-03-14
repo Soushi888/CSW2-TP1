@@ -45,6 +45,15 @@ function html_update_vehicule_code()
                 <input type="text" name="kilometrage" id="kilometrage" value="<?= $vehicule->vehicule_kilometrage ?>" required></label><br>
             <label for="prix">Prix du véhicule
                 <input type="text" name="prix" id="prix" value="<?= $vehicule->vehicule_prix ?>" required></label><br>
+            <fieldset style="display: flex; justify-content: center;">
+                <legend>Visibilite du véhicule</legend>
+                <label for="oui">Oui
+                    <input type="radio" name="visibilite" id="oui" value="oui" required>
+                </label>
+                <label for="non">Non
+                    <input type="radio" name="visibilite" id="non" value="non" required>
+                </label>
+            </fieldset>
 
             <input type="hidden" name="proprietaire_id" id="proprietaire_id" value="<?= get_current_user_id() ?>" required>
 
@@ -64,7 +73,7 @@ function html_update_vehicule_code()
 function update_vehicule()
 {
     global $wpdb;
-    
+
     $vehicule_id = isset($_GET['id']) ? $_GET['id'] : null;
     // si le bouton submit est cliqué
     if (isset($_POST['submitted'])) {

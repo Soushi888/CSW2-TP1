@@ -61,25 +61,25 @@ function csw2_vehicules_add_data()
 {
     global $wpdb;
     $sql = "INSERT INTO {$wpdb->prefix}vehicules(
-        vehicule_marque,
-        vehicule_modele,
-        vehicule_couleur,
-        vehicule_annee_circulation,
-        vehicule_kilometrage,
-        vehicule_prix,
-        vehicule_visibilite,
-        vehicule_proprietaire_id)        
+            vehicule_marque,
+            vehicule_modele,
+            vehicule_couleur,
+            vehicule_annee_circulation,
+            vehicule_kilometrage,
+            vehicule_prix,
+            vehicule_visibilite,
+            vehicule_proprietaire_id)        
         VALUES
-        ('Toyota', 'TOYCRX', 'rouge', 2003, 3000, 12000, 1, 1),
-        ('Prius', 'PRICRX', 'verte', 2005, 12000, 10000, 1, 0),
-        ('Ionic', 'IONCXCS', 'noir', 2002, 30000, 8000, 1, 1),
-        ('Toyota','TOYCRX', 'rouge', 2008, 150000, 12000, 1, 2),
-        ('Prius', 'PRICRX', 'verte', 1996, 300000, 10000, 1, 3),
-        ('Ionic', 'IONCXCS', 'noir', 2012, 20000, 8000, 0, 2),
-        ('Toyota', 'TOYCRX', 'rouge', 2015, 32000, 12000, 1, 3),
-        ('Prius', 'PRICRX', 'verte', 2001, 10000, 10000, 1, 1),
-        ('Ionic', 'IONCXCS', 'noir', 1998, 200000, 8000, 1, 2),
-        ('Toyota', 'TOYCRX', 'rouge', 2006, 120000, 12000, 0, 3);";
+            ('Toyota', 'TOYCRX', 'rouge', 2003, 3000, 12000, 'oui', 1),
+            ('Prius', 'PRICRX', 'verte', 2005, 12000, 10000, 'oui', 0),
+            ('Ionic', 'IONCXCS', 'noir', 2002, 30000, 8000, 'oui', 1),
+            ('Toyota','TOYCRX', 'rouge', 2008, 150000, 12000, 'oui', 2),
+            ('Prius', 'PRICRX', 'verte', 1996, 300000, 10000, 'oui', 3),
+            ('Ionic', 'IONCXCS', 'noir', 2012, 20000, 8000, 'non', 2),
+            ('Toyota', 'TOYCRX', 'rouge', 2015, 32000, 12000, 'oui', 3),
+            ('Prius', 'PRICRX', 'verte', 2001, 10000, 10000, 'oui', 1),
+            ('Ionic', 'IONCXCS', 'noir', 1998, 200000, 8000, 'oui', 2),
+            ('Toyota', 'TOYCRX', 'rouge', 2006, 120000, 12000, 'non', 3);";
 
     $result = $wpdb->query($sql);
     return $result;
