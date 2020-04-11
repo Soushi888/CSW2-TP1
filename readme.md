@@ -3,20 +3,6 @@
 ## Description
 Ce plugin wordpress, développé par Sacha Pignot dans le cadre du cours "Création de sites web 2" du programme "Conception et programmation de sites web" su Collège Maisonneuve, permet à des utilisateurs dont le rôle est autorisé (par l'administrateur, via le back office) de publier des annonces puis de les modifier ou supprimer. Ces anonces sont publiquement listée sur une page dédiée.
 
-## Site web
-### Lien
-[https://cmaisonneuve.sacha-pignot.website/tp1/](https://cmaisonneuve.sacha-pignot.website/tp1/)
-### Utiliateurs
-#### admin
-- identifiant : admin
-- mot de passe : ^rm)5KfGw&J(9soHh6UxE%LW
-#### abonné
-- identifiant : abonne
-- mot de passe : YQNKt&iE5F%2kGgwsa$e!Y^f
-#### auteur (rôle autorisé par défaut)
-- identifiant : auteur
-- mot de passe : QAqW^W5wBOZh96wUjt24@1ZV
-
 ## Liste des fichiers
 - csw2-vehicules.php 
     - fichier principale qui inclut tout les autres fichiers
