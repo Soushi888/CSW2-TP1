@@ -1,7 +1,7 @@
 # Plugin WordPress : CSW2_vehicules
 
 ## Description
-Ce plugin wordpress, développé par Sacha Pignot dans le cadre du cours "Création de sites wb 2", permet à des utilisateurs dont le rôle est autorisé (par l'administrateur, via le back office) de publier des annonces puis de les modifier ou supprimer. Ces anonces sont publiquement listée sur une page dédiée.
+Ce plugin wordpress, développé par Sacha Pignot dans le cadre du cours "Création de sites web 2" du programme "Conception et programmation de sites web" su Collège Maisonneuve, permet à des utilisateurs dont le rôle est autorisé (par l'administrateur, via le back office) de publier des annonces puis de les modifier ou supprimer. Ces anonces sont publiquement listée sur une page dédiée.
 
 ## Site web
 ### Lien
